@@ -24,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04217CC2208959C3002FE09D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		044445262080143000E889EC /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		044445282081106200E889EC /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		04510F17207CBE5D00F25E98 /* mnhani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mnhani.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +60,7 @@
 		04510F0E207CBE5D00F25E98 = {
 			isa = PBXGroup;
 			children = (
+				04217CC2208959C3002FE09D /* README.md */,
 				04510F19207CBE5D00F25E98 /* mnhani */,
 				04510F18207CBE5D00F25E98 /* Products */,
 				EBE685873DBA13FAEBEA7525 /* Pods */,
