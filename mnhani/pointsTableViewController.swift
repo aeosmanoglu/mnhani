@@ -13,14 +13,29 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     var pointArray = [point]()
     var filteredArray = [point]()
     let searchController = UISearchController(searchResultsController: nil)
+    var timer = Timer()
+    var memorizedCount = UserDefaults.standard.integer(forKey: "Count")
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationWithSearchBar()
         updateData()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
+        
     }
     
+    
+    @objc func runTime() {
+        let array = CoreDataManager.fetch()
+        let count = array.count
+        if memorizedCount != count {
+            updateData()
+        }
+    }
+    
+    // MARK: - Navigation and Search Bar
     func navigationWithSearchBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.searchController = searchController
@@ -30,7 +45,6 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     func searchBarIsEmpty() -> Bool {
-        // Returns true if the text is empty or nil
         return searchController.searchBar.text?.isEmpty ?? true
     }
     
@@ -49,12 +63,15 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
         return searchController.isActive && !searchBarIsEmpty()
     }
     
+    // MARK: - Core Data Fetching
     @objc func updateData() {
         pointArray.removeAll()
         pointArray = CoreDataManager.fetch()
+        UserDefaults.standard.set(pointArray.count, forKey: "Count")
         tableView.reloadData()
     }
     
+    // MARK: - Table
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
             return filteredArray.count
@@ -74,6 +91,7 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
         return cell
     }
     
+    // MARK: - Buttons
     @IBAction func deleteAllButton(_ sender: Any) {
         let alertController = UIAlertController(title: "Warning", message: "You are about to delete all saved points!", preferredStyle: .alert)
         

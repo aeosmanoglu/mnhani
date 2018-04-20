@@ -21,7 +21,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     var mgrs = String()
     @IBOutlet weak var distanceLabel: UILabel!
     var annotations = [MGLAnnotation]()
-    
+    var timer = Timer()
+    var memorizedCount = UserDefaults.standard.integer(forKey: "Count")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,9 +47,18 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         setupLocationButton()
         
         updateData()
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
     }
     
+    @objc func runTime() {
+        let array = CoreDataManager.fetch()
+        let count = array.count
+        if memorizedCount != count {
+            updateData()
+        }
+    }
     
+    // MARK: - Map Buttons
     func segmentControl() {
         let styleToggle = UISegmentedControl(items: ["Topographic", "Satalite"])
         styleToggle.translatesAutoresizingMaskIntoConstraints = false
@@ -107,12 +117,13 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         view.addConstraints(constraints)
     }
     
-    
+    // MARK: - Core Data Fetching
     @objc func updateData() {
         var pointArray = [point]()
         pointArray.removeAll()
         pointArray = CoreDataManager.fetch()
         let count = pointArray.count
+        UserDefaults.standard.set(count, forKey: "Count")
         mapView.removeAnnotations(annotations)
         if count > 0 {
             for i in 0 ... (pointArray.count - 1) {
@@ -126,6 +137,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         }
     }
     
+    // MARK: - Map View
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
@@ -146,6 +158,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         navigationItem.title = mgrs
     }
     
+    // MARK: - Buttons
     @IBAction func addButton(_ sender: Any) {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
