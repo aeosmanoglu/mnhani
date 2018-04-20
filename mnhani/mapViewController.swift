@@ -21,7 +21,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     var mgrs = String()
     @IBOutlet weak var distanceLabel: UILabel!
     var annotations = [MGLAnnotation]()
-    var refresh = Timer()
     
 
     override func viewDidLoad() {
@@ -47,7 +46,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         setupLocationButton()
         
         updateData()
-        refresh = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateData), userInfo: nil, repeats: true)
     }
     
     
@@ -125,9 +123,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
                 annotations.append(annotation)
                 mapView.addAnnotation(annotation)
             }
-            //mapView.addAnnotations(annotations)
         }
-        
     }
     
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {

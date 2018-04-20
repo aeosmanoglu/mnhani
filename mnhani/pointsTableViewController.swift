@@ -13,14 +13,12 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     var pointArray = [point]()
     var filteredArray = [point]()
     let searchController = UISearchController(searchResultsController: nil)
-    var refresh = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationWithSearchBar()
         updateData()
-        refresh = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateData), userInfo: nil, repeats: true)
     }
     
     func navigationWithSearchBar() {
