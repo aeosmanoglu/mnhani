@@ -38,6 +38,7 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     // MARK: - Navigation and Search Bar
     func navigationWithSearchBar() {
         navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false

@@ -156,8 +156,8 @@
                                             <constraint firstItem="L6p-wF-2PT" firstAttribute="leading" secondItem="Ds2-7O-7Qg" secondAttribute="leading" constant="32" id="fza-RQ-xt4"/>
                                             <constraint firstItem="8az-WM-Vl1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ds2-7O-7Qg" secondAttribute="leading" constant="20" symbolic="YES" id="gUr-g8-CYX"/>
                                             <constraint firstAttribute="trailing" secondItem="8az-WM-Vl1" secondAttribute="trailing" constant="32" id="hSg-vX-sF0"/>
-                                            <constraint firstAttribute="trailing" secondItem="k5Z-PB-fRF" secondAttribute="trailing" constant="205" id="lCu-vr-Aa3"/>
-                                            <constraint firstItem="k5Z-PB-fRF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ds2-7O-7Qg" secondAttribute="leading" id="pcX-6Q-8f3"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="k5Z-PB-fRF" secondAttribute="trailing" constant="205" id="lCu-vr-Aa3"/>
+                                            <constraint firstItem="k5Z-PB-fRF" firstAttribute="leading" secondItem="Ds2-7O-7Qg" secondAttribute="leading" constant="32" id="pcX-6Q-8f3"/>
                                             <constraint firstItem="8az-WM-Vl1" firstAttribute="top" secondItem="W5e-rf-9wr" secondAttribute="top" id="rzT-3I-7pi"/>
                                             <constraint firstItem="W5e-rf-9wr" firstAttribute="top" secondItem="k5Z-PB-fRF" secondAttribute="bottom" id="yQI-f9-Yeh"/>
                                         </constraints>

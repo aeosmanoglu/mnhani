@@ -13,7 +13,7 @@ class addViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationController?.navigationBar.prefersLargeTitles = false
+        
     }
 
     override func didReceiveMemoryWarning() {
