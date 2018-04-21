@@ -140,4 +140,12 @@ class convert {
         
         return "\(Int(UTMzone))" + "\(UTMzoneAlpha)" + " \(e100[Int(digLat)])" + "\(n100[Int(digLong)])"  + " \(String(mgrsEast.suffix(5)))" + " \(String(mgrsNorth.suffix(5)))"
     }
+    
+    func toKM (meter: Double) -> String {
+        var decimeter = meter / 10
+        decimeter = round(decimeter)
+        let kilometer = decimeter / 100
+        
+        return String(kilometer) + " km"
+    }
 }

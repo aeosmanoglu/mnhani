@@ -153,7 +153,13 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
         targetLocations = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         let distance = userLocation.distance(from: targetLocations)
-        distanceLabel.text = "\(Int(distance)) m"
+        let meter = Int(distance)
+        if distance > 999 {
+            distanceLabel.text = convert().toKM(meter: distance)
+        } else {
+            distanceLabel.text = "\(meter) m"
+        }
+        
         mgrs = convert().toMGRS(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         navigationItem.title = mgrs
     }
