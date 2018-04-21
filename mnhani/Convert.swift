@@ -7,8 +7,21 @@
 //
 
 import Foundation
+import CoreLocation
 
 class convert {
+    
+    let scaleFactor = 0.9996
+    let eqRadius = 6378137.0
+    let poRadius = 6356752.3142
+    var eccentricity = Double()
+    var e2 = Double()
+    var n = Double()
+    let n100 = ["V", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V"]
+    let e100 = ["", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    
+
+    
     
     func toMGRS (latitude: Double, longitude: Double) -> String {
         
@@ -72,14 +85,9 @@ class convert {
         
         let UtmZoneCm = 6 * UTMzone - 183
         let latRad = latitude * .pi / 180
-        let scaleFactor = 0.9996
-        let eqRadius = 6378137.0
-        let poRadius = 6356752.3142
-        let eccentricity = sqrt(1 - pow(poRadius / eqRadius, 2))
-        let e2 = eccentricity * eccentricity / (1 - eccentricity * eccentricity)
-        let n = (eqRadius - poRadius) / (eqRadius + poRadius)
-        let e100 = ["", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-        let n100 = ["V", "A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "U", "V"]
+        eccentricity = sqrt(1 - pow(poRadius / eqRadius, 2))
+        e2 = eccentricity * eccentricity / (1 - eccentricity * eccentricity)
+        n = (eqRadius - poRadius) / (eqRadius + poRadius)
         
         // Meridional Arcs
         let arcA = eqRadius * (1 - n + (5 * n * n / 4) * (1 - n) + (81 * pow(n, 4) / 4) * (1 - n))
@@ -140,6 +148,102 @@ class convert {
         
         return "\(Int(UTMzone))" + "\(UTMzoneAlpha)" + " \(e100[Int(digLat)])" + "\(n100[Int(digLong)])"  + " \(String(mgrsEast.suffix(5)))" + " \(String(mgrsNorth.suffix(5)))"
     }
+    
+    
+    func toDD (zoneNumber: Double, zoneLetter: String, mgrsZoneLetter: String, mgrsE: Double, mgrsN: Double) -> CLLocation {
+        
+        let sBody : [String : Double] = [
+            "A" : -72,
+            "C" : -64,
+            "D" : -56,
+            "E" : -48,
+            "F" : -40,
+            "G" : -32,
+            "H" : -24,
+            "J" : -16,
+            "K" : -8,
+            "L" : 0,
+            "M" : 8,
+            "N" : 16,
+            "P" : 24,
+            "Q" : 32,
+            "R" : 40,
+            "S" : 48,
+            "T" : 56,
+            "U" : 64,
+            "V" : 72,
+            "W" : 84
+        ]
+        
+        let disFrEq = sBody[zoneLetter]! * 40000000 / 360
+        let locNextLtrZone = 2000000 * floor(disFrEq / 2000000)
+        let letterNorth = Double(n100.index(of: String(mgrsZoneLetter.suffix(1)))!)
+        let letterEast = Double(e100.index(of: String(mgrsZoneLetter.prefix(1)))!)
+        
+        var startIndexEq = Double()
+        if zoneNumber.truncatingRemainder(dividingBy: 2) == 0 {
+            startIndexEq = 6
+        } else {
+            startIndexEq = 1
+        }
+        
+        var startEIndex = Double()
+        if zoneNumber.truncatingRemainder(dividingBy: 3) == 0 {
+            startEIndex = 16
+        } else if zoneNumber.truncatingRemainder(dividingBy: 3) == 1 {
+            startEIndex = 0
+        } else {
+            startEIndex = 8
+        }
+        
+        let northingAdd = locNextLtrZone + (letterNorth - startIndexEq) * 100000
+        let eastingAdd = 100000 * (letterEast - startEIndex)
+        
+        var correctionSLat = Double()
+        if northingAdd > 0 {
+            correctionSLat = northingAdd
+        } else {
+            correctionSLat = 10000000 + northingAdd
+        }
+        
+        let northing = correctionSLat + mgrsN
+        let easting = eastingAdd + mgrsE
+        eccentricity = sqrt(1 - pow(poRadius / eqRadius, 2))
+        e2 = eccentricity * eccentricity / (1 - eccentricity * eccentricity)
+        n = (eqRadius - poRadius) / (eqRadius + poRadius)
+        let arcLength = northing / scaleFactor
+        let mu = arcLength / (eqRadius * (1 - pow(eccentricity, 2) / 4 - 3 * pow(eccentricity, 4) / 64 - 5 * pow(eccentricity, 6) / 256))
+        let c1 = 3 * n / 2 - 27 * pow(n, 3) / 32
+        let c2 = 21 * pow(n, 2) / 16 - 55 * pow(n, 4) / 32
+        let c3 = 151 * pow(n, 3) / 96
+        let c4 = 1097 * pow(n, 4) / 512
+        let footprintLat = mu + c1 * sin(2 * mu) + c2 * sin(4 * mu) + c3 * sin(6 * mu) + c4 * sin(8 * mu)
+        let eFromZC = 500000 - easting
+        let numberC = e2 * pow(cos(footprintLat), 2)
+        let numberT = pow(tan(footprintLat), 2)
+        let numberN = eqRadius / pow(1 - pow(eccentricity * sin(footprintLat), 2), 1 / 2)
+        let numberR = eqRadius * (1 - eccentricity * eccentricity) / pow(1 - pow(eccentricity * sin(footprintLat), 2), 3 / 2)
+        let numberD = eFromZC / numberN * scaleFactor
+        let latCoef1 = numberN * tan(footprintLat) / numberR
+        let latCoef2 = numberD * numberD / 2
+        let latCoef3 = (5 + 3 * numberT + 10 * numberC - 4 * numberC - 9 * e2) * pow(numberD, 4) / 24
+        let latCoef4 = (61 + 90 * numberT + 298 * numberC + 45 * numberT * numberT - 252 * e2 - 3 * numberC * numberC) * pow(numberD, 6) / 720
+        let longCoef1 = numberD
+        let longCoef2 = (1 + 2 * numberT + numberC) * pow(numberD, 3) / 6
+        let longCoef3 = (5 - 2 * numberC + 28 * numberT - 3 * pow(numberC, 2) + 8 * e2 + 24 * pow(numberT, 2)) * pow(numberD, 5) / 120
+        let longZoneCM = -183 + 6 * zoneNumber
+        let deltaLong = ( longCoef1 - longCoef2 + longCoef3) / cos(footprintLat)
+        let deltaLongDecimal = deltaLong * 180 / .pi
+        
+        //LAT - LONG
+        let latitude = 180 * (footprintLat - latCoef1 * (latCoef2 + latCoef3 + latCoef4)) / .pi
+        let longitude = longZoneCM - deltaLongDecimal
+        
+        let location = CLLocation(latitude: latitude, longitude: longitude)
+        
+        return location
+    }
+    
     
     func toKM (meter: Double) -> String {
         var decimeter = meter / 10
