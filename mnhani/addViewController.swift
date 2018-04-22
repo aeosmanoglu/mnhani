@@ -23,7 +23,6 @@ class addViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         titleTextField.delegate = self
         zoneTextField.delegate = self
         mgrsZoneTextField.delegate = self
@@ -31,13 +30,15 @@ class addViewController: UIViewController, UITextFieldDelegate {
         northTextField.delegate = self
         
         self.toolbar = FormToolbar(inputs: [titleTextField, eastTextField, northTextField, zoneTextField, mgrsZoneTextField])
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
         view.addGestureRecognizer(tapGesture)
-
         
+        
+        
+
     }
     
+    //MARK: - Keyboard and Text Field Attributes
     func textFieldDidBeginEditing(_ textField: UITextField) {
         toolbar.update()
     }
@@ -48,7 +49,6 @@ class addViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        //viewWillDisappear(animated)
         removeObservers()
     }
     
@@ -81,6 +81,32 @@ class addViewController: UIViewController, UITextFieldDelegate {
     func removeObservers() {
         NotificationCenter.default.removeObserver(self)
     }
+    
+    //MARK: - Text Fields Limitations
+    internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        var i: Int
+        
+        switch textField {
+        case titleTextField:
+            i = 20
+        case zoneTextField:
+            i = 3
+        case mgrsZoneTextField:
+            i = 2
+        default:
+            i = 5
+        }
+        
+        
+        let text = textField.text ?? ""
+        guard let range = Range(range, in: text) else { return false }
+        let updatedText = text.replacingCharacters(in: range, with: string)
+        return updatedText.count <= i
+    }
+    
+    
+    
     
     
     // MARK: - Buttons
