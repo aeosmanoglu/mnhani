@@ -144,6 +144,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
         mapView.setCenter(annotation.coordinate, animated: true)
+        timer.invalidate()
+    }
+    
+    func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
