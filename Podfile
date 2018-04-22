@@ -7,5 +7,6 @@ target 'mnhani' do
 
   # Pods for mnhani
   pod 'Mapbox-iOS-SDK', '~> 3.7'
+  pod 'FormToolbar', '~> 1.0'
   
 end

@@ -7,54 +7,104 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F17AC8F77B0EDDBD86F6B15E4EDC207 /* Pods-mnhani-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 67F2688683CF86A5C4804EC8DDE753F5 /* Pods-mnhani-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9CE47DBDF7FC15A671F58BA9798D4563 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		DA243109379D184907A4601912E4E5C9 /* Pods-mnhani-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D687390C028308C33C57A0EDAE1B105F /* Pods-mnhani-dummy.m */; };
+		1F0A38A2F69B79D6DF56342B9A1C1780 /* FormToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0AF14F1E4924468DC23746FC2C52DF /* FormToolbar.swift */; };
+		2606B3F6564EA84100FC51B1E9B7036E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		3D3096AAAD5A3024CC9264B88AC6C4EC /* UIBarButtonItem+Hidden.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B4CAE512F4CECB5DEE54313B7190B3 /* UIBarButtonItem+Hidden.swift */; };
+		5186817AC2BA81A0B71ED70921E880CA /* FormToolbar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F0C9543631C2DC41AF02B8953A718717 /* FormToolbar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		796CD7400972AEFB1099D441461FCD03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A504807E0F4FD3A6952C9A625ABE48FA /* FormToolbar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C254963FFBE0D18267ED8DD3429FC9D /* FormToolbar-dummy.m */; };
+		BCB0C70787F143752C3710467ED326DA /* Pods-mnhani-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D687390C028308C33C57A0EDAE1B105F /* Pods-mnhani-dummy.m */; };
+		C901222708C6192DFDAE7EBB6421634B /* FormInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3AC18639D58EE4B58F0B3DAA5F2F65 /* FormInput.swift */; };
+		CF53FBFC7323CB069FC43E80C12BAD6A /* Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = 720D407C0CB7CC9CE3F0F6665BA976FE /* Info.plist */; };
+		F9E98BF08BAF8C84471633355F783CE4 /* Pods-mnhani-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 67F2688683CF86A5C4804EC8DDE753F5 /* Pods-mnhani-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FBE8C7FF7647999B0235BC4AEA8654F7 /* FormToolbar.h in Headers */ = {isa = PBXBuildFile; fileRef = F21A7ED3D4BA784AC36B5CD04F0A66CD /* FormToolbar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A1B0595144B1D6BD1FB2BACB9F335198 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0695E9C6283C5898B80CC2738691684;
+			remoteInfo = FormToolbar;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0C94A77A7010F84595A9C08803900BEA /* Pods-mnhani-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mnhani-resources.sh"; sourceTree = "<group>"; };
+		11678EA7CD2F0548E646A4C024CDB8F8 /* Pods_mnhani.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_mnhani.framework; path = "Pods-mnhani.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DCD9394AA012F5AAFA222676879C8A /* FormToolbar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FormToolbar.framework; path = FormToolbar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B3AC18639D58EE4B58F0B3DAA5F2F65 /* FormInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormInput.swift; path = FormToolbar/FormInput.swift; sourceTree = "<group>"; };
+		2C254963FFBE0D18267ED8DD3429FC9D /* FormToolbar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FormToolbar-dummy.m"; sourceTree = "<group>"; };
+		354ED997B8C7F9FDE2FE85890201976B /* FormToolbar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormToolbar-prefix.pch"; sourceTree = "<group>"; };
 		497D2CBF933091C564694F17FE8DCD5D /* Pods-mnhani-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mnhani-frameworks.sh"; sourceTree = "<group>"; };
+		5D07BB66A4ED5D4DFF7B388B24A27BC9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64EDD1115394D9252F4CBA2FB193B679 /* FormToolbar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FormToolbar.modulemap; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		67F2688683CF86A5C4804EC8DDE753F5 /* Pods-mnhani-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-mnhani-umbrella.h"; sourceTree = "<group>"; };
 		67F8441D464508D9EB982009D839FF72 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68A3C64898E58325D6649D1EF75CB52B /* Pods-mnhani.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mnhani.debug.xcconfig"; sourceTree = "<group>"; };
-		709B80D045353E92DB7BAC8F3BCC2054 /* Pods_mnhani.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_mnhani.framework; path = "Pods-mnhani.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		720D407C0CB7CC9CE3F0F6665BA976FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = FormToolbar/Info.plist; sourceTree = "<group>"; };
+		7B0AF14F1E4924468DC23746FC2C52DF /* FormToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormToolbar.swift; path = FormToolbar/FormToolbar.swift; sourceTree = "<group>"; };
+		82E6DD6E0F41C700E9AC88E7382E1359 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = dynamic/Mapbox.framework; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		94462DB26C134599961AEDEAAEDCA26A /* FormToolbar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FormToolbar.xcconfig; sourceTree = "<group>"; };
 		9FB9A83D53EF5FE4B403C091F933591F /* Pods-mnhani-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mnhani-acknowledgements.plist"; sourceTree = "<group>"; };
 		A19A39BCCEE0EE0D543E2BC1614DFEAD /* Pods-mnhani-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mnhani-acknowledgements.markdown"; sourceTree = "<group>"; };
 		C684A62D5BA0B4A74FDCD8B50AA85FED /* Pods-mnhani.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-mnhani.modulemap"; sourceTree = "<group>"; };
 		D687390C028308C33C57A0EDAE1B105F /* Pods-mnhani-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mnhani-dummy.m"; sourceTree = "<group>"; };
-		E3F3DEAC62E89F9ABAA5BE6404D5548E /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = dynamic/Mapbox.framework; sourceTree = "<group>"; };
+		E7B4CAE512F4CECB5DEE54313B7190B3 /* UIBarButtonItem+Hidden.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIBarButtonItem+Hidden.swift"; path = "FormToolbar/UIBarButtonItem+Hidden.swift"; sourceTree = "<group>"; };
+		F0C9543631C2DC41AF02B8953A718717 /* FormToolbar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormToolbar-umbrella.h"; sourceTree = "<group>"; };
+		F21A7ED3D4BA784AC36B5CD04F0A66CD /* FormToolbar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FormToolbar.h; path = FormToolbar/FormToolbar.h; sourceTree = "<group>"; };
 		F4C538659DEA8DE71C3F9C3C04380C42 /* Pods-mnhani.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mnhani.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		26FD42082D989EE59291BB3CAED8C224 /* Frameworks */ = {
+		A409145EE34390D6FC7F587E203208B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CE47DBDF7FC15A671F58BA9798D4563 /* Foundation.framework in Frameworks */,
+				796CD7400972AEFB1099D441461FCD03 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD131DBB1A6ADAB9F47C6EC71DC2C076 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2606B3F6564EA84100FC51B1E9B7036E /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3433746FBB20361F7C06EA7E60ED2F4A /* Frameworks */ = {
+		508AC978535AD0304F46DA59483F3FEF /* FormToolbar */ = {
 			isa = PBXGroup;
 			children = (
-				E3F3DEAC62E89F9ABAA5BE6404D5548E /* Mapbox.framework */,
+				2B3AC18639D58EE4B58F0B3DAA5F2F65 /* FormInput.swift */,
+				F21A7ED3D4BA784AC36B5CD04F0A66CD /* FormToolbar.h */,
+				7B0AF14F1E4924468DC23746FC2C52DF /* FormToolbar.swift */,
+				720D407C0CB7CC9CE3F0F6665BA976FE /* Info.plist */,
+				E7B4CAE512F4CECB5DEE54313B7190B3 /* UIBarButtonItem+Hidden.swift */,
+				63C83AB3AB223A345B8D2BC34AA3311C /* Support Files */,
 			);
-			name = Frameworks;
+			name = FormToolbar;
+			path = FormToolbar;
 			sourceTree = "<group>";
 		};
-		3B6AD4FFE66908FCA51F294DF844D59F /* Pods */ = {
+		63C83AB3AB223A345B8D2BC34AA3311C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C622644E73922BB231E29AB8457EFB83 /* Mapbox-iOS-SDK */,
+				64EDD1115394D9252F4CBA2FB193B679 /* FormToolbar.modulemap */,
+				94462DB26C134599961AEDEAAEDCA26A /* FormToolbar.xcconfig */,
+				2C254963FFBE0D18267ED8DD3429FC9D /* FormToolbar-dummy.m */,
+				354ED997B8C7F9FDE2FE85890201976B /* FormToolbar-prefix.pch */,
+				F0C9543631C2DC41AF02B8953A718717 /* FormToolbar-umbrella.h */,
+				5D07BB66A4ED5D4DFF7B388B24A27BC9 /* Info.plist */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/FormToolbar";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -62,18 +112,19 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				3B6AD4FFE66908FCA51F294DF844D59F /* Pods */,
-				A62C732D758D410F8CD11FB23BD5D347 /* Products */,
+				F22137ED806B3A6680A5C88109E975B1 /* Pods */,
+				BD88DC3502216596687E3BC43FE205D5 /* Products */,
 				FA70F37ADE9215088E85341E0344E7E2 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		A62C732D758D410F8CD11FB23BD5D347 /* Products */ = {
+		A26DF266FB8341C05018C137D98F738C /* Mapbox-iOS-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				709B80D045353E92DB7BAC8F3BCC2054 /* Pods_mnhani.framework */,
+				CBBCA36A5623DCD7469CBFF79C29E9CB /* Frameworks */,
 			);
-			name = Products;
+			name = "Mapbox-iOS-SDK";
+			path = "Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -84,13 +135,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C622644E73922BB231E29AB8457EFB83 /* Mapbox-iOS-SDK */ = {
+		BD88DC3502216596687E3BC43FE205D5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3433746FBB20361F7C06EA7E60ED2F4A /* Frameworks */,
+				26DCD9394AA012F5AAFA222676879C8A /* FormToolbar.framework */,
+				11678EA7CD2F0548E646A4C024CDB8F8 /* Pods_mnhani.framework */,
 			);
-			name = "Mapbox-iOS-SDK";
-			path = "Mapbox-iOS-SDK";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBBCA36A5623DCD7469CBFF79C29E9CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82E6DD6E0F41C700E9AC88E7382E1359 /* Mapbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -119,6 +178,15 @@
 			path = "Target Support Files/Pods-mnhani";
 			sourceTree = "<group>";
 		};
+		F22137ED806B3A6680A5C88109E975B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				508AC978535AD0304F46DA59483F3FEF /* FormToolbar */,
+				A26DF266FB8341C05018C137D98F738C /* Mapbox-iOS-SDK */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		FA70F37ADE9215088E85341E0344E7E2 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,32 +198,59 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		EE88CF03A641E8B6C5C65BDDBDF4F42E /* Headers */ = {
+		1DBF50644591CD961A79D9BB4DA82B23 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F17AC8F77B0EDDBD86F6B15E4EDC207 /* Pods-mnhani-umbrella.h in Headers */,
+				5186817AC2BA81A0B71ED70921E880CA /* FormToolbar-umbrella.h in Headers */,
+				FBE8C7FF7647999B0235BC4AEA8654F7 /* FormToolbar.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AF4A6833E4E4856EBB76726E7707D81 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9E98BF08BAF8C84471633355F783CE4 /* Pods-mnhani-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		88D4EEE8E8A4CB84F467BAC8AAE8D6E2 /* Pods-mnhani */ = {
+		A0695E9C6283C5898B80CC2738691684 /* FormToolbar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B14FDF4B0303FB6EDD4ACEC2D18B5547 /* Build configuration list for PBXNativeTarget "Pods-mnhani" */;
+			buildConfigurationList = D2D526C424A74D9F119051F0C974E66A /* Build configuration list for PBXNativeTarget "FormToolbar" */;
 			buildPhases = (
-				FCDF8C0037BD0D8E15927DA319AA6684 /* Sources */,
-				26FD42082D989EE59291BB3CAED8C224 /* Frameworks */,
-				EE88CF03A641E8B6C5C65BDDBDF4F42E /* Headers */,
+				5F5117590AAC4A4BEE2FA890407C377E /* Sources */,
+				A409145EE34390D6FC7F587E203208B8 /* Frameworks */,
+				1DBF50644591CD961A79D9BB4DA82B23 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
+			name = FormToolbar;
+			productName = FormToolbar;
+			productReference = 26DCD9394AA012F5AAFA222676879C8A /* FormToolbar.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		AF6A0AA3D8D6F42F526FDFF613594785 /* Pods-mnhani */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 961C67B75CE3F70C0849F17E0BB83BA7 /* Build configuration list for PBXNativeTarget "Pods-mnhani" */;
+			buildPhases = (
+				E177D00606806BC13B1143C3769F92FE /* Sources */,
+				CD131DBB1A6ADAB9F47C6EC71DC2C076 /* Frameworks */,
+				3AF4A6833E4E4856EBB76726E7707D81 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8861DBD925A325CDA2459003A56EAF7F /* PBXTargetDependency */,
+			);
 			name = "Pods-mnhani";
 			productName = "Pods-mnhani";
-			productReference = 709B80D045353E92DB7BAC8F3BCC2054 /* Pods_mnhani.framework */;
+			productReference = 11678EA7CD2F0548E646A4C024CDB8F8 /* Pods_mnhani.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -175,28 +270,86 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = A62C732D758D410F8CD11FB23BD5D347 /* Products */;
+			productRefGroup = BD88DC3502216596687E3BC43FE205D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				88D4EEE8E8A4CB84F467BAC8AAE8D6E2 /* Pods-mnhani */,
+				A0695E9C6283C5898B80CC2738691684 /* FormToolbar */,
+				AF6A0AA3D8D6F42F526FDFF613594785 /* Pods-mnhani */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FCDF8C0037BD0D8E15927DA319AA6684 /* Sources */ = {
+		5F5117590AAC4A4BEE2FA890407C377E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA243109379D184907A4601912E4E5C9 /* Pods-mnhani-dummy.m in Sources */,
+				C901222708C6192DFDAE7EBB6421634B /* FormInput.swift in Sources */,
+				A504807E0F4FD3A6952C9A625ABE48FA /* FormToolbar-dummy.m in Sources */,
+				1F0A38A2F69B79D6DF56342B9A1C1780 /* FormToolbar.swift in Sources */,
+				CF53FBFC7323CB069FC43E80C12BAD6A /* Info.plist in Sources */,
+				3D3096AAAD5A3024CC9264B88AC6C4EC /* UIBarButtonItem+Hidden.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E177D00606806BC13B1143C3769F92FE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCB0C70787F143752C3710467ED326DA /* Pods-mnhani-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		8861DBD925A325CDA2459003A56EAF7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = FormToolbar;
+			target = A0695E9C6283C5898B80CC2738691684 /* FormToolbar */;
+			targetProxy = A1B0595144B1D6BD1FB2BACB9F335198 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		2C269D563314590A244242B4F387583A /* Debug */ = {
+		0E65D696DE9B5B29F4B684CFA599A0D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4C538659DEA8DE71C3F9C3C04380C42 /* Pods-mnhani.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-mnhani/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-mnhani/Pods-mnhani.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		103F4FBE060326067B7130D158BBEAEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68A3C64898E58325D6649D1EF75CB52B /* Pods-mnhani.debug.xcconfig */;
 			buildSettings = {
@@ -224,6 +377,40 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		25898D649FBB6080E08537C803E76D93 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94462DB26C134599961AEDEAAEDCA26A /* FormToolbar.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/FormToolbar/FormToolbar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FormToolbar/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/FormToolbar/FormToolbar.modulemap";
+				PRODUCT_MODULE_NAME = FormToolbar;
+				PRODUCT_NAME = FormToolbar;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -351,12 +538,10 @@
 			};
 			name = Release;
 		};
-		F72C4C8921100A2FA98C49053AED42F8 /* Release */ = {
+		74523B2A39DEDC18EA3E8C08B2ABBC6B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F4C538659DEA8DE71C3F9C3C04380C42 /* Pods-mnhani.release.xcconfig */;
+			baseConfigurationReference = 94462DB26C134599961AEDEAAEDCA26A /* FormToolbar.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -366,19 +551,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-mnhani/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FormToolbar/FormToolbar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FormToolbar/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-mnhani/Pods-mnhani.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/FormToolbar/FormToolbar.modulemap";
+				PRODUCT_MODULE_NAME = FormToolbar;
+				PRODUCT_NAME = FormToolbar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -398,11 +583,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B14FDF4B0303FB6EDD4ACEC2D18B5547 /* Build configuration list for PBXNativeTarget "Pods-mnhani" */ = {
+		961C67B75CE3F70C0849F17E0BB83BA7 /* Build configuration list for PBXNativeTarget "Pods-mnhani" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2C269D563314590A244242B4F387583A /* Debug */,
-				F72C4C8921100A2FA98C49053AED42F8 /* Release */,
+				103F4FBE060326067B7130D158BBEAEF /* Debug */,
+				0E65D696DE9B5B29F4B684CFA599A0D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2D526C424A74D9F119051F0C974E66A /* Build configuration list for PBXNativeTarget "FormToolbar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25898D649FBB6080E08537C803E76D93 /* Debug */,
+				74523B2A39DEDC18EA3E8C08B2ABBC6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
