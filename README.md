@@ -8,7 +8,7 @@ Kendimi GitHub ve Swift dilinde geliştirmek, uygulamayı da daha iyi bir hale g
 
 <br>
 
-Görseller için [linke] (http://abuzeremre.com/mnhani-app) tıklayınız.
+Görseller için [linke](http://abuzeremre.com/mnhani-app) tıklayınız.
 
 <br>
 
