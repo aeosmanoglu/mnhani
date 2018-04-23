@@ -169,7 +169,7 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         
         CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: textedLocation.coordinate.latitude, longitude: textedLocation.coordinate.longitude)
         
-        self.view.makeToast("Saved", position: .bottom)
+        _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func deleteButton(_ sender: Any) {
