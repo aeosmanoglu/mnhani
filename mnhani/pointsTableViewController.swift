@@ -15,6 +15,7 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     let searchController = UISearchController(searchResultsController: nil)
     var timer = Timer()
     var memorizedCount = UserDefaults.standard.integer(forKey: "Count")
+    
 
     
     override func viewDidLoad() {
@@ -81,15 +82,44 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell")
         let cellRow : point
         if isFiltering() {
             cellRow = filteredArray[indexPath.row]
         } else {
             cellRow = pointArray[indexPath.row]
         }
-        cell.textLabel?.text = cellRow.pointTitle
-        return cell
+        cell?.textLabel?.text = cellRow.pointTitle
+        cell?.detailTextLabel?.text = cellRow.pointMGRS
+        return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
+        timer.invalidate()
+    }
+    
+    override func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
+        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            /// how to clean Core Data Object? WTF?
+            pointArray.remove(at: indexPath.row)
+            
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            tableView.endUpdates()
+            
+            
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
     }
     
     // MARK: - Buttons

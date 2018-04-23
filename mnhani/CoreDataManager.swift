@@ -78,4 +78,9 @@ class CoreDataManager: NSObject {
             print(error.localizedDescription)
         }
     }
+    
+    // Delete Data
+    
+    class func deleteObject () {
+    }
 }
