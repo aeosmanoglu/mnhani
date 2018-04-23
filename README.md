@@ -4,7 +4,11 @@ iOS için Askeri GPS Uygulaması - *Military GPS Application for iOS*
 <br>
 
 ## 1. Amaç
-Kendimi GitHub ve Swift dilinde geliştirmek, uygulamayı da daha iyi bir hale getirmek için açık kaynak yaptım. Yapacağınız her türlü yardım sadece uygulamayı geliştirmeyecek, aynı zamanda yazdığınız kodları inceleyen beni de daha iyi bir seviyeye getirecektir. Bu yüzden hiç bir ticari kaygım yok.
+Kendimi GitHub ve Swift dilinde geliştirmek, uygulamayı da daha iyi bir hale getirmek için açık kaynak yaptım. Yapacağınız her türlü yardım sadece uygulamayı geliştirmeyecek, aynı zamanda yazdığınız kodları inceleyen beni de daha iyi bir seviyeye getirecektir. Bu yüzden hiç bir ticari kaygım yok. 
+
+<br>
+
+Görseller için [linke] (http://abuzeremre.com/mnhani-app) tıklayınız.
 
 <br>
 
