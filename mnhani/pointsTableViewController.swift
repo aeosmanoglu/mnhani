@@ -109,9 +109,10 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            /// how to clean Core Data Object? WTF?
             pointArray.remove(at: indexPath.row)
-            
+            var point: [Point]? = nil
+            point = CoreDataManager.fetchObject()
+            CoreDataManager.delete (point: point![indexPath.row])
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()

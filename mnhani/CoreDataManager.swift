@@ -34,7 +34,7 @@ class CoreDataManager: NSObject {
     // Store Point in Core Data
     class func store (title: String, mgrs: String, latitude: Double, longitude: Double) {
         let context = getContext()
-        let entity = NSEntityDescription.entity(forEntityName: "Annotations", in: context)
+        let entity = NSEntityDescription.entity(forEntityName: "Point", in: context)
         let managedObj = NSManagedObject(entity: entity!, insertInto: context)
         
         managedObj.setValue(title, forKey: "title")
@@ -53,7 +53,7 @@ class CoreDataManager: NSObject {
     // Fetch Points from Core Data
     class func fetch (selectedScopeIdx:Int?=nil, targetText:String?=nil) -> [point]{
         var array = [point]()
-        let fetchRequest:NSFetchRequest<Annotations> = Annotations.fetchRequest()
+        let fetchRequest:NSFetchRequest<Point> = Point.fetchRequest()
         do {
             let fetchResult = try getContext().fetch(fetchRequest)
             for item in fetchResult {
@@ -68,7 +68,7 @@ class CoreDataManager: NSObject {
     
     // Clean All Core Data
     class func cleanCoreData() {
-        let fetchRequest:NSFetchRequest<Annotations> = Annotations.fetchRequest()
+        let fetchRequest:NSFetchRequest<Point> = Point.fetchRequest()
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
         
         do {
@@ -81,6 +81,26 @@ class CoreDataManager: NSObject {
     
     // Delete Data
     
-    class func deleteObject () {
+    class func delete (point: Point) {
+        let context = getContext()
+        context.delete(point)
+        
+        do {
+            try context.save()
+            print("deleted")
+        }catch {
+            print(error.localizedDescription)
+        }
+    }
+    
+    class func fetchObject() -> [Point]? {
+        let context = getContext()
+        var point: [Point]? = nil
+        do {
+            point = try context.fetch(Point.fetchRequest())
+            return point
+        }catch {
+            return point
+        }
     }
 }
