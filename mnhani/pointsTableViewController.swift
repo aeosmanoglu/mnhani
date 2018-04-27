@@ -95,7 +95,11 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
+        if isFiltering() {
+            return false
+        } else {
+            return true
+        }
     }
     
     override func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
