@@ -21,8 +21,6 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.leftBarButtonItem = self.editButtonItem
-        
         navigationWithSearchBar()
         updateData()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
@@ -40,6 +38,7 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     
     // MARK: - Navigation and Search Bar
     func navigationWithSearchBar() {
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
         navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationController?.navigationItem.largeTitleDisplayMode = .automatic
         navigationItem.searchController = searchController
@@ -122,11 +121,21 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
             tableView.endUpdates()
-            
-            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if isFiltering() {
+        } else {
+            performSegue(withIdentifier: "EditSegue", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! editViewController
+        vc.indexPFSR = (tableView.indexPathForSelectedRow?.row)!
     }
     
     // MARK: - Buttons

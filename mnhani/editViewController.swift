@@ -1,16 +1,15 @@
 //
-//  addViewController.swift
+//  editViewController.swift
 //  mnhani
 //
-//  Created by Abuzer Emre Osmanoğlu on 21.04.2018.
+//  Created by Abuzer Emre Osmanoğlu on 28.04.2018.
 //  Copyright © 2018 Abuzer Emre Osmanoğlu. All rights reserved.
 //
 
 import UIKit
 import FormToolbar
-import CoreLocation
 
-class addViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
+class editViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -19,16 +18,12 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
     @IBOutlet weak var eastTextField: UITextField!
     @IBOutlet weak var northTextField: UITextField!
     var toolbar = FormToolbar()
-    var locationManager = CLLocationManager()
-    var userLocation = CLLocation()
-    var latitude = Double()
-    var longitude = Double()
-    var mgrs = String()
-    
+    var indexPFSR = Int()
+    var pointArray = [point]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         titleTextField.delegate = self
         zoneTextField.delegate = self
         mgrsZoneTextField.delegate = self
@@ -39,32 +34,11 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
         view.addGestureRecognizer(tapGesture)
         
-        locationManager.startUpdatingLocation()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        updateData()
+        placeHolders()
         
+    }
 
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        userLocation = locations[0]
-        
-        latitude = userLocation.coordinate.latitude
-        longitude = userLocation.coordinate.longitude
-        mgrs = convert().toMGRS(latitude: latitude, longitude: longitude)
-        let zones = mgrs.prefix(6)
-        let coordinates = mgrs.suffix(11)
-        zoneTextField.placeholder = String(zones.prefix(3))
-        mgrsZoneTextField.placeholder = String(zones.suffix(2))
-        eastTextField.placeholder = String(coordinates.prefix(5))
-        northTextField.placeholder = String(coordinates.suffix(5))
-        let formatter = DateFormatter()
-        formatter.dateStyle = .short
-        formatter.timeStyle = .medium
-        let timeString = formatter.string(from: Date())
-        titleTextField.placeholder = timeString
-    }
-    
     //MARK: - Keyboard and Text Field Attributes
     func textFieldDidBeginEditing(_ textField: UITextField) {
         toolbar.update()
@@ -125,16 +99,44 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
             i = 5
         }
         
-        
         let text = textField.text ?? ""
         guard let range = Range(range, in: text) else { return false }
         let updatedText = text.replacingCharacters(in: range, with: string)
         return updatedText.count <= i
     }
     
+    func placeHolders() {
+        let mgrs = pointArray[indexPFSR].pointMGRS
+        let zones = mgrs?.prefix(6)
+        let coordinates = mgrs?.suffix(11)
+        zoneTextField.placeholder = String((zones?.prefix(3))!)
+        mgrsZoneTextField.placeholder = String((zones?.suffix(2))!)
+        eastTextField.placeholder = String((coordinates?.prefix(5))!)
+        northTextField.placeholder = String((coordinates?.suffix(5))!)
+        titleTextField.placeholder = pointArray[indexPFSR].pointTitle
+    }
     
-    // MARK: - Buttons
+    
+    // MARK: - Core Data Fetching
+    func updateData() {
+        pointArray.removeAll()
+        pointArray = CoreDataManager.fetch()
+    }
+    
+    func deleteSelectedData() {
+        pointArray.remove(at: indexPFSR)
+        var point: [Point]? = nil
+        point = CoreDataManager.fetchObject()
+        CoreDataManager.delete (point: point![indexPFSR])
+    }
+    
+
+    
+    // MARK: - Navigation
+
     @IBAction func saveButton(_ sender: Any) {
+        deleteSelectedData()
+        
         var title = titleTextField.text
         var zone = zoneTextField.text
         var mgrsZone = mgrsZoneTextField.text
@@ -168,5 +170,15 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         self.view.makeToast("Saved", position: .top)
         _ = navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func deleteButton(_ sender: Any) {
+        deleteSelectedData()
+        self.view.makeToast("Deleted", position: .top)
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func showButton(_ sender: Any) {
+    }
+    
 
 }
