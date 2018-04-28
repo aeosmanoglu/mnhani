@@ -63,6 +63,7 @@
 		04510F0E207CBE5D00F25E98 = {
 			isa = PBXGroup;
 			children = (
+				04A9421120944D6A005EE758 /* ScreenShots.xcassets */,
 				04217CC2208959C3002FE09D /* README.md */,
 				04510F19207CBE5D00F25E98 /* mnhani */,
 				04510F18207CBE5D00F25E98 /* Products */,
@@ -97,7 +98,6 @@
 				047D80BB20862784001FD38C /* UserLocationButton.swift */,
 				04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */,
 				04510F24207CBE5F00F25E98 /* Assets.xcassets */,
-				04A9421120944D6A005EE758 /* ScreenShots.xcassets */,
 			);
 			path = mnhani;
 			sourceTree = "<group>";
