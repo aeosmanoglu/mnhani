@@ -21,6 +21,8 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.leftBarButtonItem = self.editButtonItem
+        
         navigationWithSearchBar()
         updateData()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)

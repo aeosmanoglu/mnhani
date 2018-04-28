@@ -104,7 +104,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Points" id="qkY-Yy-9Mb">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="gj8-rk-GSG"/>
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="gzg-eF-E2A">
                                 <connections>
