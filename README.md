@@ -1,6 +1,12 @@
 # mnhani
 iOS için Askeri GPS Uygulaması - *Military GPS Application for iOS*
 
+[![Version](https://img.shields.io/badge/Version-1.0-ff9500.svg)](https://swift.org/)
+[![Build](https://img.shields.io/badge/Build-1-ff9500.svg)](https://swift.org/)
+[![Language](https://img.shields.io/badge/Swift-4.1-ff9500.svg)](https://swift.org/)
+[![Website](https://img.shields.io/website-up-down-green-red/http/abuzeremre.com.svg)](http://abuzeremre.com/)
+[![OpenSource](https://img.shields.io/badge/Open-Source-ff9500.svg)](https://swift.org/)
+
 <br>
 
 ## 1. Amaç
