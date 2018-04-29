@@ -33,7 +33,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         mapView.showsUserLocation = true
         mapView.userTrackingMode = .followWithHeading
         mapView.showsUserHeadingIndicator = true
-        mapView.styleURL = MGLStyle.outdoorsStyleURL()
+        mapView.styleURL = MGLStyle.outdoorsStyleURL
         mapView.userTrackingMode = MGLUserTrackingMode.follow
         view.addSubview(mapView)
         view.insertSubview(targetView, aboveSubview: mapView)
@@ -72,11 +72,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     @objc func changeStyle(sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
-            mapView.styleURL = MGLStyle.outdoorsStyleURL()
+            mapView.styleURL = MGLStyle.outdoorsStyleURL
         case 1:
-            mapView.styleURL = MGLStyle.satelliteStyleURL()
+            mapView.styleURL = MGLStyle.satelliteStyleURL
         default:
-            mapView.styleURL = MGLStyle.outdoorsStyleURL()
+            mapView.styleURL = MGLStyle.outdoorsStyleURL
         }
     }
     

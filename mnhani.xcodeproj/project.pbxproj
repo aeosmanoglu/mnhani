@@ -42,6 +42,7 @@
 		04704AF6208B3226001578F9 /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		047D80BB20862784001FD38C /* UserLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationButton.swift; sourceTree = "<group>"; };
 		04A9421120944D6A005EE758 /* ScreenShots.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ScreenShots.xcassets; sourceTree = "<group>"; };
+		04B3E1A6209658AC007A4F2D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointsTableViewController.swift; sourceTree = "<group>"; };
 		04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		04D9CCCB207F72DF002A9B5C /* currentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +66,7 @@
 		04510F0E207CBE5D00F25E98 = {
 			isa = PBXGroup;
 			children = (
+				04B3E1A6209658AC007A4F2D /* Podfile */,
 				04A9421120944D6A005EE758 /* ScreenShots.xcassets */,
 				04217CC2208959C3002FE09D /* README.md */,
 				04510F19207CBE5D00F25E98 /* mnhani */,
