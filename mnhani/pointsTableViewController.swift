@@ -134,11 +134,18 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! editViewController
-        vc.indexPFSR = (tableView.indexPathForSelectedRow?.row)!
+        if segue.identifier == "EditSegue" {
+            let edit = segue.destination as! editViewController
+            edit.indexPFSR = (tableView.indexPathForSelectedRow?.row)!
+        }
     }
     
     // MARK: - Buttons
+    @IBAction func addButton(_ sender: Any) {
+        performSegue(withIdentifier: "AddSegue", sender: self)
+    }
+    
+    
     @IBAction func deleteAllButton(_ sender: Any) {
         let alertController = UIAlertController(title: "Warning", message: "You are about to delete all saved points!", preferredStyle: .alert)
         

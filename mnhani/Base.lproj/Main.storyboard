@@ -107,7 +107,7 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="add" id="gzg-eF-E2A">
                                 <connections>
-                                    <segue destination="G01-7J-095" kind="show" id="SoN-7T-pHe"/>
+                                    <action selector="addButton:" destination="0U2-pH-Q0B" id="fvC-Ue-GkD"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="trash" id="5cW-FZ-1m9">
@@ -119,7 +119,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <segue destination="z16-Hg-3xD" kind="show" identifier="EditSegue" id="YYn-mB-zPc"/>
+                        <segue destination="G01-7J-095" kind="show" identifier="AddSegue" id="d3e-HA-ff5"/>
+                        <segue destination="z16-Hg-3xD" kind="show" identifier="EditSegue" id="SDg-I0-W8s"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ng3-CO-axn" userLabel="First Responder" sceneMemberID="firstResponder"/>
