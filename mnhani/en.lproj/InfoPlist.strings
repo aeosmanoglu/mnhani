@@ -1,0 +1,13 @@
+/* 
+  Infoplist.strings
+  mnhani
+
+  Created by Abuzer Emre Osmanoğlu on 1.05.2018.
+  Copyright © 2018 Abuzer Emre Osmanoğlu. All rights reserved.
+*/
+
+"NSLocationWhenInUseUsageDescription" = "Shows your location on the map and helps improve OpenStreetMap.";
+"Share" = "Share Mnhani";
+"AddNewPoint" = "Add New Point";
+"SaveLocation" = "Save Location";
+"ShowLocation" = "Show Location";
