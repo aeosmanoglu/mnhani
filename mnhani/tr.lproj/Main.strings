@@ -1,0 +1,87 @@
+
+/* Class = "UITextField"; placeholder = "12345"; ObjectID = "0Rc-pL-9km"; */
+"0Rc-pL-9km.placeholder" = "12345";
+
+/* Class = "UITableViewController"; title = "Points"; ObjectID = "0U2-pH-Q0B"; */
+"0U2-pH-Q0B.title" = "Noktalar";
+
+/* Class = "UITextField"; placeholder = "12345"; ObjectID = "3ww-u6-4h2"; */
+"3ww-u6-4h2.placeholder" = "12345";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "69K-gU-zKU"; */
+"69K-gU-zKU.title" = "Harita";
+
+/* Class = "UITextField"; placeholder = "99A"; ObjectID = "8Qb-cm-oSv"; */
+"8Qb-cm-oSv.placeholder" = "99A";
+
+/* Class = "UITextField"; placeholder = "12345"; ObjectID = "8az-WM-Vl1"; */
+"8az-WM-Vl1.placeholder" = "12345";
+
+/* Class = "UIViewController"; title = "Current"; ObjectID = "93F-UQ-3UH"; */
+"93F-UQ-3UH.title" = "Konum";
+
+/* Class = "UILabel"; text = "ALTITUDE"; ObjectID = "9gh-ui-Sc7"; */
+"9gh-ui-Sc7.text" = "YÜKSEKLİK";
+
+/* Class = "UIViewController"; title = "Map"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Harita";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Czr-Nu-ZZE"; */
+"Czr-Nu-ZZE.text" = "Başlık";
+
+/* Class = "UIViewController"; title = "Add New Point"; ObjectID = "G01-7J-095"; */
+"G01-7J-095.title" = "Yeni Nokta";
+
+/* Class = "UITabBarItem"; title = "Current"; ObjectID = "HB7-vb-IHs"; */
+"HB7-vb-IHs.title" = "Konum";
+
+/* Class = "UITextField"; placeholder = "Set Title"; ObjectID = "L6p-wF-2PT"; */
+"L6p-wF-2PT.placeholder" = "Başlık Giriniz";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "L9U-HP-amE"; */
+"L9U-HP-amE.title" = "Nesne";
+
+/* Class = "UITextField"; placeholder = "AA"; ObjectID = "N6Q-1K-rA0"; */
+"N6Q-1K-rA0.placeholder" = "AA";
+
+/* Class = "UILabel"; text = "1234 m"; ObjectID = "Q7G-sj-qqy"; */
+"Q7G-sj-qqy.text" = "1234 m";
+
+/* Class = "UILabel"; text = "12345 67890"; ObjectID = "Qb0-gK-5le"; */
+"Qb0-gK-5le.text" = "12345 67890";
+
+/* Class = "UITextField"; placeholder = "AA"; ObjectID = "W5e-rf-9wr"; */
+"W5e-rf-9wr.placeholder" = "AA";
+
+/* Class = "UILabel"; text = "Distance"; ObjectID = "aG8-Ab-tev"; */
+"aG8-Ab-tev.text" = "Mesafe";
+
+/* Class = "UITabBarItem"; title = "Points"; ObjectID = "bMb-rw-Rwa"; */
+"bMb-rw-Rwa.title" = "Noktalar";
+
+/* Class = "UITextField"; placeholder = "99A"; ObjectID = "k5Z-PB-fRF"; */
+"k5Z-PB-fRF.placeholder" = "99A";
+
+/* Class = "UITextField"; placeholder = "12345"; ObjectID = "lMF-C7-xdR"; */
+"lMF-C7-xdR.placeholder" = "12345";
+
+/* Class = "UINavigationItem"; title = "Coordinate"; ObjectID = "moK-cJ-ece"; */
+"moK-cJ-ece.title" = "Koordinat";
+
+/* Class = "UILabel"; text = "LOCATION"; ObjectID = "nne-cp-8Tt"; */
+"nne-cp-8Tt.text" = "KONUM";
+
+/* Class = "UINavigationItem"; title = "Points"; ObjectID = "qkY-Yy-9Mb"; */
+"qkY-Yy-9Mb.title" = "Noktalar";
+
+/* Class = "UITextField"; placeholder = "Set Title"; ObjectID = "tgn-Hc-rJb"; */
+"tgn-Hc-rJb.placeholder" = "Başlık Giriniz";
+
+/* Class = "UILabel"; text = "12A BC"; ObjectID = "vkc-dW-TsW"; */
+"vkc-dW-TsW.text" = "12A BC";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "vnX-lV-xdO"; */
+"vnX-lV-xdO.text" = "Alt başlık";
+
+/* Class = "UIViewController"; title = "Edit Point"; ObjectID = "z16-Hg-3xD"; */
+"z16-Hg-3xD.title" = "Düzenle";

@@ -60,7 +60,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     // MARK: - Map Buttons
     func segmentControl() {
-        let styleToggle = UISegmentedControl(items: ["Topographic", "Satalite"])
+        let styleToggle = UISegmentedControl(items: [NSLocalizedString("Topographic", comment: "Topographic"), NSLocalizedString("Satalite", comment: "Satalite")])
         styleToggle.translatesAutoresizingMaskIntoConstraints = false
         styleToggle.selectedSegmentIndex = 0
         view.insertSubview(styleToggle, aboveSubview: mapView)
@@ -176,14 +176,14 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         formatter.timeStyle = .medium
         let timeString = formatter.string(from: Date())
         
-        let alertController = UIAlertController(title: "New Point", message: "Please write your point name!", preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("New Point", comment: "New Point"), message: NSLocalizedString("PleaseWriteYourPointName!", comment: "Please write your point name!"), preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.text = timeString
             textField.clearButtonMode = .always
             textField.autocapitalizationType = .words
         }
         
-        let saveButton = UIAlertAction(title: "Save", style: .default) { [unowned alertController] _ in
+        let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: "Save"), style: .default) { [unowned alertController] _ in
             let newPointName = alertController.textFields![0]
             var title = newPointName.text
             if newPointName.text == "" {
@@ -191,10 +191,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)
             self.updateData()
-            self.view.makeToast("Saved", position: .top)
+            self.view.makeToast(NSLocalizedString("Saved", comment: "Saved"), position: .top)
         }
         
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
         
         alertController.addAction(saveButton)
         alertController.addAction(cancelButton)
@@ -203,7 +203,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
 
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
-        self.view.makeToast("Coordinates copied to clipboard", position: .top)
+        self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: "Coordinates copied to clipboard"), position: .top)
     }
 
 }

@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  mnhani
+
+  Created by Abuzer Emre Osmanoğlu on 30.04.2018.
+  Copyright © 2018 Abuzer Emre Osmanoğlu. All rights reserved.
+*/
+
+"CoordinatesCopiedToClipboard" = "Koordinat kopyalandı";
+"NewPoint" = "Yeni Nokta";
+"PleaseWriteYourPointName!" = "Lütfen noktanın adını yazınız!";
+"Save" = "Kaydet";
+"Saved" = "Kaydedildi";
+"Cancel" = "İptal";
+
+"Topographic" = "Topografik";
+"Satalite" = "Uydu";
+
+"Warning" = "Uyarı";
+"YouRAbout2DeleteAllSavedPoints!" = "Tüm kayıtlı noktaları silmek üzeresiniz!";
+"Delete" = "Sil";
+"Deleted" = "Silindi";
+
+"Done" = "Tamam";

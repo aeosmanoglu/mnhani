@@ -1,0 +1,87 @@
+
+/* Class = "UITextField"; placeholder = "12345"; ObjectID = "0Rc-pL-9km"; */
+"0Rc-pL-9km.placeholder" = "12345";
+
+/* Class = "UITableViewController"; title = "Points"; ObjectID = "0U2-pH-Q0B"; */
+"0U2-pH-Q0B.title" = "Points";
+
+/* Class = "UITextField"; placeholder = "12345"; ObjectID = "3ww-u6-4h2"; */
+"3ww-u6-4h2.placeholder" = "12345";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "69K-gU-zKU"; */
+"69K-gU-zKU.title" = "Map";
+
+/* Class = "UITextField"; placeholder = "99A"; ObjectID = "8Qb-cm-oSv"; */
+"8Qb-cm-oSv.placeholder" = "99A";
+
+/* Class = "UITextField"; placeholder = "12345"; ObjectID = "8az-WM-Vl1"; */
+"8az-WM-Vl1.placeholder" = "12345";
+
+/* Class = "UIViewController"; title = "Current"; ObjectID = "93F-UQ-3UH"; */
+"93F-UQ-3UH.title" = "Current";
+
+/* Class = "UILabel"; text = "ALTITUDE"; ObjectID = "9gh-ui-Sc7"; */
+"9gh-ui-Sc7.text" = "ALTITUDE";
+
+/* Class = "UIViewController"; title = "Map"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Map";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Czr-Nu-ZZE"; */
+"Czr-Nu-ZZE.text" = "Title";
+
+/* Class = "UIViewController"; title = "Add New Point"; ObjectID = "G01-7J-095"; */
+"G01-7J-095.title" = "Add New Point";
+
+/* Class = "UITabBarItem"; title = "Current"; ObjectID = "HB7-vb-IHs"; */
+"HB7-vb-IHs.title" = "Current";
+
+/* Class = "UITextField"; placeholder = "Set Title"; ObjectID = "L6p-wF-2PT"; */
+"L6p-wF-2PT.placeholder" = "Set Title";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "L9U-HP-amE"; */
+"L9U-HP-amE.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "AA"; ObjectID = "N6Q-1K-rA0"; */
+"N6Q-1K-rA0.placeholder" = "AA";
+
+/* Class = "UILabel"; text = "1234 m"; ObjectID = "Q7G-sj-qqy"; */
+"Q7G-sj-qqy.text" = "1234 m";
+
+/* Class = "UILabel"; text = "12345 67890"; ObjectID = "Qb0-gK-5le"; */
+"Qb0-gK-5le.text" = "12345 67890";
+
+/* Class = "UITextField"; placeholder = "AA"; ObjectID = "W5e-rf-9wr"; */
+"W5e-rf-9wr.placeholder" = "AA";
+
+/* Class = "UILabel"; text = "Distance"; ObjectID = "aG8-Ab-tev"; */
+"aG8-Ab-tev.text" = "Distance";
+
+/* Class = "UITabBarItem"; title = "Points"; ObjectID = "bMb-rw-Rwa"; */
+"bMb-rw-Rwa.title" = "Points";
+
+/* Class = "UITextField"; placeholder = "99A"; ObjectID = "k5Z-PB-fRF"; */
+"k5Z-PB-fRF.placeholder" = "99A";
+
+/* Class = "UITextField"; placeholder = "12345"; ObjectID = "lMF-C7-xdR"; */
+"lMF-C7-xdR.placeholder" = "12345";
+
+/* Class = "UINavigationItem"; title = "Coordinate"; ObjectID = "moK-cJ-ece"; */
+"moK-cJ-ece.title" = "Coordinate";
+
+/* Class = "UILabel"; text = "LOCATION"; ObjectID = "nne-cp-8Tt"; */
+"nne-cp-8Tt.text" = "LOCATION";
+
+/* Class = "UINavigationItem"; title = "Points"; ObjectID = "qkY-Yy-9Mb"; */
+"qkY-Yy-9Mb.title" = "Points";
+
+/* Class = "UITextField"; placeholder = "Set Title"; ObjectID = "tgn-Hc-rJb"; */
+"tgn-Hc-rJb.placeholder" = "Set Title";
+
+/* Class = "UILabel"; text = "12A BC"; ObjectID = "vkc-dW-TsW"; */
+"vkc-dW-TsW.text" = "12A BC";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "vnX-lV-xdO"; */
+"vnX-lV-xdO.text" = "Subtitle";
+
+/* Class = "UIViewController"; title = "Edit Point"; ObjectID = "z16-Hg-3xD"; */
+"z16-Hg-3xD.title" = "Edit Point";

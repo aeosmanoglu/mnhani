@@ -165,7 +165,7 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         let textedLocation = convert().toDD(zoneNumber: zoneNumber!, zoneLetter: zoneLetter, mgrsZoneLetter: mgrsZone!, mgrsE: Double(east!)!, mgrsN: Double(north!)!)
         
         CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: textedLocation.coordinate.latitude, longitude: textedLocation.coordinate.longitude)
-        self.view.makeToast("Saved", position: .top)
+        self.view.makeToast(NSLocalizedString("Saved", comment: "Saved"), position: .top)
         _ = navigationController?.popViewController(animated: true)
     }
 

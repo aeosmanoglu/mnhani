@@ -45,7 +45,7 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
  
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
-        self.view.makeToast("Coordinates copied to clipboard", position: .top)
+        self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: "Coordinates copied to clipboard"), position: .top)
     }
     
     @IBAction func addButton(_ sender: Any) {
@@ -54,24 +54,24 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
         formatter.timeStyle = .medium
         let timeString = formatter.string(from: Date())
         
-        let alertController = UIAlertController(title: "New Point", message: "Please write your point name!", preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("NewPoint", comment: "New Point"), message: NSLocalizedString("PleaseWriteYourPointName!", comment: "Please write your point name!"), preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.text = timeString
             textField.clearButtonMode = .always
             textField.autocapitalizationType = .words
         }
         
-        let saveButton = UIAlertAction(title: "Save", style: .default) { [unowned alertController] _ in
+        let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: "Save"), style: .default) { [unowned alertController] _ in
             let newPointName = alertController.textFields![0]
             var title = newPointName.text
             if newPointName.text == "" {
                 title = timeString
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.latitude, longitude: self.longitude)
-            self.view.makeToast("Saved", position: .top)
+            self.view.makeToast(NSLocalizedString("Saved", comment: "Saved"), position: .top)
         }
         
-        let cancelButton = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
         
         alertController.addAction(saveButton)
         alertController.addAction(cancelButton)

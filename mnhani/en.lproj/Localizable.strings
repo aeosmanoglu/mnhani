@@ -1,0 +1,24 @@
+/* 
+  Localizable.strings
+  mnhani
+
+  Created by Abuzer Emre Osmanoğlu on 30.04.2018.
+  Copyright © 2018 Abuzer Emre Osmanoğlu. All rights reserved.
+*/
+
+"CoordinatesCopiedToClipboard" = "Coordinates copied to clipboard";
+"NewPoint" = "New Point";
+"PleaseWriteYourPointName!" = "Please write your point name!";
+"Save" = "Save";
+"Saved" = "Saved";
+"Cancel" = "Cancel";
+
+"Topographic" = "Topographic";
+"Satalite" = "Satalite";
+
+"Warning" = "Warning";
+"YouRAbout2DeleteAllSavedPoints!" = "You are about to delete all saved points!";
+"Delete" = "Delete";
+"Deleted" = "Deleted";
+
+"Done" = "Done";
