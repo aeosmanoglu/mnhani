@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		041EA607209745A9001E8944 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041EA606209745A9001E8944 /* settingsViewController.swift */; };
 		044445272080143000E889EC /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044445262080143000E889EC /* Toast.swift */; };
 		044445292081106200E889EC /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044445282081106200E889EC /* Convert.swift */; };
 		04510F1B207CBE5D00F25E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510F1A207CBE5D00F25E98 /* AppDelegate.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		041EA606209745A9001E8944 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		04217CC2208959C3002FE09D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		044445262080143000E889EC /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		044445282081106200E889EC /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 				04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */,
 				04704AF6208B3226001578F9 /* addViewController.swift */,
 				045A1AC820950F140062DF80 /* editViewController.swift */,
+				041EA606209745A9001E8944 /* settingsViewController.swift */,
 				04510F1E207CBE5D00F25E98 /* Main.storyboard */,
 				04510F26207CBE5F00F25E98 /* LaunchScreen.storyboard */,
 				045DF3B2207F81CF0079362C /* CardView.swift */,
@@ -255,6 +258,7 @@
 				044445292081106200E889EC /* Convert.swift in Sources */,
 				045A1AC920950F140062DF80 /* editViewController.swift in Sources */,
 				04510F1D207CBE5D00F25E98 /* mapViewController.swift in Sources */,
+				041EA607209745A9001E8944 /* settingsViewController.swift in Sources */,
 				04BFD57820877F4E00CF3AD5 /* pointsTableViewController.swift in Sources */,
 				047D80BC20862784001FD38C /* UserLocationButton.swift in Sources */,
 				04510F1B207CBE5D00F25E98 /* AppDelegate.swift in Sources */,

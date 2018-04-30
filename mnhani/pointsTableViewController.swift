@@ -144,21 +144,5 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     @IBAction func addButton(_ sender: Any) {
         performSegue(withIdentifier: "AddSegue", sender: self)
     }
-    
-    
-    @IBAction func deleteAllButton(_ sender: Any) {
-        let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: "Warning"), message: NSLocalizedString("YouRAbout2DeleteAllSavedPoints!", comment: "You are about to delete all saved points!"), preferredStyle: .alert)
-        
-        let deleteButton = UIAlertAction(title: NSLocalizedString("Delete", comment: "Delete"), style: .destructive) { (action: UIAlertAction) in
-            CoreDataManager.cleanCoreData()
-            self.updateData()
-            self.view.makeToast(NSLocalizedString("Deleted", comment: "Deleted"), position: .center)
-        }
-        
-        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .default, handler: nil)
-        
-        alertController.addAction(deleteButton)
-        alertController.addAction(cancelButton)
-        present(alertController, animated: true)
-    }
+
 }

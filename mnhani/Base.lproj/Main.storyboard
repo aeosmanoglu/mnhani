@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -44,7 +43,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Coordinate" id="moK-cJ-ece">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="Copy" id="L9U-HP-amE">
+                        <barButtonItem key="leftBarButtonItem" image="Copy" id="L9U-HP-amE">
                             <connections>
                                 <action selector="copyButton:" destination="BYZ-38-t0r" id="9ph-va-XCT"/>
                             </connections>
@@ -62,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1736" y="100"/>
+            <point key="canvasLocation" x="1733" y="-115"/>
         </scene>
         <!--Points-->
         <scene sceneID="iVt-7g-8cp">
@@ -104,19 +103,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Points" id="qkY-Yy-9Mb">
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="gzg-eF-E2A">
-                                <connections>
-                                    <action selector="addButton:" destination="0U2-pH-Q0B" id="fvC-Ue-GkD"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="trash" id="5cW-FZ-1m9">
-                                <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="deleteAllButton:" destination="0U2-pH-Q0B" id="fWm-XQ-Zvz"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gzg-eF-E2A">
+                            <connections>
+                                <action selector="addButton:" destination="0U2-pH-Q0B" id="fvC-Ue-GkD"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="G01-7J-095" kind="show" identifier="AddSegue" id="d3e-HA-ff5"/>
@@ -125,7 +116,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ng3-CO-axn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="788"/>
+            <point key="canvasLocation" x="1733" y="614"/>
         </scene>
         <!--Add New Point-->
         <scene sceneID="urO-cm-7N2">
@@ -205,7 +196,7 @@
                                                     <constraint firstAttribute="width" constant="24" id="2P2-aC-z6J"/>
                                                     <constraint firstAttribute="height" constant="24" id="Mvg-H3-egb"/>
                                                 </constraints>
-                                                <state key="normal" image="save"/>
+                                                <state key="normal" image="Save"/>
                                                 <connections>
                                                     <action selector="saveButton:" destination="G01-7J-095" eventType="touchUpInside" id="aE2-Lg-nmH"/>
                                                 </connections>
@@ -251,7 +242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="okH-EP-yGi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2505" y="787.5"/>
+            <point key="canvasLocation" x="2809" y="314"/>
         </scene>
         <!--Edit Point-->
         <scene sceneID="HOS-2W-N6t">
@@ -331,7 +322,7 @@
                                                     <constraint firstAttribute="width" constant="24" id="CAa-Hd-tmw"/>
                                                     <constraint firstAttribute="height" constant="24" id="M4W-kH-PWn"/>
                                                 </constraints>
-                                                <state key="normal" image="findOnMap"/>
+                                                <state key="normal" image="Find"/>
                                                 <connections>
                                                     <action selector="showButton:" destination="z16-Hg-3xD" eventType="touchUpInside" id="5H7-B1-T7N"/>
                                                     <action selector="showButton:" destination="G01-7J-095" eventType="touchUpInside" id="9Ly-ia-leS"/>
@@ -355,7 +346,7 @@
                                                     <constraint firstAttribute="width" constant="24" id="53p-As-WJI"/>
                                                     <constraint firstAttribute="height" constant="24" id="L3e-LM-akB"/>
                                                 </constraints>
-                                                <state key="normal" image="save"/>
+                                                <state key="normal" image="Save"/>
                                                 <connections>
                                                     <action selector="saveButton:" destination="G01-7J-095" eventType="touchUpInside" id="5xw-ga-eLw"/>
                                                     <action selector="saveButton:" destination="z16-Hg-3xD" eventType="touchUpInside" id="CMN-71-uI3"/>
@@ -406,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWC-kr-B7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2505" y="1613"/>
+            <point key="canvasLocation" x="2809" y="1028"/>
         </scene>
         <!--Current-->
         <scene sceneID="bGL-w9-uyB">
@@ -555,7 +546,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xo8-aQ-VzL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="-585"/>
+            <point key="canvasLocation" x="981" y="-824"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="DMN-G7-sye">
@@ -571,11 +562,12 @@
                         <segue destination="93F-UQ-3UH" kind="relationship" relationship="viewControllers" id="1Bg-49-jzy"/>
                         <segue destination="5be-dc-G1G" kind="relationship" relationship="viewControllers" id="N86-Gf-bNl"/>
                         <segue destination="MA1-rd-W8t" kind="relationship" relationship="viewControllers" id="6Ev-aw-Dq4"/>
+                        <segue destination="IY9-UP-0Qk" kind="relationship" relationship="viewControllers" id="1Ic-01-Qst"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zf7-N9-2PS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="101.19940029985008"/>
+            <point key="canvasLocation" x="-587" y="778"/>
         </scene>
         <!--Points-->
         <scene sceneID="JVW-i2-WIQ">
@@ -594,7 +586,74 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IU9-Hm-Y2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="788"/>
+            <point key="canvasLocation" x="981" y="614"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="ceG-oq-PJI">
+            <objects>
+                <viewController storyboardIdentifier="settingsViewController" title="Settings" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IY9-UP-0Qk" customClass="settingsViewController" customModule="mnhani" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rsf-yf-Vjt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Qv-zE-abt">
+                                <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pMa-j8-deA" customClass="CardView" customModule="mnhani" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="16" width="288" height="38"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete all saved points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eX-vu-SVX">
+                                                <rect key="frame" x="8" y="8" width="172" height="21"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="EBp-YQ-bSb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YGS-7e-v3r">
+                                                <rect key="frame" x="250" y="3" width="30" height="30"/>
+                                                <state key="normal" title="Yes"/>
+                                                <connections>
+                                                    <action selector="deleteAllButton:" destination="IY9-UP-0Qk" eventType="touchUpInside" id="dif-El-FpZ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="4eX-vu-SVX" firstAttribute="leading" secondItem="pMa-j8-deA" secondAttribute="leading" constant="8" id="5sl-Fa-NDS"/>
+                                            <constraint firstAttribute="height" constant="38" id="Dxb-8v-reR"/>
+                                            <constraint firstItem="4eX-vu-SVX" firstAttribute="centerY" secondItem="pMa-j8-deA" secondAttribute="centerY" id="GDM-8Z-g5g"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4eX-vu-SVX" secondAttribute="trailing" constant="20" symbolic="YES" id="Rzi-yO-Rkn"/>
+                                            <constraint firstItem="YGS-7e-v3r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="pMa-j8-deA" secondAttribute="leading" constant="20" symbolic="YES" id="XrE-9i-fA8"/>
+                                            <constraint firstAttribute="trailing" secondItem="YGS-7e-v3r" secondAttribute="trailing" constant="8" id="m7v-bo-kMX"/>
+                                            <constraint firstItem="YGS-7e-v3r" firstAttribute="centerY" secondItem="4eX-vu-SVX" secondAttribute="centerY" id="wlJ-eJ-U6h"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pMa-j8-deA" secondAttribute="bottom" constant="357" id="Jjd-zC-rgm"/>
+                                    <constraint firstItem="pMa-j8-deA" firstAttribute="top" secondItem="6Qv-zE-abt" secondAttribute="top" constant="16" id="OEO-nc-1ja"/>
+                                    <constraint firstAttribute="trailing" secondItem="pMa-j8-deA" secondAttribute="trailing" constant="16" id="f5a-Aw-HUM"/>
+                                    <constraint firstItem="pMa-j8-deA" firstAttribute="leading" secondItem="6Qv-zE-abt" secondAttribute="leading" constant="16" id="rHt-Cr-Ve8"/>
+                                    <constraint firstItem="pMa-j8-deA" firstAttribute="centerX" secondItem="6Qv-zE-abt" secondAttribute="centerX" id="wF0-k9-l0U"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Qv-zE-abt" firstAttribute="bottom" secondItem="3H8-ff-f8B" secondAttribute="bottom" id="HUw-nT-MjJ"/>
+                            <constraint firstItem="6Qv-zE-abt" firstAttribute="leading" secondItem="rsf-yf-Vjt" secondAttribute="leading" id="SE5-je-Aat"/>
+                            <constraint firstItem="6Qv-zE-abt" firstAttribute="top" secondItem="3H8-ff-f8B" secondAttribute="top" id="aEo-jV-Jof"/>
+                            <constraint firstAttribute="trailing" secondItem="6Qv-zE-abt" secondAttribute="trailing" id="fuj-kQ-TbN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3H8-ff-f8B"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="7dS-ry-DIH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8uq-LI-ljU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="981" y="1360"/>
         </scene>
         <!--Map-->
         <scene sceneID="bPl-At-xtK">
@@ -616,17 +675,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdU-lM-5np" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="981" y="100"/>
+            <point key="canvasLocation" x="981" y="-115"/>
         </scene>
     </scenes>
     <resources>
         <image name="Add" width="24" height="24"/>
         <image name="Copy" width="24" height="24"/>
+        <image name="Find" width="50" height="50"/>
         <image name="List" width="25" height="25"/>
         <image name="Map" width="25" height="25"/>
         <image name="Now" width="25" height="25"/>
+        <image name="Save" width="50" height="50"/>
+        <image name="Settings" width="25" height="25"/>
         <image name="Trash" width="50" height="50"/>
-        <image name="findOnMap" width="50" height="50"/>
-        <image name="save" width="50" height="50"/>
     </resources>
 </document>

@@ -17,7 +17,7 @@
 "Satalite" = "Satalite";
 
 "Warning" = "Warning";
-"YouRAbout2DeleteAllSavedPoints!" = "You are about to delete all saved points!";
+"YouRAbout2DeleteAllSavedPoints!" = "You are about to delete all saved points! You can not undone.";
 "Delete" = "Delete";
 "Deleted" = "Deleted";
 

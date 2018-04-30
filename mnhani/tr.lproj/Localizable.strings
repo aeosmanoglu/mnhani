@@ -17,7 +17,7 @@
 "Satalite" = "Uydu";
 
 "Warning" = "Uyarı";
-"YouRAbout2DeleteAllSavedPoints!" = "Tüm kayıtlı noktaları silmek üzeresiniz!";
+"YouRAbout2DeleteAllSavedPoints!" = "Tüm kayıtlı noktaları silmek üzeresiniz! Bu işlem geri alınamaz.";
 "Delete" = "Sil";
 "Deleted" = "Silindi";
 
