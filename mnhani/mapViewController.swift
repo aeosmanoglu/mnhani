@@ -48,9 +48,12 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         
         updateData()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
+        
+        
     }
     
     @objc func runTime() {
+        distanceLabel.isHidden = UserDefaults.standard.bool(forKey: "distanceSwitch")
         let array = CoreDataManager.fetch()
         let count = array.count
         if memorizedCount != count {
@@ -60,7 +63,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     // MARK: - Map Buttons
     func segmentControl() {
-        let styleToggle = UISegmentedControl(items: [NSLocalizedString("Topographic", comment: "Topographic"), NSLocalizedString("Satalite", comment: "Satalite")])
+        let styleToggle = UISegmentedControl(items: [NSLocalizedString("Topographic", comment: ""), NSLocalizedString("Satalite", comment: "")])
         styleToggle.translatesAutoresizingMaskIntoConstraints = false
         styleToggle.selectedSegmentIndex = 0
         view.insertSubview(styleToggle, aboveSubview: mapView)
@@ -143,7 +146,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     }
     
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
-        mapView.setCenter(annotation.coordinate, animated: true)
+        if UserDefaults.standard.bool(forKey: "centerSwitch") {
+            mapView.setCenter(annotation.coordinate, animated: true)
+        }
+        
         timer.invalidate()
     }
     
@@ -165,9 +171,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             distanceLabel.text = "\(meter) m"
         }
         
+        
         mgrs = convert().toMGRS(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         navigationItem.title = mgrs
     }
+    
     
     // MARK: - Buttons
     @IBAction func addButton(_ sender: Any) {
