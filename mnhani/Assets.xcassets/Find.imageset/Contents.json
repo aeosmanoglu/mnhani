@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "findOnMap.png",
+      "filename" : "Find.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "findOnMap@2x.png",
+      "filename" : "Find@2x.png",
       "scale" : "2x"
     },
     {

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-street-view-filled-25.png",
+      "filename" : "Now.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-street-view-filled-50.png",
+      "filename" : "Now@2x.png",
       "scale" : "2x"
     },
     {

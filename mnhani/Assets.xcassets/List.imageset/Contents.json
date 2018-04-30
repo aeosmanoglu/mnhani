@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-bulleted-list-filled-25.png",
+      "filename" : "List.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-bulleted-list-filled-50.png",
+      "filename" : "List@2x.png",
       "scale" : "2x"
     },
     {

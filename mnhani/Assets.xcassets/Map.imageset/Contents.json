@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icons8-map-filled-25.png",
+      "filename" : "Map.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icons8-map-filled-50.png",
+      "filename" : "Map@2x.png",
       "scale" : "2x"
     },
     {
