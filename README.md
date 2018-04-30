@@ -28,7 +28,7 @@ Görseller için [linke](http://abuzeremre.com/mnhani-app) tıklayınız. - *See
 ### 2.1 Genel - *General*
 - [x] Sade ve Hızlı - *Simple and Fast*
 - [x] Kolay koordinat paylaşma - *Easy coordinat sharing*
-- [ ] Türkçe - *Turkish*
+- [x] Türkçe - *Turkish*
 ### 2.2 Harita Özellikleri - *Map Features*
 - [x] Topografik harita - *Topographic Map*
 - [ ] Çevrimdışı harita - *Offline Map*
@@ -40,7 +40,7 @@ Görseller için [linke](http://abuzeremre.com/mnhani-app) tıklayınız. - *See
 - [ ] Çizgi ekleme - *Add Lines*
 - [ ] Alan ekleme - *Add Area*
 ### 2.4 Diğer
-- [ x] Kullanıcı Kılavuzu - *User Guide* [:point_right:](https://github.com/aeosmanoglu/mnhani/wiki)
+- [x] Kullanıcı Kılavuzu - *User Guide* :point_right: [wiki](https://github.com/aeosmanoglu/mnhani/wiki)
 
 <br>
 
