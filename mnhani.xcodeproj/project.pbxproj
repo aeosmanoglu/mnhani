@@ -24,12 +24,14 @@
 		04BFD57820877F4E00CF3AD5 /* pointsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */; };
 		04BFD57A2087BC7A00CF3AD5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */; };
 		04D9CCCC207F72DF002A9B5C /* currentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9CCCB207F72DF002A9B5C /* currentViewController.swift */; };
+		04F4B9F22097C70B0056D00A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F4B9F42097C70B0056D00A /* InfoPlist.strings */; };
 		C284CE742EB2BAAB31EB6FEB /* Pods_mnhani.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93DB0C12AA0184EED72C2FB8 /* Pods_mnhani.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		041EA606209745A9001E8944 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		04217CC2208959C3002FE09D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		043C2FE12097CA4C006C2A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044445262080143000E889EC /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		044445282081106200E889EC /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		04510F17207CBE5D00F25E98 /* mnhani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mnhani.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,11 +41,9 @@
 		04510F22207CBE5D00F25E98 /* mnhani.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mnhani.xcdatamodel; sourceTree = "<group>"; };
 		04510F24207CBE5F00F25E98 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		04510F27207CBE5F00F25E98 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		04510F29207CBE5F00F25E98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0458E1CD20970DA900076FC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		0458E1D12097104000076FC8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0458E1D32097107400076FC8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
-		0458E1D42097107400076FC8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0458E1D52097107500076FC8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		045A1AC820950F140062DF80 /* editViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
 		045DF3B2207F81CF0079362C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -54,6 +54,8 @@
 		04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointsTableViewController.swift; sourceTree = "<group>"; };
 		04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		04D9CCCB207F72DF002A9B5C /* currentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentViewController.swift; sourceTree = "<group>"; };
+		04F4B9F32097C70B0056D00A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		04F4B9F52097C7130056D00A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		93DB0C12AA0184EED72C2FB8 /* Pods_mnhani.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mnhani.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB7D2A09B0525FC05685A87B /* Pods-mnhani.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mnhani.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mnhani/Pods-mnhani.debug.xcconfig"; sourceTree = "<group>"; };
 		BD8BA83F67BB402EAEAB5006 /* Pods-mnhani.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mnhani.release.xcconfig"; path = "Pods/Target Support Files/Pods-mnhani/Pods-mnhani.release.xcconfig"; sourceTree = "<group>"; };
@@ -112,7 +114,8 @@
 				0458E1D22097104000076FC8 /* Localizable.strings */,
 				04510F24207CBE5F00F25E98 /* Assets.xcassets */,
 				04510F21207CBE5D00F25E98 /* mnhani.xcdatamodeld */,
-				04510F29207CBE5F00F25E98 /* Info.plist */,
+				043C2FE12097CA4C006C2A41 /* Info.plist */,
+				04F4B9F42097C70B0056D00A /* InfoPlist.strings */,
 			);
 			path = mnhani;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				04510F28207CBE5F00F25E98 /* LaunchScreen.storyboard in Resources */,
 				0458E1D02097104000076FC8 /* Localizable.strings in Resources */,
 				04510F25207CBE5F00F25E98 /* Assets.xcassets in Resources */,
+				04F4B9F22097C70B0056D00A /* InfoPlist.strings in Resources */,
 				04510F20207CBE5D00F25E98 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,7 +289,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				04510F27207CBE5F00F25E98 /* Base */,
-				0458E1D42097107400076FC8 /* tr */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -297,6 +300,15 @@
 				0458E1D52097107500076FC8 /* tr */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		04F4B9F42097C70B0056D00A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				04F4B9F32097C70B0056D00A /* en */,
+				04F4B9F52097C7130056D00A /* tr */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -354,7 +366,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -409,7 +421,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -423,6 +435,7 @@
 			baseConfigurationReference = BB7D2A09B0525FC05685A87B /* Pods-mnhani.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZDSRJX347M;
 				INFOPLIST_FILE = mnhani/Info.plist;
@@ -442,6 +455,7 @@
 			baseConfigurationReference = BD8BA83F67BB402EAEAB5006 /* Pods-mnhani.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZDSRJX347M;
 				INFOPLIST_FILE = mnhani/Info.plist;

@@ -63,7 +63,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     // MARK: - Map Buttons
     func segmentControl() {
-        let styleToggle = UISegmentedControl(items: [NSLocalizedString("Topographic", comment: ""), NSLocalizedString("Satalite", comment: "")])
+        let styleToggle = UISegmentedControl(items: [NSLocalizedString("Topographic", comment: ""), NSLocalizedString("Satellite", comment: "")])
         styleToggle.translatesAutoresizingMaskIntoConstraints = false
         styleToggle.selectedSegmentIndex = 0
         view.insertSubview(styleToggle, aboveSubview: mapView)
