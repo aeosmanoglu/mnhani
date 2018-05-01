@@ -43,6 +43,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    // MARK: - Application ShortCuts
+    
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        
+        let tabVC = self.window?.rootViewController as? UITabBarController
+        
+        if shortcutItem.type == "com.abuzeremre.mnhani.points" {
+            tabVC?.selectedIndex = 2
+        } else if shortcutItem.type == "com.abuzeremre.mnhani.map" {
+            tabVC?.selectedIndex = 1
+        } else if shortcutItem.type == "com.abuzeremre.mnhani.current" {
+            tabVC?.selectedIndex = 0
+        }
+    }
 
     // MARK: - Core Data stack
 

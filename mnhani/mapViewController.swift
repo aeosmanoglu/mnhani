@@ -189,12 +189,13 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             textField.text = timeString
             textField.clearButtonMode = .always
             textField.autocapitalizationType = .words
+            textField.keyboardAppearance = .dark
         }
         
         let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: "Save"), style: .default) { [unowned alertController] _ in
             let newPointName = alertController.textFields![0]
             var title = newPointName.text
-            if newPointName.text == "" {
+            if title == "" {
                 title = timeString
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)

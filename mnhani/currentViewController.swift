@@ -45,7 +45,7 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
  
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
-        self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: "Coordinates copied to clipboard"), position: .top)
+        self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: ""), position: .top)
     }
     
     @IBAction func addButton(_ sender: Any) {
@@ -54,24 +54,26 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
         formatter.timeStyle = .medium
         let timeString = formatter.string(from: Date())
         
-        let alertController = UIAlertController(title: NSLocalizedString("NewPoint", comment: "New Point"), message: NSLocalizedString("PleaseWriteYourPointName!", comment: "Please write your point name!"), preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("NewPoint", comment: ""), message: NSLocalizedString("PleaseWriteYourPointName!", comment: ""), preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.text = timeString
             textField.clearButtonMode = .always
             textField.autocapitalizationType = .words
+            textField.keyboardAppearance = .dark
         }
         
-        let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: "Save"), style: .default) { [unowned alertController] _ in
+        let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { [unowned alertController] _ in
             let newPointName = alertController.textFields![0]
+            newPointName.keyboardAppearance = .dark
             var title = newPointName.text
-            if newPointName.text == "" {
+            if title == "" {
                 title = timeString
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.latitude, longitude: self.longitude)
-            self.view.makeToast(NSLocalizedString("Saved", comment: "Saved"), position: .top)
+            self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
         }
         
-        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
+        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
         
         alertController.addAction(saveButton)
         alertController.addAction(cancelButton)

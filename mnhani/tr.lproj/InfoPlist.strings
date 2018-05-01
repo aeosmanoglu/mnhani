@@ -7,7 +7,7 @@
 */
 
 "NSLocationWhenInUseUsageDescription" = "Konumunuzu paylaşın ve OpenStreetMap'in gelişmesine yardımcı olun.";
-"Share" = "Share Mnhani";
-"AddNewPoint" = "Yeni Nokta Kaydet";
-"SaveLocation" = "Burayı Kaydet";
-"ShowLocation" = "Koordinatım";
+"4" = "Mnhani'yi Paylaş";
+"3" = "Noktalarım";
+"2" = "Harita";
+"1" = "Koordinatım";
