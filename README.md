@@ -1,8 +1,8 @@
 # mnhani
 iOS için Askeri GPS Uygulaması - *Military GPS Application for iOS*
 
-[![Version](https://img.shields.io/badge/Version-1.0-ff9500.svg)](https://swift.org/)
-[![Build](https://img.shields.io/badge/Build-1-ff9500.svg)](https://swift.org/)
+[![Version](https://img.shields.io/badge/Version-1.2-ff9500.svg)](https://swift.org/)
+[![Build](https://img.shields.io/badge/Build-3-ff9500.svg)](https://swift.org/)
 [![Language](https://img.shields.io/badge/Swift-4.1-ff9500.svg)](https://swift.org/)
 [![Mapbox](https://img.shields.io/badge/Mapbox-4.0.0-ff9500.svg)](https://www.mapbox.com/)
 [![FormToolbar](https://img.shields.io/badge/FormToolbar-1.1-ff9500.svg)](https://github.com/sgr-ksmt/FormToolbar)
@@ -12,7 +12,7 @@ iOS için Askeri GPS Uygulaması - *Military GPS Application for iOS*
 <br>
 
 ## 1. Amaç
-Kendimi GitHub ve Swift dilinde geliştirmek, uygulamayı da daha iyi bir hale getirmek için açık kaynak yaptım. Yapacağınız her türlü yardım sadece uygulamayı geliştirmeyecek, aynı zamanda yazdığınız kodları inceleyen beni de daha iyi bir seviyeye getirecektir. Bu yüzden hiç bir ticari kaygım yok. 
+Kendimi GitHub ve Swift dilinde geliştirmek, uygulamayı da daha iyi bir hale getirmek için açık kaynak yaptım. Yapacağınız her türlü yardım sadece uygulamayı geliştirmeyecek, aynı zamanda yazdığınız kodları inceleyen beni de daha iyi bir seviyeye getirecektir. 
 
 
 *I made the application open source in order to develop and better implement GitHub and Swift language myself. Any help you will make will not only improve the application, but it will also bring me to a better level, who will be examining the codes you write at the same time. That's why I have no commercial concerns.*

@@ -107,7 +107,7 @@ class editViewController: UIViewController, UITextFieldDelegate {
     
     func placeHolders() {
         let mgrs = pointArray[indexPFSR].pointMGRS
-        let zones = mgrs?.prefix(6)
+        let zones = mgrs?.prefix(5)
         let coordinates = mgrs?.suffix(11)
         zoneTextField.placeholder = String((zones?.prefix(3))!)
         mgrsZoneTextField.placeholder = String((zones?.suffix(2))!)
@@ -160,20 +160,27 @@ class editViewController: UIViewController, UITextFieldDelegate {
         }
         
         
-        let mgrsText = "\(zone!) \(mgrsZone!) \(east!) \(north!)"
-        let zoneNumber = Double(zone!.prefix(2))
-        let zoneLetter = String(zone!.suffix(1))
+        let mgrsText = "\(zone!)\(mgrsZone!) \(east!) \(north!)"
         
-        let textedLocation = convert().toDD(zoneNumber: zoneNumber!, zoneLetter: zoneLetter, mgrsZoneLetter: mgrsZone!, mgrsE: Double(east!)!, mgrsN: Double(north!)!)
+        let mgrsTextLatitude = UnsafeMutablePointer<Double>.allocate(capacity: 1)
+        let mgrsTextLongitude = UnsafeMutablePointer<Double>.allocate(capacity: 1)
         
-        CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: textedLocation.coordinate.latitude, longitude: textedLocation.coordinate.longitude)
-        self.view.makeToast(NSLocalizedString("Saved", comment: "Saved"), position: .top)
+        
+        let converter = GeoCoordinateConverter.shared()
+        _ = converter?.mgrs(mgrsText, toLatitude: mgrsTextLatitude, longitude: mgrsTextLongitude)
+        
+        CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: mgrsTextLatitude[0], longitude: mgrsTextLongitude[0])
+        self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
+        
+        mgrsTextLatitude.deallocate()
+        mgrsTextLongitude.deallocate()
+        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
         _ = navigationController?.popViewController(animated: true)
     }
     
     @IBAction func deleteButton(_ sender: Any) {
         deleteSelectedData()
-        self.view.makeToast(NSLocalizedString("Deleted", comment: "Deleted"), position: .top)
+        self.view.makeToast(NSLocalizedString("Deleted", comment: ""), position: .top)
         _ = navigationController?.popViewController(animated: true)
     }
     

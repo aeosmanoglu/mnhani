@@ -19,6 +19,11 @@
 		0458E1D02097104000076FC8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0458E1D22097104000076FC8 /* Localizable.strings */; };
 		045A1AC920950F140062DF80 /* editViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A1AC820950F140062DF80 /* editViewController.swift */; };
 		045DF3B3207F81CF0079362C /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045DF3B2207F81CF0079362C /* CardView.swift */; };
+		046CF34F209913730024DF69 /* LatLon2MGRS.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CF345209913710024DF69 /* LatLon2MGRS.m */; };
+		046CF350209913730024DF69 /* GeoCoordinateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CF346209913710024DF69 /* GeoCoordinateConverter.m */; };
+		046CF351209913730024DF69 /* LatLon2UTM.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CF34B209913720024DF69 /* LatLon2UTM.m */; };
+		046CF352209913730024DF69 /* MGRS2LatLon.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CF34C209913720024DF69 /* MGRS2LatLon.m */; };
+		046CF353209913730024DF69 /* UTM2LatLon.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CF34E209913730024DF69 /* UTM2LatLon.m */; };
 		04704AF7208B3226001578F9 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04704AF6208B3226001578F9 /* addViewController.swift */; };
 		047D80BC20862784001FD38C /* UserLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D80BB20862784001FD38C /* UserLocationButton.swift */; };
 		04BFD57820877F4E00CF3AD5 /* pointsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */; };
@@ -47,6 +52,18 @@
 		0458E1D52097107500076FC8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		045A1AC820950F140062DF80 /* editViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = editViewController.swift; sourceTree = "<group>"; };
 		045DF3B2207F81CF0079362C /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		046CF343209913700024DF69 /* mnhani-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mnhani-Bridging-Header.h"; sourceTree = "<group>"; };
+		046CF344209913710024DF69 /* GeoCoordinateConverter-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoCoordinateConverter-Prefix.pch"; sourceTree = "<group>"; };
+		046CF345209913710024DF69 /* LatLon2MGRS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatLon2MGRS.m; sourceTree = "<group>"; };
+		046CF346209913710024DF69 /* GeoCoordinateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoCoordinateConverter.m; sourceTree = "<group>"; };
+		046CF347209913720024DF69 /* MGRS2LatLon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRS2LatLon.h; sourceTree = "<group>"; };
+		046CF348209913720024DF69 /* UTM2LatLon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTM2LatLon.h; sourceTree = "<group>"; };
+		046CF349209913720024DF69 /* LatLon2MGRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatLon2MGRS.h; sourceTree = "<group>"; };
+		046CF34A209913720024DF69 /* LatLon2UTM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatLon2UTM.h; sourceTree = "<group>"; };
+		046CF34B209913720024DF69 /* LatLon2UTM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatLon2UTM.m; sourceTree = "<group>"; };
+		046CF34C209913720024DF69 /* MGRS2LatLon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRS2LatLon.m; sourceTree = "<group>"; };
+		046CF34D209913720024DF69 /* GeoCoordinateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoCoordinateConverter.h; sourceTree = "<group>"; };
+		046CF34E209913730024DF69 /* UTM2LatLon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTM2LatLon.m; sourceTree = "<group>"; };
 		04704AF6208B3226001578F9 /* addViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addViewController.swift; sourceTree = "<group>"; };
 		047D80BB20862784001FD38C /* UserLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationButton.swift; sourceTree = "<group>"; };
 		04A9421120944D6A005EE758 /* ScreenShots.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ScreenShots.xcassets; sourceTree = "<group>"; };
@@ -97,6 +114,8 @@
 		04510F19207CBE5D00F25E98 /* mnhani */ = {
 			isa = PBXGroup;
 			children = (
+				046CF343209913700024DF69 /* mnhani-Bridging-Header.h */,
+				046CF354209916180024DF69 /* GeoConvert */,
 				04510F1A207CBE5D00F25E98 /* AppDelegate.swift */,
 				04D9CCCB207F72DF002A9B5C /* currentViewController.swift */,
 				04510F1C207CBE5D00F25E98 /* mapViewController.swift */,
@@ -118,6 +137,24 @@
 				04F4B9F42097C70B0056D00A /* InfoPlist.strings */,
 			);
 			path = mnhani;
+			sourceTree = "<group>";
+		};
+		046CF354209916180024DF69 /* GeoConvert */ = {
+			isa = PBXGroup;
+			children = (
+				046CF344209913710024DF69 /* GeoCoordinateConverter-Prefix.pch */,
+				046CF34D209913720024DF69 /* GeoCoordinateConverter.h */,
+				046CF346209913710024DF69 /* GeoCoordinateConverter.m */,
+				046CF349209913720024DF69 /* LatLon2MGRS.h */,
+				046CF345209913710024DF69 /* LatLon2MGRS.m */,
+				046CF34A209913720024DF69 /* LatLon2UTM.h */,
+				046CF34B209913720024DF69 /* LatLon2UTM.m */,
+				046CF347209913720024DF69 /* MGRS2LatLon.h */,
+				046CF34C209913720024DF69 /* MGRS2LatLon.m */,
+				046CF348209913720024DF69 /* UTM2LatLon.h */,
+				046CF34E209913730024DF69 /* UTM2LatLon.m */,
+			);
+			path = GeoConvert;
 			sourceTree = "<group>";
 		};
 		BDA724439A0B69AB8B12DF40 /* Frameworks */ = {
@@ -171,6 +208,7 @@
 				TargetAttributes = {
 					04510F16207CBE5D00F25E98 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 0930;
 					};
 				};
 			};
@@ -256,6 +294,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046CF350209913730024DF69 /* GeoCoordinateConverter.m in Sources */,
+				046CF353209913730024DF69 /* UTM2LatLon.m in Sources */,
 				04D9CCCC207F72DF002A9B5C /* currentViewController.swift in Sources */,
 				044445272080143000E889EC /* Toast.swift in Sources */,
 				04510F23207CBE5D00F25E98 /* mnhani.xcdatamodeld in Sources */,
@@ -264,7 +304,10 @@
 				04510F1D207CBE5D00F25E98 /* mapViewController.swift in Sources */,
 				041EA607209745A9001E8944 /* settingsViewController.swift in Sources */,
 				04BFD57820877F4E00CF3AD5 /* pointsTableViewController.swift in Sources */,
+				046CF351209913730024DF69 /* LatLon2UTM.m in Sources */,
 				047D80BC20862784001FD38C /* UserLocationButton.swift in Sources */,
+				046CF352209913730024DF69 /* MGRS2LatLon.m in Sources */,
+				046CF34F209913730024DF69 /* LatLon2MGRS.m in Sources */,
 				04510F1B207CBE5D00F25E98 /* AppDelegate.swift in Sources */,
 				04BFD57A2087BC7A00CF3AD5 /* CoreDataManager.swift in Sources */,
 				045DF3B3207F81CF0079362C /* CardView.swift in Sources */,
@@ -435,6 +478,7 @@
 			baseConfigurationReference = BB7D2A09B0525FC05685A87B /* Pods-mnhani.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZDSRJX347M;
 				INFOPLIST_FILE = mnhani/Info.plist;
@@ -444,6 +488,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abuzeremre.mnhani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mnhani/mnhani-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -454,6 +500,7 @@
 			baseConfigurationReference = BD8BA83F67BB402EAEAB5006 /* Pods-mnhani.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZDSRJX347M;
 				INFOPLIST_FILE = mnhani/Info.plist;
@@ -463,6 +510,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.abuzeremre.mnhani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mnhani/mnhani-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

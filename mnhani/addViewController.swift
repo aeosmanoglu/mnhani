@@ -51,8 +51,9 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         
         latitude = userLocation.coordinate.latitude
         longitude = userLocation.coordinate.longitude
-        mgrs = convert().toMGRS(latitude: latitude, longitude: longitude)
-        let zones = mgrs.prefix(6)
+        let converter = GeoCoordinateConverter.shared()
+        mgrs = (converter?.mgrs(fromLatitude: latitude, longitude: longitude))!
+        let zones = mgrs.prefix(5)
         let coordinates = mgrs.suffix(11)
         zoneTextField.placeholder = String(zones.prefix(3))
         mgrsZoneTextField.placeholder = String(zones.suffix(2))
@@ -158,14 +159,21 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         }
         
         
-        let mgrsText = "\(zone!) \(mgrsZone!) \(east!) \(north!)"
-        let zoneNumber = Double(zone!.prefix(2))
-        let zoneLetter = String(zone!.suffix(1))
+        let mgrsText = "\(zone!)\(mgrsZone!) \(east!) \(north!)"
         
-        let textedLocation = convert().toDD(zoneNumber: zoneNumber!, zoneLetter: zoneLetter, mgrsZoneLetter: mgrsZone!, mgrsE: Double(east!)!, mgrsN: Double(north!)!)
+        let mgrsTextLatitude = UnsafeMutablePointer<Double>.allocate(capacity: 1)
+        let mgrsTextLongitude = UnsafeMutablePointer<Double>.allocate(capacity: 1)
         
-        CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: textedLocation.coordinate.latitude, longitude: textedLocation.coordinate.longitude)
-        self.view.makeToast(NSLocalizedString("Saved", comment: "Saved"), position: .top)
+        
+        let converter = GeoCoordinateConverter.shared()
+        _ = converter?.mgrs(mgrsText, toLatitude: mgrsTextLatitude, longitude: mgrsTextLongitude)
+        
+        CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: mgrsTextLatitude[0], longitude: mgrsTextLongitude[0])
+        self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
+        
+        mgrsTextLatitude.deallocate()
+        mgrsTextLongitude.deallocate()
+        
         _ = navigationController?.popViewController(animated: true)
     }
 

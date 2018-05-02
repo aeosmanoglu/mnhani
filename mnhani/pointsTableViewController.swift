@@ -24,6 +24,7 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
         navigationWithSearchBar()
         updateData()
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
         
     }
     
@@ -126,6 +127,8 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
         }
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if isFiltering() {
         } else {
@@ -143,6 +146,10 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     // MARK: - Buttons
     @IBAction func addButton(_ sender: Any) {
         performSegue(withIdentifier: "AddSegue", sender: self)
+    }
+    
+    @objc func updateDataNotification (notification: NSNotification) {
+        updateData()
     }
 
 }

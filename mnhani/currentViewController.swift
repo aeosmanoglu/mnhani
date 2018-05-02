@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 
+
 class currentViewController: UIViewController, CLLocationManagerDelegate {
     
     
@@ -30,19 +31,23 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
+    // MARK: - Location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations[0]
         
         let altitude = userLocation.altitude
         let roundedAltitude = Int(round(altitude))
+        altitudeLabel.text = "\(roundedAltitude) m"
+        
         latitude = userLocation.coordinate.latitude
         longitude = userLocation.coordinate.longitude
-        altitudeLabel.text = "\(roundedAltitude) m"
-        mgrs = convert().toMGRS(latitude: latitude, longitude: longitude)
-        locationLabel.text = String(mgrs.prefix(6))
+        let converter = GeoCoordinateConverter.shared()
+        mgrs = (converter?.mgrs(fromLatitude: latitude, longitude: longitude))!
+        locationLabel.text = String(mgrs.prefix(5))
         locationTenLabel.text = String(mgrs.suffix(11))
     }
- 
+    
+    // MARK: - Buttons
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
         self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: ""), position: .top)

@@ -77,7 +77,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         case 0:
             mapView.styleURL = MGLStyle.outdoorsStyleURL
         case 1:
-            mapView.styleURL = MGLStyle.satelliteStyleURL
+            mapView.styleURL = MGLStyle.satelliteStreetsStyleURL
         default:
             mapView.styleURL = MGLStyle.outdoorsStyleURL
         }
@@ -171,8 +171,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             distanceLabel.text = "\(meter) m"
         }
         
-        
-        mgrs = convert().toMGRS(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
+        let converter = GeoCoordinateConverter.shared()
+        mgrs = (converter?.mgrs(fromLatitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude))!
         navigationItem.title = mgrs
     }
     
@@ -184,7 +184,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         formatter.timeStyle = .medium
         let timeString = formatter.string(from: Date())
         
-        let alertController = UIAlertController(title: NSLocalizedString("New Point", comment: "New Point"), message: NSLocalizedString("PleaseWriteYourPointName!", comment: "Please write your point name!"), preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("NewPoint", comment: ""), message: NSLocalizedString("PleaseWriteYourPointName!", comment: ""), preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.text = timeString
             textField.clearButtonMode = .always
@@ -192,7 +192,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             textField.keyboardAppearance = .dark
         }
         
-        let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: "Save"), style: .default) { [unowned alertController] _ in
+        let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { [unowned alertController] _ in
             let newPointName = alertController.textFields![0]
             var title = newPointName.text
             if title == "" {
@@ -200,10 +200,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)
             self.updateData()
-            self.view.makeToast(NSLocalizedString("Saved", comment: "Saved"), position: .top)
+            self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
         }
         
-        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: nil)
+        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
         
         alertController.addAction(saveButton)
         alertController.addAction(cancelButton)
@@ -212,7 +212,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
 
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
-        self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: "Coordinates copied to clipboard"), position: .top)
+        self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: ""), position: .top)
     }
 
 }
