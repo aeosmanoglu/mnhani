@@ -174,6 +174,7 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         mgrsTextLatitude.deallocate()
         mgrsTextLongitude.deallocate()
         
+        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
         _ = navigationController?.popViewController(animated: true)
     }
 

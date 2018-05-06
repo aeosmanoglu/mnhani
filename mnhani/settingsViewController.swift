@@ -32,6 +32,7 @@ class settingsViewController: UIViewController {
         
         let deleteButton = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (action: UIAlertAction) in
             CoreDataManager.cleanCoreData()
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
             self.view.makeToast(NSLocalizedString("Deleted", comment: ""), position: .center)
         }
         

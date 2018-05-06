@@ -181,6 +181,7 @@ class editViewController: UIViewController, UITextFieldDelegate {
     @IBAction func deleteButton(_ sender: Any) {
         deleteSelectedData()
         self.view.makeToast(NSLocalizedString("Deleted", comment: ""), position: .top)
+        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
         _ = navigationController?.popViewController(animated: true)
     }
     

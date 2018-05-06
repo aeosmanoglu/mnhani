@@ -21,8 +21,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     var mgrs = String()
     @IBOutlet weak var distanceLabel: UILabel!
     var annotations = [MGLAnnotation]()
-    var timer = Timer()
-    var memorizedCount = UserDefaults.standard.integer(forKey: "Count")
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,19 +46,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         setupLocationButton()
         
         updateData()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
-        
+
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
         
     }
     
-    @objc func runTime() {
-        distanceLabel.isHidden = UserDefaults.standard.bool(forKey: "distanceSwitch")
-        let array = CoreDataManager.fetch()
-        let count = array.count
-        if memorizedCount != count {
-            updateData()
-        }
-    }
     
     // MARK: - Map Buttons
     func segmentControl() {
@@ -126,10 +117,9 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         pointArray.removeAll()
         pointArray = CoreDataManager.fetch()
         let count = pointArray.count
-        UserDefaults.standard.set(count, forKey: "Count")
         mapView.removeAnnotations(annotations)
         if count > 0 {
-            for i in 0 ... (pointArray.count - 1) {
+            for i in 0 ... (count - 1) {
                 let annotation = MGLPointAnnotation()
                 annotation.coordinate = CLLocationCoordinate2D(latitude: pointArray[i].pointLatitude, longitude: pointArray[i].pointLongitude)
                 annotation.title = pointArray[i].pointTitle
@@ -149,12 +139,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         if UserDefaults.standard.bool(forKey: "centerSwitch") {
             mapView.setCenter(annotation.coordinate, animated: true)
         }
-        
-        timer.invalidate()
     }
     
     func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -170,6 +158,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         } else {
             distanceLabel.text = "\(meter) m"
         }
+        
+        distanceLabel.isHidden = UserDefaults.standard.bool(forKey: "distanceSwitch")
         
         let converter = GeoCoordinateConverter.shared()
         mgrs = (converter?.mgrs(fromLatitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude))!
@@ -199,7 +189,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
                 title = timeString
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)
-            self.updateData()
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
             self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
         }
         
@@ -213,6 +203,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
         self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: ""), position: .top)
+    }
+    
+    @objc func updateDataNotification (notification: NSNotification) {
+        updateData()
     }
 
 }

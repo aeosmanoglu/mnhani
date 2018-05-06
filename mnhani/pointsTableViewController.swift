@@ -13,29 +13,17 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     var pointArray = [point]()
     var filteredArray = [point]()
     let searchController = UISearchController(searchResultsController: nil)
-    var timer = Timer()
-    var memorizedCount = UserDefaults.standard.integer(forKey: "Count")
     
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationWithSearchBar()
         updateData()
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
         
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
     }
     
-    
-    @objc func runTime() {
-        let array = CoreDataManager.fetch()
-        let count = array.count
-        if memorizedCount != count {
-            updateData()
-        }
-    }
     
     // MARK: - Navigation and Search Bar
     func navigationWithSearchBar() {
@@ -71,7 +59,6 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     @objc func updateData() {
         pointArray.removeAll()
         pointArray = CoreDataManager.fetch()
-        UserDefaults.standard.set(pointArray.count, forKey: "Count")
         tableView.reloadData()
     }
     
@@ -105,11 +92,9 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     override func tableView(_ tableView: UITableView, willBeginEditingRowAt indexPath: IndexPath) {
-        timer.invalidate()
     }
     
     override func tableView(_ tableView: UITableView, didEndEditingRowAt indexPath: IndexPath?) {
-        timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(runTime), userInfo: nil, repeats: true)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -121,6 +106,7 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
             CoreDataManager.delete (point: point![indexPath.row])
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
             tableView.endUpdates()
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.

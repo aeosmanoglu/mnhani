@@ -75,6 +75,7 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
                 title = timeString
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.latitude, longitude: self.longitude)
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
             self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
         }
         
