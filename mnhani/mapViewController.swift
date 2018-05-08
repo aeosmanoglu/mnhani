@@ -21,6 +21,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     var mgrs = String()
     @IBOutlet weak var distanceLabel: UILabel!
     var annotations = [MGLAnnotation]()
+    var styleToggle = UISegmentedControl()
     
 
     override func viewDidLoad() {
@@ -30,10 +31,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.delegate = self
         mapView.showsUserLocation = true
-        mapView.userTrackingMode = .followWithHeading
+        mapView.userTrackingMode = .follow
         mapView.showsUserHeadingIndicator = true
         mapView.styleURL = MGLStyle.outdoorsStyleURL
-        mapView.userTrackingMode = MGLUserTrackingMode.follow
+        mapView.showsScale = true
+        
         view.addSubview(mapView)
         view.insertSubview(targetView, aboveSubview: mapView)
         view.insertSubview(distanceLabel, aboveSubview: mapView)
@@ -54,7 +56,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     // MARK: - Map Buttons
     func segmentControl() {
-        let styleToggle = UISegmentedControl(items: [NSLocalizedString("Topographic", comment: ""), NSLocalizedString("Satellite", comment: "")])
+        styleToggle = UISegmentedControl(items: [NSLocalizedString("Topographic", comment: ""), NSLocalizedString("Satellite", comment: "")])
         styleToggle.translatesAutoresizingMaskIntoConstraints = false
         styleToggle.selectedSegmentIndex = 0
         view.insertSubview(styleToggle, aboveSubview: mapView)
@@ -103,8 +105,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         
         button.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            NSLayoutConstraint(item: button, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 10),
-            NSLayoutConstraint(item: button, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 10),
+            NSLayoutConstraint(item: button, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: styleToggle, attribute: .top, multiplier: 1, constant: -50),
+            NSLayoutConstraint(item: button, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -10),
             NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: button.frame.size.height),
             NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: button.frame.size.width)
         ]
@@ -147,9 +149,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations[0]
-    }
-    
-    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
         targetLocations = CLLocation(latitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude)
         let distance = userLocation.distance(from: targetLocations)
         let meter = Int(distance)
@@ -164,6 +163,12 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         let converter = GeoCoordinateConverter.shared()
         mgrs = (converter?.mgrs(fromLatitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude))!
         navigationItem.title = mgrs
+    }
+    
+    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+    }
+    
+    func mapView(_ mapView: MGLMapView, didChange mode: MGLUserTrackingMode, animated: Bool) {
     }
     
     

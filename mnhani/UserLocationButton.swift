@@ -68,13 +68,13 @@ class UserLocationButton: UIButton {
         
         switch mode {
         case .none:
-            updateArrow(fillColor: disabledPrimaryColor, strokeColor: disabledSecondaryColor, rotation: 0)
+            updateArrow(fillColor: disabledPrimaryColor, strokeColor: disabledSecondaryColor, rotation: rotatedArrow)
             break
         case .follow:
-            updateArrow(fillColor: disabledPrimaryColor, strokeColor: activePrimaryColor, rotation: 0)
+            updateArrow(fillColor: disabledPrimaryColor, strokeColor: activePrimaryColor, rotation: rotatedArrow)
             break
         case .followWithHeading:
-            updateArrow(fillColor: activePrimaryColor, strokeColor: activePrimaryColor, rotation: rotatedArrow)
+            updateArrow(fillColor: activePrimaryColor, strokeColor: activePrimaryColor, rotation: 0)
             break
         case .followWithCourse:
             updateArrow(fillColor: activePrimaryColor, strokeColor: activePrimaryColor, rotation: 0)
