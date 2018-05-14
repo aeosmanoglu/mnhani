@@ -34,7 +34,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         mapView.userTrackingMode = .follow
         mapView.showsUserHeadingIndicator = true
         mapView.styleURL = MGLStyle.outdoorsStyleURL
-        mapView.showsScale = true
+        
         
         view.addSubview(mapView)
         view.insertSubview(targetView, aboveSubview: mapView)
@@ -105,7 +105,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         
         button.translatesAutoresizingMaskIntoConstraints = false
         let constraints = [
-            NSLayoutConstraint(item: button, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: styleToggle, attribute: .top, multiplier: 1, constant: -50),
+            NSLayoutConstraint(item: button, attribute: .top, relatedBy: .greaterThanOrEqual, toItem: view.safeAreaLayoutGuide, attribute: .top, multiplier: 1, constant: 60),
             NSLayoutConstraint(item: button, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -10),
             NSLayoutConstraint(item: button, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: button.frame.size.height),
             NSLayoutConstraint(item: button, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: button.frame.size.width)
@@ -163,6 +163,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         let converter = GeoCoordinateConverter.shared()
         mgrs = (converter?.mgrs(fromLatitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude))!
         navigationItem.title = mgrs
+        
+        mapView.showsScale = UserDefaults.standard.bool(forKey: "scaleSwitch")
     }
     
     func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {

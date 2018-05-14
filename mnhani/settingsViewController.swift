@@ -12,6 +12,7 @@ class settingsViewController: UIViewController {
     
     @IBOutlet weak var centerS: UISwitch!
     @IBOutlet weak var distanceS: UISwitch!
+    @IBOutlet weak var scaleS: UISwitch!
     
     
     override func viewDidLoad() {
@@ -20,6 +21,7 @@ class settingsViewController: UIViewController {
         
         centerS.isOn = UserDefaults.standard.bool(forKey: "centerSwitch")
         distanceS.isOn = UserDefaults.standard.bool(forKey: "distanceSwitch")
+        scaleS.isOn = UserDefaults.standard.bool(forKey: "scaleSwitch")
     }
 
 
@@ -50,6 +52,7 @@ class settingsViewController: UIViewController {
     @IBAction func distanceSwitch(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: "distanceSwitch")
     }
-    
-    
+    @IBAction func scaleSwitch(_ sender: UISwitch) {
+        UserDefaults.standard.set(sender.isOn, forKey: "scaleSwitch")
+    }
 }
