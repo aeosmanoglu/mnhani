@@ -86,19 +86,28 @@ class editViewController: UIViewController, UITextFieldDelegate {
     //MARK: - Text Fields Limitations
     internal func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        var i: Int
+        ///Limitation
+        var i = 20
         
-        switch textField {
-        case titleTextField:
+        if textField == titleTextField {
             i = 20
-        case zoneTextField:
-            i = 3
-        case mgrsZoneTextField:
-            i = 2
-        default:
-            i = 5
         }
         
+        ///Jump
+        let currentCharacterCount = ((textField.text?.count)! + string.count) - 1
+        
+        switch (textField, currentCharacterCount) {
+        case (eastTextField, 5):
+            northTextField.becomeFirstResponder()
+        case (northTextField, 5):
+            zoneTextField.becomeFirstResponder()
+        case (zoneTextField, 3):
+            mgrsZoneTextField.becomeFirstResponder()
+        default:
+            break
+        }
+        
+        ///Bool
         let text = textField.text ?? ""
         guard let range = Range(range, in: text) else { return false }
         let updatedText = text.replacingCharacters(in: range, with: string)
