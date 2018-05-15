@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,8 +32,8 @@
 
 /* Begin PBXFileReference section */
 		0C94A77A7010F84595A9C08803900BEA /* Pods-mnhani-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mnhani-resources.sh"; sourceTree = "<group>"; };
-		11678EA7CD2F0548E646A4C024CDB8F8 /* Pods_mnhani.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mnhani.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		26DCD9394AA012F5AAFA222676879C8A /* FormToolbar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FormToolbar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		11678EA7CD2F0548E646A4C024CDB8F8 /* Pods_mnhani.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_mnhani.framework; path = "Pods-mnhani.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26DCD9394AA012F5AAFA222676879C8A /* FormToolbar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FormToolbar.framework; path = FormToolbar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B3AC18639D58EE4B58F0B3DAA5F2F65 /* FormInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormInput.swift; path = FormToolbar/FormInput.swift; sourceTree = "<group>"; };
 		2C254963FFBE0D18267ED8DD3429FC9D /* FormToolbar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FormToolbar-dummy.m"; sourceTree = "<group>"; };
 		354ED997B8C7F9FDE2FE85890201976B /* FormToolbar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FormToolbar-prefix.pch"; sourceTree = "<group>"; };
@@ -47,7 +47,7 @@
 		720D407C0CB7CC9CE3F0F6665BA976FE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = FormToolbar/Info.plist; sourceTree = "<group>"; };
 		7B0AF14F1E4924468DC23746FC2C52DF /* FormToolbar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FormToolbar.swift; path = FormToolbar/FormToolbar.swift; sourceTree = "<group>"; };
 		82E6DD6E0F41C700E9AC88E7382E1359 /* Mapbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Mapbox.framework; path = dynamic/Mapbox.framework; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		94462DB26C134599961AEDEAAEDCA26A /* FormToolbar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FormToolbar.xcconfig; sourceTree = "<group>"; };
 		9FB9A83D53EF5FE4B403C091F933591F /* Pods-mnhani-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mnhani-acknowledgements.plist"; sourceTree = "<group>"; };
 		A19A39BCCEE0EE0D543E2BC1614DFEAD /* Pods-mnhani-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mnhani-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -89,6 +89,7 @@
 				E7B4CAE512F4CECB5DEE54313B7190B3 /* UIBarButtonItem+Hidden.swift */,
 				63C83AB3AB223A345B8D2BC34AA3311C /* Support Files */,
 			);
+			name = FormToolbar;
 			path = FormToolbar;
 			sourceTree = "<group>";
 		};
@@ -122,6 +123,7 @@
 			children = (
 				CBBCA36A5623DCD7469CBFF79C29E9CB /* Frameworks */,
 			);
+			name = "Mapbox-iOS-SDK";
 			path = "Mapbox-iOS-SDK";
 			sourceTree = "<group>";
 		};

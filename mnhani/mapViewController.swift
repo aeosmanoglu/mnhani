@@ -22,6 +22,9 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     @IBOutlet weak var distanceLabel: UILabel!
     var annotations = [MGLAnnotation]()
     var styleToggle = UISegmentedControl()
+    @IBOutlet weak var zoomInButton: UIButton!
+    @IBOutlet weak var zoomOutButton: UIButton!
+    
     
 
     override func viewDidLoad() {
@@ -39,6 +42,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         view.addSubview(mapView)
         view.insertSubview(targetView, aboveSubview: mapView)
         view.insertSubview(distanceLabel, aboveSubview: mapView)
+        view.insertSubview(zoomInButton, aboveSubview: mapView)
+        view.insertSubview(zoomOutButton, aboveSubview: mapView)
         
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
@@ -112,6 +117,19 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         ]
         view.addConstraints(constraints)
     }
+    
+    @IBAction func zoomIn(_ sender: Any) {
+        var zoom = mapView.zoomLevel
+        zoom = zoom + 1
+        mapView.setZoomLevel(zoom, animated: true)
+    }
+    
+    @IBAction func zoomOut(_ sender: Any) {
+        var zoom = mapView.zoomLevel
+        zoom = zoom - 1
+        mapView.setZoomLevel(zoom, animated: true)
+    }
+    
     
     // MARK: - Core Data Fetching
     @objc func updateData() {

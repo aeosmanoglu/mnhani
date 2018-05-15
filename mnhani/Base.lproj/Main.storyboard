@@ -32,13 +32,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7O9-iD-OJf">
+                                <rect key="frame" x="270" y="214" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="0eE-OL-AeF"/>
+                                    <constraint firstAttribute="height" constant="40" id="ZdO-t9-DNb"/>
+                                </constraints>
+                                <state key="normal" image="Add"/>
+                                <connections>
+                                    <action selector="zoomIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3YN-KI-P5P"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfy-a0-1cJ">
+                                <rect key="frame" x="270" y="264" width="40" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="11x-ZF-bFv"/>
+                                    <constraint firstAttribute="height" constant="40" id="Y7m-sz-2XS"/>
+                                </constraints>
+                                <state key="normal" image="Negative"/>
+                                <connections>
+                                    <action selector="zoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oki-ju-9Jz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kXD-L2-ATo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="135-zi-4mf"/>
                             <constraint firstItem="kXD-L2-ATo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="22c-7h-lgc"/>
+                            <constraint firstItem="bfy-a0-1cJ" firstAttribute="trailing" secondItem="7O9-iD-OJf" secondAttribute="trailing" id="3b3-vC-1MJ"/>
                             <constraint firstItem="aG8-Ab-tev" firstAttribute="top" secondItem="kXD-L2-ATo" secondAttribute="bottom" id="BZ1-zU-Oqe"/>
+                            <constraint firstItem="7O9-iD-OJf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="av4-As-Vsi"/>
+                            <constraint firstItem="bfy-a0-1cJ" firstAttribute="top" secondItem="7O9-iD-OJf" secondAttribute="bottom" constant="10" id="dbY-Nt-mNq"/>
                             <constraint firstItem="aG8-Ab-tev" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dp6-OV-bfn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7O9-iD-OJf" secondAttribute="trailing" constant="10" id="exs-H9-haL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -57,6 +85,8 @@
                     <connections>
                         <outlet property="distanceLabel" destination="aG8-Ab-tev" id="Zcf-Gg-SHk"/>
                         <outlet property="targetView" destination="kXD-L2-ATo" id="Cn7-Tl-KBF"/>
+                        <outlet property="zoomInButton" destination="7O9-iD-OJf" id="WlF-7J-JE0"/>
+                        <outlet property="zoomOutButton" destination="bfy-a0-1cJ" id="ieR-12-xXL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -785,6 +815,7 @@
         <image name="Find" width="50" height="50"/>
         <image name="List" width="25" height="25"/>
         <image name="Map" width="25" height="25"/>
+        <image name="Negative" width="24" height="24"/>
         <image name="Now" width="25" height="25"/>
         <image name="Save" width="50" height="50"/>
         <image name="Settings" width="25" height="25"/>
