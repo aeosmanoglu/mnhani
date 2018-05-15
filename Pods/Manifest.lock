@@ -1,6 +1,6 @@
 PODS:
   - FormToolbar (1.1)
-  - Mapbox-iOS-SDK (4.0.0)
+  - Mapbox-iOS-SDK (4.0.1)
 
 DEPENDENCIES:
   - FormToolbar
@@ -13,8 +13,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   FormToolbar: df06c051cb8ef235fab036f02d9fc4b31d163e56
-  Mapbox-iOS-SDK: 271754e96eb4434ba1b0a8c68432e1ea26fe9841
+  Mapbox-iOS-SDK: 09b978be732d753e5c5e2911460fc0a018ce9be6
 
-PODFILE CHECKSUM: 3f6bb635171eb260a4aa1cf7b6c51fa270b7cd19
+PODFILE CHECKSUM: cfc0db3ba61c9f0a05e58703d751c690ef3c4f62
 
 COCOAPODS: 1.5.0
