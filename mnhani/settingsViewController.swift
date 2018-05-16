@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MaterialComponents
 
 class settingsViewController: UIViewController {
     
@@ -35,7 +36,11 @@ class settingsViewController: UIViewController {
         let deleteButton = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (action: UIAlertAction) in
             CoreDataManager.cleanCoreData()
             NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
-            self.view.makeToast(NSLocalizedString("Deleted", comment: ""), position: .center)
+            
+            let message = MDCSnackbarMessage()
+            message.text = NSLocalizedString("Deleted", comment: "")
+            MDCSnackbarManager.setBottomOffset(50)
+            MDCSnackbarManager.show(message)
         }
         
         let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .default, handler: nil)

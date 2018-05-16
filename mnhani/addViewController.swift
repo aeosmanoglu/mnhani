@@ -9,6 +9,7 @@
 import UIKit
 import FormToolbar
 import CoreLocation
+import MaterialComponents
 
 class addViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
     
@@ -177,7 +178,11 @@ class addViewController: UIViewController, UITextFieldDelegate, CLLocationManage
         _ = converter?.mgrs(mgrsText, toLatitude: mgrsTextLatitude, longitude: mgrsTextLongitude)
         
         CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: mgrsTextLatitude[0], longitude: mgrsTextLongitude[0])
-        self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
+        
+        let message = MDCSnackbarMessage()
+        message.text = NSLocalizedString("Saved", comment: "")
+        MDCSnackbarManager.setBottomOffset(50)
+        MDCSnackbarManager.show(message)
         
         mgrsTextLatitude.deallocate()
         mgrsTextLongitude.deallocate()

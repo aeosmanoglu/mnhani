@@ -6,5 +6,6 @@ target 'mnhani' do
 
   pod 'Mapbox-iOS-SDK'
   pod 'FormToolbar'
+  pod 'MaterialComponents'
   
 end

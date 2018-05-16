@@ -9,6 +9,7 @@
 import UIKit
 import Mapbox
 import CoreData
+import MaterialComponents
 
 class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManagerDelegate {
     
@@ -215,7 +216,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.mapView.centerCoordinate.latitude, longitude: self.mapView.centerCoordinate.longitude)
             NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
-            self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
+            
+            let message = MDCSnackbarMessage()
+            message.text = NSLocalizedString("Saved", comment: "")
+            MDCSnackbarManager.show(message)
         }
         
         let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
@@ -227,7 +231,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
 
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
-        self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: ""), position: .top)
+        
+        let message = MDCSnackbarMessage()
+        message.text = NSLocalizedString("CoordinatesCopiedToClipboard", comment: "")
+        MDCSnackbarManager.setBottomOffset(50)
+        MDCSnackbarManager.show(message)
     }
     
     @objc func updateDataNotification (notification: NSNotification) {

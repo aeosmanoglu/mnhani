@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		041EA607209745A9001E8944 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041EA606209745A9001E8944 /* settingsViewController.swift */; };
-		044445272080143000E889EC /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044445262080143000E889EC /* Toast.swift */; };
 		044445292081106200E889EC /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044445282081106200E889EC /* Convert.swift */; };
 		04510F1B207CBE5D00F25E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510F1A207CBE5D00F25E98 /* AppDelegate.swift */; };
 		04510F1D207CBE5D00F25E98 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510F1C207CBE5D00F25E98 /* mapViewController.swift */; };
@@ -37,7 +36,6 @@
 		041EA606209745A9001E8944 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		04217CC2208959C3002FE09D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		043C2FE12097CA4C006C2A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		044445262080143000E889EC /* Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
 		044445282081106200E889EC /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
 		04510F17207CBE5D00F25E98 /* mnhani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mnhani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04510F1A207CBE5D00F25E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,7 +124,6 @@
 				04510F1E207CBE5D00F25E98 /* Main.storyboard */,
 				04510F26207CBE5F00F25E98 /* LaunchScreen.storyboard */,
 				045DF3B2207F81CF0079362C /* CardView.swift */,
-				044445262080143000E889EC /* Toast.swift */,
 				044445282081106200E889EC /* Convert.swift */,
 				047D80BB20862784001FD38C /* UserLocationButton.swift */,
 				04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */,
@@ -273,14 +270,26 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-mnhani/Pods-mnhani-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/FormToolbar/FormToolbar.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework",
 				"${PODS_ROOT}/Mapbox-iOS-SDK/dynamic/Mapbox.framework.dSYM",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FormToolbar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapbox.framework",
 				"${DWARF_DSYM_FOLDER_PATH}/Mapbox.framework.dSYM",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -297,7 +306,6 @@
 				046CF350209913730024DF69 /* GeoCoordinateConverter.m in Sources */,
 				046CF353209913730024DF69 /* UTM2LatLon.m in Sources */,
 				04D9CCCC207F72DF002A9B5C /* currentViewController.swift in Sources */,
-				044445272080143000E889EC /* Toast.swift in Sources */,
 				04510F23207CBE5D00F25E98 /* mnhani.xcdatamodeld in Sources */,
 				044445292081106200E889EC /* Convert.swift in Sources */,
 				045A1AC920950F140062DF80 /* editViewController.swift in Sources */,

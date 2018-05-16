@@ -8,6 +8,7 @@
 
 import UIKit
 import FormToolbar
+import MaterialComponents
 
 class editViewController: UIViewController, UITextFieldDelegate {
     
@@ -179,7 +180,11 @@ class editViewController: UIViewController, UITextFieldDelegate {
         _ = converter?.mgrs(mgrsText, toLatitude: mgrsTextLatitude, longitude: mgrsTextLongitude)
         
         CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: mgrsTextLatitude[0], longitude: mgrsTextLongitude[0])
-        self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
+        
+        let message = MDCSnackbarMessage()
+        message.text = NSLocalizedString("Saved", comment: "")
+        MDCSnackbarManager.setBottomOffset(50)
+        MDCSnackbarManager.show(message)
         
         mgrsTextLatitude.deallocate()
         mgrsTextLongitude.deallocate()
@@ -189,7 +194,12 @@ class editViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func deleteButton(_ sender: Any) {
         deleteSelectedData()
-        self.view.makeToast(NSLocalizedString("Deleted", comment: ""), position: .top)
+        
+        let message = MDCSnackbarMessage()
+        message.text = NSLocalizedString("Deleted", comment: "")
+        MDCSnackbarManager.setBottomOffset(50)
+        MDCSnackbarManager.show(message)
+        
         NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
         _ = navigationController?.popViewController(animated: true)
     }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MaterialComponents
 
 
 class currentViewController: UIViewController, CLLocationManagerDelegate {
@@ -50,7 +51,11 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Buttons
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
-        self.view.makeToast(NSLocalizedString("CoordinatesCopiedToClipboard", comment: ""), position: .top)
+        
+        let message = MDCSnackbarMessage()
+        message.text = NSLocalizedString("CoordinatesCopiedToClipboard", comment: "")
+        MDCSnackbarManager.setBottomOffset(50)
+        MDCSnackbarManager.show(message)
     }
     
     @IBAction func addButton(_ sender: Any) {
@@ -76,7 +81,11 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
             }
             CoreDataManager.store(title: title!, mgrs: self.mgrs, latitude: self.latitude, longitude: self.longitude)
             NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
-            self.view.makeToast(NSLocalizedString("Saved", comment: ""), position: .top)
+            
+            let message = MDCSnackbarMessage()
+            message.text = NSLocalizedString("Saved", comment: "")
+            MDCSnackbarManager.setBottomOffset(50)
+            MDCSnackbarManager.show(message)
         }
         
         let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
