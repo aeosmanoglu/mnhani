@@ -30,6 +30,7 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        
     }
     
     // MARK: - Location
@@ -94,4 +95,5 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
         alertController.addAction(cancelButton)
         present(alertController, animated: true)
     }
+    
 }
