@@ -204,8 +204,4 @@ class editViewController: UIViewController, UITextFieldDelegate {
         _ = navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func showButton(_ sender: Any) {
-    }
-    
-
 }
