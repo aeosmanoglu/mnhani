@@ -206,7 +206,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="k5Z-PB-fRF" firstAttribute="baseline" secondItem="3ww-u6-4h2" secondAttribute="baseline" id="0xH-PW-e0h"/>
                                             <constraint firstItem="L6p-wF-2PT" firstAttribute="centerX" secondItem="Ds2-7O-7Qg" secondAttribute="centerX" id="3VT-eX-3p1"/>
@@ -307,7 +307,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                             </textField>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="0Rc-pL-9km" firstAttribute="top" secondItem="N6Q-1K-rA0" secondAttribute="top" id="1fo-ZT-SpW"/>
                                             <constraint firstItem="tgn-Hc-rJb" firstAttribute="top" secondItem="sDX-1N-3qq" secondAttribute="top" constant="32" id="3MN-G3-4ma"/>
@@ -347,7 +347,7 @@
                                             <constraint firstAttribute="height" constant="56" id="VCK-HB-PEh"/>
                                             <constraint firstAttribute="width" constant="56" id="YsG-cX-IRZ"/>
                                         </constraints>
-                                        <state key="normal" image="Trash"/>
+                                        <state key="normal" image="TrashRed"/>
                                         <connections>
                                             <action selector="deleteButton:" destination="z16-Hg-3xD" eventType="touchUpInside" id="W4Y-Qx-OiA"/>
                                         </connections>
@@ -619,7 +619,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4eX-vu-SVX" secondAttribute="trailing" constant="20" symbolic="YES" id="6bP-Kw-xJA"/>
                                             <constraint firstAttribute="height" constant="108" id="Dxb-8v-reR"/>
@@ -691,7 +691,7 @@
                                                 </connections>
                                             </switch>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="Rxy-Y7-v5f" firstAttribute="top" secondItem="wBw-fl-gVf" secondAttribute="top" constant="16" id="5TF-K9-v5n"/>
                                             <constraint firstItem="yIx-nJ-Zt6" firstAttribute="trailing" secondItem="473-5m-b0O" secondAttribute="trailing" id="9xb-y5-EP0"/>
@@ -780,6 +780,6 @@
         <image name="Negative" width="24" height="24"/>
         <image name="Now" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
-        <image name="Trash" width="24" height="24"/>
+        <image name="TrashRed" width="24" height="24"/>
     </resources>
 </document>
