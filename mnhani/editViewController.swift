@@ -13,23 +13,20 @@ import MaterialComponents
 class editViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var titleTextField: MDCTextField!
     @IBOutlet weak var zoneTextField: UITextField!
     @IBOutlet weak var mgrsZoneTextField: UITextField!
     @IBOutlet weak var eastTextField: UITextField!
     @IBOutlet weak var northTextField: UITextField!
+    var allTextFieldControllers = [MDCTextInputControllerFloatingPlaceholder]()
     var toolbar = FormToolbar()
     var indexPFSR = Int()
     var pointArray = [point]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        titleTextField.delegate = self
-        zoneTextField.delegate = self
-        mgrsZoneTextField.delegate = self
-        eastTextField.delegate = self
-        northTextField.delegate = self
+        
+        setupTextFields()
         
         self.toolbar = FormToolbar(inputs: [titleTextField, eastTextField, northTextField, zoneTextField, mgrsZoneTextField])
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(didTapView(gesture:)))
@@ -41,6 +38,18 @@ class editViewController: UIViewController, UITextFieldDelegate {
     }
 
     //MARK: - Keyboard and Text Field Attributes
+    func setupTextFields() {
+        titleTextField.delegate = self
+        zoneTextField.delegate = self
+        mgrsZoneTextField.delegate = self
+        eastTextField.delegate = self
+        northTextField.delegate = self
+        
+        let titleController = MDCTextInputControllerOutlined(textInput: titleTextField)
+        titleController.placeholderText = NSLocalizedString("PointName", comment: "")
+        allTextFieldControllers.append(titleController)
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         toolbar.update()
     }
@@ -102,7 +111,7 @@ class editViewController: UIViewController, UITextFieldDelegate {
             northTextField.becomeFirstResponder()
         case (northTextField, 5):
             zoneTextField.becomeFirstResponder()
-        case (zoneTextField, 3):
+        case (zoneTextField, 2):
             mgrsZoneTextField.becomeFirstResponder()
         default:
             break
@@ -119,11 +128,11 @@ class editViewController: UIViewController, UITextFieldDelegate {
         let mgrs = pointArray[indexPFSR].pointMGRS
         let zones = mgrs?.prefix(5)
         let coordinates = mgrs?.suffix(11)
-        zoneTextField.placeholder = String((zones?.prefix(3))!)
-        mgrsZoneTextField.placeholder = String((zones?.suffix(2))!)
+        zoneTextField.placeholder = String((zones?.prefix(2))!)
+        mgrsZoneTextField.placeholder = String((zones?.suffix(3))!)
         eastTextField.placeholder = String((coordinates?.prefix(5))!)
         northTextField.placeholder = String((coordinates?.suffix(5))!)
-        titleTextField.placeholder = pointArray[indexPFSR].pointTitle
+        titleTextField.text = pointArray[indexPFSR].pointTitle
     }
     
     
@@ -147,61 +156,88 @@ class editViewController: UIViewController, UITextFieldDelegate {
     @IBAction func saveButton(_ sender: Any) {
         deleteSelectedData()
         
-        var title = titleTextField.text
+        let title = titleTextField.text
         var zone = zoneTextField.text
         var mgrsZone = mgrsZoneTextField.text
         var east = eastTextField.text
         var north = northTextField.text
-        
-        if title == "" {
-            title = titleTextField.placeholder
-        }
-        if zone == "" {
-            zone = zoneTextField.placeholder
-        }
-        if mgrsZone == "" {
-            mgrsZone = mgrsZoneTextField.placeholder
-        }
-        if east == "" {
-            east = eastTextField.placeholder
-        }
-        if north == "" {
-            north = northTextField.placeholder
-        }
-        
-        
-        let mgrsText = "\(zone!)\(mgrsZone!) \(east!) \(north!)"
-        
-        let mgrsTextLatitude = UnsafeMutablePointer<Double>.allocate(capacity: 1)
-        let mgrsTextLongitude = UnsafeMutablePointer<Double>.allocate(capacity: 1)
-        
-        
-        let converter = GeoCoordinateConverter.shared()
-        _ = converter?.mgrs(mgrsText, toLatitude: mgrsTextLatitude, longitude: mgrsTextLongitude)
-        
-        CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: mgrsTextLatitude[0], longitude: mgrsTextLongitude[0])
-        
         let message = MDCSnackbarMessage()
-        message.text = NSLocalizedString("Saved", comment: "")
         MDCSnackbarManager.setBottomOffset(50)
-        MDCSnackbarManager.show(message)
         
-        mgrsTextLatitude.deallocate()
-        mgrsTextLongitude.deallocate()
-        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
-        _ = navigationController?.popViewController(animated: true)
+        if title?.count == 0 {
+            message.text = NSLocalizedString("TitleError", comment: "")
+            MDCSnackbarManager.show(message)
+            titleTextField.shake()
+        } else if zone?.count == 1 {
+            message.text = NSLocalizedString("ZoneError", comment: "")
+            MDCSnackbarManager.show(message)
+            zoneTextField.shake()
+        } else if mgrsZone?.count == 1 || mgrsZone?.count == 2 {
+            message.text = NSLocalizedString("MgrsZoneError", comment: "")
+            MDCSnackbarManager.show(message)
+            mgrsZoneTextField.shake()
+        } else if (east?.count)! > 0 && (east?.count)! < 5 {
+            message.text = NSLocalizedString("CoordinateError", comment: "")
+            MDCSnackbarManager.show(message)
+            eastTextField.shake()
+        } else if (north?.count)! > 0 && (north?.count)! < 5 {
+            message.text = NSLocalizedString("CoordinateError", comment: "")
+            MDCSnackbarManager.show(message)
+            northTextField.shake()
+        } else {
+            if zone?.count == 0 {
+                zone = zoneTextField.placeholder
+            }
+            if mgrsZone?.count == 0 {
+                mgrsZone = mgrsZoneTextField.placeholder
+            }
+            if east?.count == 0 {
+                east = eastTextField.placeholder
+            }
+            if north?.count == 0 {
+                north = northTextField.placeholder
+            }
+            
+            let mgrsText = "\(zone!)\(mgrsZone!) \(east!) \(north!)"
+            
+            let mgrsTextLatitude = UnsafeMutablePointer<Double>.allocate(capacity: 1)
+            let mgrsTextLongitude = UnsafeMutablePointer<Double>.allocate(capacity: 1)
+            
+            
+            let converter = GeoCoordinateConverter.shared()
+            _ = converter?.mgrs(mgrsText, toLatitude: mgrsTextLatitude, longitude: mgrsTextLongitude)
+            
+            CoreDataManager.store(title: title!, mgrs: mgrsText, latitude: mgrsTextLatitude[0], longitude: mgrsTextLongitude[0])
+            
+            message.text = NSLocalizedString("Saved", comment: "")
+            MDCSnackbarManager.show(message)
+            
+            mgrsTextLatitude.deallocate()
+            mgrsTextLongitude.deallocate()
+            
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
+            _ = navigationController?.popViewController(animated: true)
+        }
     }
     
     @IBAction func deleteButton(_ sender: Any) {
-        deleteSelectedData()
+        let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("YouRAbout2DeleteSavedPoints!", comment: ""), preferredStyle: .alert)
         
-        let message = MDCSnackbarMessage()
-        message.text = NSLocalizedString("Deleted", comment: "")
-        MDCSnackbarManager.setBottomOffset(50)
-        MDCSnackbarManager.show(message)
+        let deleteButton = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (action: UIAlertAction) in
+            self.deleteSelectedData()
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
+            _ = self.navigationController?.popViewController(animated: true)
+            
+            let message = MDCSnackbarMessage()
+            message.text = NSLocalizedString("Deleted", comment: "")
+            MDCSnackbarManager.setBottomOffset(50)
+            MDCSnackbarManager.show(message)
+        }
         
-        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
-        _ = navigationController?.popViewController(animated: true)
+        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .default, handler: nil)
+        
+        alertController.addAction(deleteButton)
+        alertController.addAction(cancelButton)
+        present(alertController, animated: true)
     }
-    
 }

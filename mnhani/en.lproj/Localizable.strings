@@ -16,6 +16,7 @@
 "Satellite" = "Satellite";
 "Warning" = "Warning";
 "YouRAbout2DeleteAllSavedPoints!" = "You are about to delete all saved points! You can not undone.";
+"YouRAbout2DeleteSavedPoints!" = "You are about to delete this point! You can not undone.";
 "Delete" = "Delete";
 "Deleted" = "Deleted";
 "Done" = "Done";

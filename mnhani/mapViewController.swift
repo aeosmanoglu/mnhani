@@ -219,6 +219,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             
             let message = MDCSnackbarMessage()
             message.text = NSLocalizedString("Saved", comment: "")
+            MDCSnackbarManager.setBottomOffset(50)
             MDCSnackbarManager.show(message)
         }
         

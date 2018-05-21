@@ -31,7 +31,7 @@ class settingsViewController: UIViewController {
     // MARK: - Data
 
     @IBAction func deleteAllButton(_ sender: Any) {
-        let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("YouRAbout2DeleteAllSavedPoints!", comment: "You are about to delete all saved points!"), preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("YouRAbout2DeleteAllSavedPoints!", comment: ""), preferredStyle: .alert)
         
         let deleteButton = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (action: UIAlertAction) in
             CoreDataManager.cleanCoreData()
