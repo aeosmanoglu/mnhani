@@ -12,13 +12,16 @@
 "Save" = "Save";
 "Saved" = "Saved";
 "Cancel" = "Cancel";
-
 "Topographic" = "Topographic";
 "Satellite" = "Satellite";
-
 "Warning" = "Warning";
 "YouRAbout2DeleteAllSavedPoints!" = "You are about to delete all saved points! You can not undone.";
 "Delete" = "Delete";
 "Deleted" = "Deleted";
-
 "Done" = "Done";
+"Error" = "Error";
+"PointName" = "Point Name";
+"TitleError" = "Please set a point title.";
+"ZoneError" = "Zone number must be two digits. Set full or delete all.";
+"MgrsZoneError" = "Zone must be three characters. Set full or delete all.";
+"CoordinateError" = "Horizontal or vertical coordinates must be five digit each. Set full or delete all.";

@@ -12,13 +12,16 @@
 "Save" = "Kaydet";
 "Saved" = "Kaydedildi";
 "Cancel" = "İptal";
-
 "Topographic" = "Topografik";
 "Satellite" = "Uydu";
-
 "Warning" = "Uyarı";
 "YouRAbout2DeleteAllSavedPoints!" = "Tüm kayıtlı noktaları silmek üzeresiniz! Bu işlem geri alınamaz.";
 "Delete" = "Sil";
 "Deleted" = "Silindi";
-
 "Done" = "Tamam";
+"Error" = "Hata";
+"PointName" = "Nokta Adı";
+"TitleError" = "Lütfen noktanın adını yazınız.";
+"ZoneError" = "Alan numarası iki haneli olmalıdır. Lütfen tam doldurun ya da silin.";
+"MgrsZoneError" = "Alan üç alfabetik karakterli olmalıdır. Lütfen tam doldurun ya da silin.";
+"CoordinateError" = "Dikey ve yatay koordinatların her biri beş haneli olmalıdır. Lütfen tam doldurun ya da silin.";

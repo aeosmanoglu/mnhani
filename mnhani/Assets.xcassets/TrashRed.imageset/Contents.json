@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Trash.png",
+      "filename" : "TrashRed.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Trash@2x.png",
+      "filename" : "TrashRed@2x.png",
       "scale" : "2x"
     },
     {
