@@ -25,6 +25,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     var styleToggle = UISegmentedControl()
     @IBOutlet weak var zoomInButton: UIButton!
     @IBOutlet weak var zoomOutButton: UIButton!
+    @IBOutlet weak var addView: MDCFloatingButton!
+    @IBOutlet weak var copyView: MDCFloatingButton!
     
     
 
@@ -45,6 +47,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         view.insertSubview(distanceLabel, aboveSubview: mapView)
         view.insertSubview(zoomInButton, aboveSubview: mapView)
         view.insertSubview(zoomOutButton, aboveSubview: mapView)
+        view.insertSubview(addView, aboveSubview: mapView)
+        view.insertSubview(copyView, aboveSubview: mapView)
         
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
@@ -68,7 +72,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         view.insertSubview(styleToggle, aboveSubview: mapView)
         styleToggle.addTarget(self, action: #selector(changeStyle(sender:)), for: .valueChanged)
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|-40-[styleToggle]-40-|", options: [], metrics: nil, views: ["styleToggle" : styleToggle]))
-        NSLayoutConstraint.activate([NSLayoutConstraint(item: styleToggle, attribute: .bottom, relatedBy: .equal, toItem: mapView.logoView, attribute: .top, multiplier: 1, constant: -20)])
+        NSLayoutConstraint.activate([NSLayoutConstraint(item: styleToggle, attribute: .bottom, relatedBy: .equal, toItem: mapView.logoView, attribute: .top, multiplier: 1, constant: 0)])
     }
     
     @objc func changeStyle(sender: UISegmentedControl) {
