@@ -34,7 +34,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7O9-iD-OJf">
-                                <rect key="frame" x="270" y="214" width="40" height="40"/>
+                                <rect key="frame" x="270" y="174" width="40" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="0eE-OL-AeF"/>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.75" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfy-a0-1cJ">
-                                <rect key="frame" x="270" y="264" width="40" height="40"/>
+                                <rect key="frame" x="270" y="224" width="40" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="11x-ZF-bFv"/>
@@ -57,6 +57,30 @@
                                     <action selector="zoomOut:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oki-ju-9Jz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWL-L8-Gqb" customClass="MDCFloatingButton">
+                                <rect key="frame" x="248" y="303" width="56" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="N12-vT-UFe"/>
+                                    <constraint firstAttribute="height" constant="56" id="oMd-O7-3Dg"/>
+                                </constraints>
+                                <state key="normal" image="AddWhite"/>
+                                <connections>
+                                    <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lHn-rQ-S4K"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpn-4t-xDc" customClass="MDCFloatingButton">
+                                <rect key="frame" x="16" y="303" width="56" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="5rt-2F-hJ4"/>
+                                    <constraint firstAttribute="width" constant="56" id="Et8-2i-hWN"/>
+                                </constraints>
+                                <state key="normal" image="Copy"/>
+                                <connections>
+                                    <action selector="copyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5BH-Uy-Fbs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -64,26 +88,21 @@
                             <constraint firstItem="kXD-L2-ATo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="22c-7h-lgc"/>
                             <constraint firstItem="bfy-a0-1cJ" firstAttribute="trailing" secondItem="7O9-iD-OJf" secondAttribute="trailing" id="3b3-vC-1MJ"/>
                             <constraint firstItem="aG8-Ab-tev" firstAttribute="top" secondItem="kXD-L2-ATo" secondAttribute="bottom" id="BZ1-zU-Oqe"/>
-                            <constraint firstItem="7O9-iD-OJf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="av4-As-Vsi"/>
+                            <constraint firstItem="7O9-iD-OJf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="110" id="av4-As-Vsi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sWL-L8-Gqb" secondAttribute="trailing" constant="16" id="btL-0a-ksJ"/>
                             <constraint firstItem="bfy-a0-1cJ" firstAttribute="top" secondItem="7O9-iD-OJf" secondAttribute="bottom" constant="10" id="dbY-Nt-mNq"/>
                             <constraint firstItem="aG8-Ab-tev" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dp6-OV-bfn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rpn-4t-xDc" secondAttribute="bottom" constant="72" id="eOJ-ti-dHf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7O9-iD-OJf" secondAttribute="trailing" constant="10" id="exs-H9-haL"/>
+                            <constraint firstItem="Rpn-4t-xDc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="g7C-PS-6aS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sWL-L8-Gqb" secondAttribute="bottom" constant="72" id="xEH-Th-FcU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Coordinate" id="moK-cJ-ece">
-                        <barButtonItem key="leftBarButtonItem" image="Copy" id="L9U-HP-amE">
-                            <connections>
-                                <action selector="copyButton:" destination="BYZ-38-t0r" id="9ph-va-XCT"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="9EC-vp-FpE">
-                            <connections>
-                                <action selector="addButton:" destination="BYZ-38-t0r" id="ZpO-O5-9pS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Coordinate" id="moK-cJ-ece"/>
                     <connections>
+                        <outlet property="addView" destination="sWL-L8-Gqb" id="Xjl-IQ-f9e"/>
+                        <outlet property="copyView" destination="Rpn-4t-xDc" id="76Q-uR-tKg"/>
                         <outlet property="distanceLabel" destination="aG8-Ab-tev" id="Zcf-Gg-SHk"/>
                         <outlet property="targetView" destination="kXD-L2-ATo" id="Cn7-Tl-KBF"/>
                         <outlet property="zoomInButton" destination="7O9-iD-OJf" id="WlF-7J-JE0"/>
@@ -358,13 +377,27 @@
                                             <action selector="deleteButton:" destination="z16-Hg-3xD" eventType="touchUpInside" id="W4Y-Qx-OiA"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KK5-kH-4A7" customClass="MDCFloatingButton">
+                                        <rect key="frame" x="16" y="240" width="56" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="5Z9-kl-XvN"/>
+                                            <constraint firstAttribute="width" constant="56" id="6Sb-R3-sBK"/>
+                                        </constraints>
+                                        <state key="normal" image="Eye"/>
+                                        <connections>
+                                            <action selector="showButton:" destination="z16-Hg-3xD" eventType="touchUpInside" id="1aE-O2-OKa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="sDX-1N-3qq" secondAttribute="trailing" constant="16" id="1dw-g6-mT6"/>
+                                    <constraint firstItem="KK5-kH-4A7" firstAttribute="leading" secondItem="Kl9-MV-Shk" secondAttribute="leading" constant="16" id="8X7-cW-N7f"/>
                                     <constraint firstItem="sDX-1N-3qq" firstAttribute="top" secondItem="Kl9-MV-Shk" secondAttribute="topMargin" constant="16" id="BbQ-pe-JXI"/>
                                     <constraint firstItem="Hef-5m-fEG" firstAttribute="baseline" secondItem="rAW-Me-kkg" secondAttribute="baseline" id="JU5-pm-yJy"/>
                                     <constraint firstItem="sDX-1N-3qq" firstAttribute="leading" secondItem="Kl9-MV-Shk" secondAttribute="leading" constant="16" id="WMM-1F-Yiy"/>
                                     <constraint firstItem="rAW-Me-kkg" firstAttribute="top" secondItem="sDX-1N-3qq" secondAttribute="bottom" constant="16" id="WmS-Mm-X1c"/>
+                                    <constraint firstItem="KK5-kH-4A7" firstAttribute="top" secondItem="sDX-1N-3qq" secondAttribute="bottom" constant="16" id="YHr-vs-mkt"/>
                                     <constraint firstItem="rAW-Me-kkg" firstAttribute="firstBaseline" secondItem="Hef-5m-fEG" secondAttribute="firstBaseline" id="bNW-U5-rQW"/>
                                     <constraint firstAttribute="bottom" secondItem="rAW-Me-kkg" secondAttribute="bottom" constant="91" id="isI-Xd-qZN"/>
                                     <constraint firstItem="rAW-Me-kkg" firstAttribute="centerX" secondItem="Kl9-MV-Shk" secondAttribute="centerX" id="jwM-2t-sca"/>
@@ -394,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWC-kr-B7X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809" y="1028"/>
+            <point key="canvasLocation" x="2809" y="1020"/>
         </scene>
         <!--Current-->
         <scene sceneID="bGL-w9-uyB">
@@ -781,6 +814,7 @@
         <image name="AddWhite" width="24" height="24"/>
         <image name="Copy" width="24" height="24"/>
         <image name="Done" width="24" height="24"/>
+        <image name="Eye" width="24" height="24"/>
         <image name="List" width="25" height="25"/>
         <image name="Map" width="25" height="25"/>
         <image name="Negative" width="24" height="24"/>

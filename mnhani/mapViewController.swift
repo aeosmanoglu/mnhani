@@ -29,6 +29,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     @IBOutlet weak var copyView: MDCFloatingButton!
     
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,9 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         updateData()
 
         NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(showPointNotification(notification:)), name: NSNotification.Name(rawValue: "Center"), object: nil)
+        UserDefaults.standard.set(false, forKey: "ShowPoint")
         
     }
     
@@ -196,6 +200,14 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     func mapView(_ mapView: MGLMapView, didChange mode: MGLUserTrackingMode, animated: Bool) {
     }
     
+    func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        if UserDefaults.standard.bool(forKey: "ShowPoint") {
+            let center = CLLocationCoordinate2D(latitude: UserDefaults.standard.double(forKey: "Latitude"), longitude: UserDefaults.standard.double(forKey: "Longitude"))
+            mapView.setCenter(center, zoomLevel: mapView.zoomLevel, direction: mapView.direction, animated: false)
+            UserDefaults.standard.set(false, forKey: "ShowPoint")
+        }
+    }
+    
     
     // MARK: - Buttons
     @IBAction func addButton(_ sender: Any) {
@@ -245,6 +257,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     @objc func updateDataNotification (notification: NSNotification) {
         updateData()
+    }
+    
+    @objc func showPointNotification (notification: NSNotification) {
+        mapViewDidFinishLoadingMap(mapView)
     }
 
 }

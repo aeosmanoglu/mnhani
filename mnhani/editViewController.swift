@@ -240,4 +240,16 @@ class editViewController: UIViewController, UITextFieldDelegate {
         alertController.addAction(cancelButton)
         present(alertController, animated: true)
     }
+    
+    @IBAction func showButton(_ sender: Any) {
+        let latitude = pointArray[indexPFSR].pointLatitude
+        let longitude = pointArray[indexPFSR].pointLongitude
+        UserDefaults.standard.set(latitude, forKey: "Latitude")
+        UserDefaults.standard.set(longitude, forKey: "Longitude")
+        UserDefaults.standard.set(true, forKey: "ShowPoint")
+        NotificationCenter.default.post(name: NSNotification.Name("Center"), object: nil)
+        _ = self.tabBarController?.selectedIndex = 1
+        
+    }
+    
 }
