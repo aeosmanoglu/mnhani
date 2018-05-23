@@ -366,11 +366,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rAW-Me-kkg" customClass="MDCFloatingButton">
-                                        <rect key="frame" x="132" y="240" width="56" height="56"/>
+                                        <rect key="frame" x="128" y="248" width="40" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="VCK-HB-PEh"/>
-                                            <constraint firstAttribute="width" constant="56" id="YsG-cX-IRZ"/>
+                                            <constraint firstAttribute="height" constant="40" id="VCK-HB-PEh"/>
+                                            <constraint firstAttribute="width" constant="40" id="YsG-cX-IRZ"/>
                                         </constraints>
                                         <state key="normal" image="TrashRed"/>
                                         <connections>
@@ -378,32 +378,54 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KK5-kH-4A7" customClass="MDCFloatingButton">
-                                        <rect key="frame" x="16" y="240" width="56" height="56"/>
+                                        <rect key="frame" x="16" y="248" width="40" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="56" id="5Z9-kl-XvN"/>
-                                            <constraint firstAttribute="width" constant="56" id="6Sb-R3-sBK"/>
+                                            <constraint firstAttribute="height" constant="40" id="5Z9-kl-XvN"/>
+                                            <constraint firstAttribute="width" constant="40" id="6Sb-R3-sBK"/>
                                         </constraints>
                                         <state key="normal" image="Eye"/>
                                         <connections>
                                             <action selector="showButton:" destination="z16-Hg-3xD" eventType="touchUpInside" id="1aE-O2-OKa"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLg-JV-N7q" customClass="MDCFloatingButton">
+                                        <rect key="frame" x="72" y="248" width="40" height="40"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="ZO0-fC-uhS"/>
+                                            <constraint firstAttribute="height" constant="40" id="ebr-bN-CHw"/>
+                                        </constraints>
+                                        <state key="normal" image="Copy"/>
+                                        <connections>
+                                            <action selector="copyButton:" destination="z16-Hg-3xD" eventType="touchUpInside" id="gF2-Sc-ptv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="sDX-1N-3qq" secondAttribute="trailing" constant="16" id="1dw-g6-mT6"/>
+                                    <constraint firstItem="KK5-kH-4A7" firstAttribute="baseline" secondItem="Hef-5m-fEG" secondAttribute="baseline" id="5Vp-yD-IcI"/>
+                                    <constraint firstItem="yLg-JV-N7q" firstAttribute="leading" secondItem="KK5-kH-4A7" secondAttribute="trailing" constant="16" id="7wX-eU-rer"/>
                                     <constraint firstItem="KK5-kH-4A7" firstAttribute="leading" secondItem="Kl9-MV-Shk" secondAttribute="leading" constant="16" id="8X7-cW-N7f"/>
+                                    <constraint firstItem="rAW-Me-kkg" firstAttribute="baseline" secondItem="Hef-5m-fEG" secondAttribute="baseline" id="Anb-kj-BYI"/>
                                     <constraint firstItem="sDX-1N-3qq" firstAttribute="top" secondItem="Kl9-MV-Shk" secondAttribute="topMargin" constant="16" id="BbQ-pe-JXI"/>
-                                    <constraint firstItem="Hef-5m-fEG" firstAttribute="baseline" secondItem="rAW-Me-kkg" secondAttribute="baseline" id="JU5-pm-yJy"/>
+                                    <constraint firstItem="rAW-Me-kkg" firstAttribute="baseline" secondItem="yLg-JV-N7q" secondAttribute="baseline" id="Q7q-5u-lIT"/>
+                                    <constraint firstItem="KK5-kH-4A7" firstAttribute="baseline" secondItem="rAW-Me-kkg" secondAttribute="baseline" id="UZI-uX-Bnj"/>
+                                    <constraint firstItem="yLg-JV-N7q" firstAttribute="top" secondItem="KK5-kH-4A7" secondAttribute="top" id="VaU-k3-gCK"/>
                                     <constraint firstItem="sDX-1N-3qq" firstAttribute="leading" secondItem="Kl9-MV-Shk" secondAttribute="leading" constant="16" id="WMM-1F-Yiy"/>
-                                    <constraint firstItem="rAW-Me-kkg" firstAttribute="top" secondItem="sDX-1N-3qq" secondAttribute="bottom" constant="16" id="WmS-Mm-X1c"/>
-                                    <constraint firstItem="KK5-kH-4A7" firstAttribute="top" secondItem="sDX-1N-3qq" secondAttribute="bottom" constant="16" id="YHr-vs-mkt"/>
-                                    <constraint firstItem="rAW-Me-kkg" firstAttribute="firstBaseline" secondItem="Hef-5m-fEG" secondAttribute="firstBaseline" id="bNW-U5-rQW"/>
-                                    <constraint firstAttribute="bottom" secondItem="rAW-Me-kkg" secondAttribute="bottom" constant="91" id="isI-Xd-qZN"/>
-                                    <constraint firstItem="rAW-Me-kkg" firstAttribute="centerX" secondItem="Kl9-MV-Shk" secondAttribute="centerX" id="jwM-2t-sca"/>
+                                    <constraint firstItem="Hef-5m-fEG" firstAttribute="firstBaseline" secondItem="rAW-Me-kkg" secondAttribute="firstBaseline" id="WVM-Ej-dTk"/>
+                                    <constraint firstItem="KK5-kH-4A7" firstAttribute="baseline" secondItem="yLg-JV-N7q" secondAttribute="baseline" id="WYG-wj-uG7"/>
+                                    <constraint firstItem="rAW-Me-kkg" firstAttribute="leading" secondItem="yLg-JV-N7q" secondAttribute="trailing" constant="16" id="YzS-Uv-ojb"/>
+                                    <constraint firstItem="KK5-kH-4A7" firstAttribute="firstBaseline" secondItem="yLg-JV-N7q" secondAttribute="firstBaseline" id="cFv-WQ-BI7"/>
+                                    <constraint firstItem="yLg-JV-N7q" firstAttribute="firstBaseline" secondItem="rAW-Me-kkg" secondAttribute="firstBaseline" id="dAd-k7-wFy"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hef-5m-fEG" secondAttribute="bottom" constant="71" id="dnB-T7-Y2V"/>
+                                    <constraint firstItem="Hef-5m-fEG" firstAttribute="baseline" secondItem="yLg-JV-N7q" secondAttribute="baseline" id="l60-lC-rdO"/>
+                                    <constraint firstItem="rAW-Me-kkg" firstAttribute="top" secondItem="yLg-JV-N7q" secondAttribute="top" id="n8f-1T-3X9"/>
                                     <constraint firstItem="Hef-5m-fEG" firstAttribute="top" secondItem="sDX-1N-3qq" secondAttribute="bottom" constant="16" id="rvF-0R-aOA"/>
                                     <constraint firstItem="sDX-1N-3qq" firstAttribute="centerX" secondItem="Kl9-MV-Shk" secondAttribute="centerX" id="sIe-Cr-aHJ"/>
+                                    <constraint firstItem="KK5-kH-4A7" firstAttribute="centerY" secondItem="Hef-5m-fEG" secondAttribute="centerY" id="vk6-gT-nCK"/>
                                     <constraint firstAttribute="trailing" secondItem="Hef-5m-fEG" secondAttribute="trailing" constant="16" id="wmG-ZK-2HC"/>
+                                    <constraint firstItem="rAW-Me-kkg" firstAttribute="firstBaseline" secondItem="KK5-kH-4A7" secondAttribute="firstBaseline" id="yfl-Be-OTI"/>
                                 </constraints>
                             </scrollView>
                         </subviews>

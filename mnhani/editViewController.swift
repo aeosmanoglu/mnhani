@@ -252,4 +252,13 @@ class editViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    @IBAction func copyButton(_ sender: Any) {
+        UIPasteboard.general.string = pointArray[indexPFSR].pointMGRS
+        
+        let message = MDCSnackbarMessage()
+        message.text = NSLocalizedString("CoordinatesCopiedToClipboard", comment: "")
+        MDCSnackbarManager.setBottomOffset(50)
+        MDCSnackbarManager.show(message)
+    }
+    
 }
