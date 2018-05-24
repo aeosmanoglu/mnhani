@@ -69,6 +69,21 @@
                                     <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lHn-rQ-S4K"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ta8-YD-HDs" customClass="MDCFloatingButton">
+                                <rect key="frame" x="248" y="303" width="56" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="0pl-ye-sIX"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="Mk4-52-PZK"/>
+                                    <constraint firstAttribute="width" constant="56" id="UrA-Gp-0na"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="56" id="pr9-Wc-68z"/>
+                                </constraints>
+                                <state key="normal" image="Done"/>
+                                <connections>
+                                    <action selector="addButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JWS-ch-STo"/>
+                                    <action selector="doneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4jq-ID-4RP"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpn-4t-xDc" customClass="MDCFloatingButton">
                                 <rect key="frame" x="16" y="303" width="56" height="56"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -81,13 +96,24 @@
                                     <action selector="copyButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5BH-Uy-Fbs"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cp5-SS-x5v" customClass="MDCFloatingButton">
+                                <rect key="frame" x="16" y="303" width="56" height="56"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="56" id="1hD-CO-Ckn"/>
+                                    <constraint firstAttribute="height" constant="56" id="fUT-vi-0cS"/>
+                                </constraints>
+                                <state key="normal" image="Add"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kXD-L2-ATo" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="135-zi-4mf"/>
                             <constraint firstItem="kXD-L2-ATo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="22c-7h-lgc"/>
                             <constraint firstItem="bfy-a0-1cJ" firstAttribute="trailing" secondItem="7O9-iD-OJf" secondAttribute="trailing" id="3b3-vC-1MJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ta8-YD-HDs" secondAttribute="bottom" constant="72" id="B9M-wG-wwV"/>
                             <constraint firstItem="aG8-Ab-tev" firstAttribute="top" secondItem="kXD-L2-ATo" secondAttribute="bottom" id="BZ1-zU-Oqe"/>
+                            <constraint firstItem="cp5-SS-x5v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Efa-U3-mZw"/>
                             <constraint firstItem="7O9-iD-OJf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="110" id="av4-As-Vsi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sWL-L8-Gqb" secondAttribute="trailing" constant="16" id="btL-0a-ksJ"/>
                             <constraint firstItem="bfy-a0-1cJ" firstAttribute="top" secondItem="7O9-iD-OJf" secondAttribute="bottom" constant="10" id="dbY-Nt-mNq"/>
@@ -95,15 +121,19 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rpn-4t-xDc" secondAttribute="bottom" constant="72" id="eOJ-ti-dHf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7O9-iD-OJf" secondAttribute="trailing" constant="10" id="exs-H9-haL"/>
                             <constraint firstItem="Rpn-4t-xDc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="g7C-PS-6aS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ta8-YD-HDs" secondAttribute="trailing" constant="16" id="keM-vp-TOp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="sWL-L8-Gqb" secondAttribute="bottom" constant="72" id="xEH-Th-FcU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="cp5-SS-x5v" secondAttribute="bottom" constant="72" id="zfo-p4-R3x"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Coordinate" id="moK-cJ-ece"/>
                     <connections>
+                        <outlet property="addLineView" destination="cp5-SS-x5v" id="CQc-40-kUV"/>
                         <outlet property="addView" destination="sWL-L8-Gqb" id="Xjl-IQ-f9e"/>
                         <outlet property="copyView" destination="Rpn-4t-xDc" id="76Q-uR-tKg"/>
                         <outlet property="distanceLabel" destination="aG8-Ab-tev" id="Zcf-Gg-SHk"/>
+                        <outlet property="doneView" destination="ta8-YD-HDs" id="DSJ-hQ-Y9g"/>
                         <outlet property="targetView" destination="kXD-L2-ATo" id="Cn7-Tl-KBF"/>
                         <outlet property="zoomInButton" destination="7O9-iD-OJf" id="WlF-7J-JE0"/>
                         <outlet property="zoomOutButton" destination="bfy-a0-1cJ" id="ieR-12-xXL"/>

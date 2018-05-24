@@ -9,6 +9,7 @@
 "CoordinatesCopiedToClipboard" = "Coordinates copied to clipboard";
 "NewPoint" = "New Point";
 "PleaseWriteYourPointName!" = "Please write your point name!";
+"PleaseWriteYourLineName!" = "Please write your line name!";
 "Save" = "Save";
 "Saved" = "Saved";
 "Cancel" = "Cancel";
@@ -26,3 +27,6 @@
 "ZoneError" = "Zone number must be two digits. Set full or delete all.";
 "MgrsZoneError" = "Zone must be three characters. Set full or delete all.";
 "CoordinateError" = "Horizontal or vertical coordinates must be five digit each. Set full or delete all.";
+"Point" = "Point";
+"Line" = "Line";
+"NewLine" = "New Line";

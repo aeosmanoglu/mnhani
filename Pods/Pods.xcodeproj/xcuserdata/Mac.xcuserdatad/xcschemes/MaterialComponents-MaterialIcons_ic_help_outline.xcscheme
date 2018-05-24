@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A450783C61B461610779FD597FE97F4C"
-               BuildableName = "Pods_mnhani.framework"
-               BlueprintName = "Pods-mnhani"
+               BlueprintIdentifier = "A19C4B9B254C13C5612471D9AB918E33"
+               BuildableName = "MaterialIcons_ic_help_outline.bundle"
+               BlueprintName = "MaterialComponents-MaterialIcons_ic_help_outline"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A450783C61B461610779FD597FE97F4C"
-            BuildableName = "Pods_mnhani.framework"
-            BlueprintName = "Pods-mnhani"
+            BlueprintIdentifier = "A19C4B9B254C13C5612471D9AB918E33"
+            BuildableName = "MaterialIcons_ic_help_outline.bundle"
+            BlueprintName = "MaterialComponents-MaterialIcons_ic_help_outline"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -9,6 +9,7 @@
 "CoordinatesCopiedToClipboard" = "Koordinat kopyalandı";
 "NewPoint" = "Yeni Nokta";
 "PleaseWriteYourPointName!" = "Lütfen noktanın adını yazınız!";
+"PleaseWriteYourPointName!" = "Lütfen çizginin adını yazınız!";
 "Save" = "Kaydet";
 "Saved" = "Kaydedildi";
 "Cancel" = "İptal";
@@ -26,3 +27,6 @@
 "ZoneError" = "Alan numarası iki haneli olmalıdır. Lütfen tam doldurun ya da silin.";
 "MgrsZoneError" = "Alan üç alfabetik karakterli olmalıdır. Lütfen tam doldurun ya da silin.";
 "CoordinateError" = "Dikey ve yatay koordinatların her biri beş haneli olmalıdır. Lütfen tam doldurun ya da silin.";
+"Point" = "Nokta";
+"Line" = "Çizgi";
+"NewLine" = "Yeni Çizgi";

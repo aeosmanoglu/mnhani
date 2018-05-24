@@ -27,8 +27,9 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     @IBOutlet weak var zoomOutButton: UIButton!
     @IBOutlet weak var addView: MDCFloatingButton!
     @IBOutlet weak var copyView: MDCFloatingButton!
-    
-    
+    @IBOutlet weak var doneView: MDCFloatingButton!
+    @IBOutlet weak var addLineView: MDCFloatingButton!
+    var isAlertSheetActive = true
     
 
     override func viewDidLoad() {
@@ -50,6 +51,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         view.insertSubview(zoomOutButton, aboveSubview: mapView)
         view.insertSubview(addView, aboveSubview: mapView)
         view.insertSubview(copyView, aboveSubview: mapView)
+        view.insertSubview(doneView, aboveSubview: mapView)
+        view.insertSubview(addLineView, aboveSubview: mapView)
+        doneView.isHidden = true
+        addLineView.isHidden = true
         
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
@@ -63,7 +68,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showPointNotification(notification:)), name: NSNotification.Name(rawValue: "Center"), object: nil)
-        UserDefaults.standard.set(false, forKey: "ShowPoint")
         
     }
     
@@ -201,9 +205,13 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
+        showPoint()
+    }
+    
+    func showPoint() {
         if UserDefaults.standard.bool(forKey: "ShowPoint") {
             let center = CLLocationCoordinate2D(latitude: UserDefaults.standard.double(forKey: "Latitude"), longitude: UserDefaults.standard.double(forKey: "Longitude"))
-            mapView.setCenter(center, zoomLevel: mapView.zoomLevel, direction: mapView.direction, animated: false)
+            mapView.setCenter(center, zoomLevel: mapView.zoomLevel, direction: mapView.direction, animated: true)
             UserDefaults.standard.set(false, forKey: "ShowPoint")
         }
     }
@@ -211,12 +219,39 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     // MARK: - Buttons
     @IBAction func addButton(_ sender: Any) {
+        
+        let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: NSLocalizedString("NewPoint", comment: "" ), style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.addPoint()
+        })
+        let saveAction = UIAlertAction(title: NSLocalizedString("NewLine", comment: "" ), style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.addLine()
+        })
+        
+        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "" ), style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        optionMenu.addAction(deleteAction)
+        optionMenu.addAction(saveAction)
+        optionMenu.addAction(cancelAction)
+        
+        if isAlertSheetActive {
+          self.present(optionMenu, animated: true, completion: nil)
+        }
+    }
+    
+    func addPoint() {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .medium
         let timeString = formatter.string(from: Date())
         
-        let alertController = UIAlertController(title: NSLocalizedString("NewPoint", comment: ""), message: NSLocalizedString("PleaseWriteYourPointName!", comment: ""), preferredStyle: .alert)
+        let alertController = UIAlertController(title: NSLocalizedString("NewPoint", comment: "" ), message: NSLocalizedString("PleaseWriteYourPointName!", comment: ""), preferredStyle: .alert)
         alertController.addTextField { (textField) in
             textField.text = timeString
             textField.clearButtonMode = .always
@@ -245,6 +280,47 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         alertController.addAction(cancelButton)
         present(alertController, animated: true)
     }
+    
+    func addLine() {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .medium
+        let timeString = formatter.string(from: Date())
+        
+        let alertController = UIAlertController(title: NSLocalizedString("NewLine", comment: "" ), message: NSLocalizedString("PleaseWriteYourLineName!", comment: ""), preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            textField.text = timeString
+            textField.clearButtonMode = .always
+            textField.autocapitalizationType = .words
+            textField.keyboardAppearance = .dark
+        }
+        
+        let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { [unowned alertController] _ in
+            let newPointName = alertController.textFields![0]
+            var title = newPointName.text
+            if title == "" {
+                title = timeString
+            }
+            //tuşlar gözükecek
+            self.copyView.isHidden = true
+            self.addView.isHidden = true
+            self.isAlertSheetActive = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                self.doneView.isHidden = false
+                self.addLineView.isHidden = false
+            })
+            
+            
+            // + tuşuna basıldıkça arraya append
+            // done tuşunda core dataya yükle, mesaj göster ve noktaları sil
+        }
+        
+        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
+        
+        alertController.addAction(saveButton)
+        alertController.addAction(cancelButton)
+        present(alertController, animated: true)
+    }
 
     @IBAction func copyButton(_ sender: Any) {
         UIPasteboard.general.string = mgrs
@@ -255,12 +331,25 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         MDCSnackbarManager.show(message)
     }
     
+    @IBAction func doneButton(_ sender: Any) {
+        doneView.isHidden = true
+        addLineView.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.isAlertSheetActive = true
+            self.copyView.isHidden = false
+            self.addView.isHidden = false
+            
+        }
+        
+        
+    }
+    
     @objc func updateDataNotification (notification: NSNotification) {
         updateData()
     }
     
     @objc func showPointNotification (notification: NSNotification) {
-        mapViewDidFinishLoadingMap(mapView)
+        showPoint()
     }
 
 }
