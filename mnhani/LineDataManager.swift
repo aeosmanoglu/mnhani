@@ -1,29 +1,28 @@
 //
-//  CoreDataManager.swift
+//  LineDataManager.swift
 //  mnhani
 //
-//  Created by Abuzer Emre Osmanoğlu on 18.04.2018.
+//  Created by Abuzer Emre Osmanoğlu on 24.05.2018.
 //  Copyright © 2018 Abuzer Emre Osmanoğlu. All rights reserved.
 //
 
 import UIKit
 import CoreData
+import CoreLocation
 
-struct point {
-    var pointTitle:String!
-    var pointMGRS:String!
-    var pointLatitude:Double!
-    var pointLongitude:Double!
+struct line {
+    var lineTitle:String!
+    var lineLatitude:String!
+    var lineLongitude:String!
     
-    init(title: String, mgrs: String, latitude: Double, longitude: Double) {
-        pointTitle = title
-        pointMGRS = mgrs
-        pointLatitude = latitude
-        pointLongitude = longitude
+    init(title: String, latitude: String, longitude: String) {
+        lineTitle = title
+        lineLatitude = latitude
+        lineLongitude = longitude
     }
 }
 
-class CoreDataManager: NSObject {
+class lineDataManager: NSObject {
     
     // Delegate
     private class func getContext() -> NSManagedObjectContext {
@@ -32,47 +31,46 @@ class CoreDataManager: NSObject {
     }
     
     // Store Point in Core Data
-    class func store (title: String, mgrs: String, latitude: Double, longitude: Double) {
+    class func store (title: String, latitude: String, longitude: String) {
         let context = getContext()
-        let entity = NSEntityDescription.entity(forEntityName: "Point", in: context)
+        let entity = NSEntityDescription.entity(forEntityName: "Line", in: context)
         let managedObj = NSManagedObject(entity: entity!, insertInto: context)
         
         managedObj.setValue(title, forKey: "title")
-        managedObj.setValue(mgrs, forKey: "mgrs")
         managedObj.setValue(latitude, forKey: "latitude")
         managedObj.setValue(longitude, forKey: "longitude")
         
         do {
             try context.save()
-            print("point saved!")
+            print("line saved!")
         } catch {
             print(error.localizedDescription)
         }
     }
     
     // Fetch Points from Core Data
-    class func fetch (selectedScopeIdx:Int?=nil, targetText:String?=nil) -> [point]{
-        var array = [point]()
-        let fetchRequest:NSFetchRequest<Point> = Point.fetchRequest()
+    class func fetch (selectedScopeIdx:Int?=nil, targetText:String?=nil) -> [line]{
+        var coordinates = [line]()
+        let fetchRequest:NSFetchRequest<Line> = Line.fetchRequest()
         do {
             let fetchResult = try getContext().fetch(fetchRequest)
             for item in fetchResult {
-                let newPoint = point(title: item.title!, mgrs: item.mgrs!, latitude: item.latitude, longitude: item.longitude)
-                array.append(newPoint)
+                let newLine = line(title: item.title!, latitude: item.latitude!, longitude: item.longitude!)
+                coordinates.append(newLine)
             }
         }catch {
             print(error.localizedDescription)
         }
-        return array
+        return coordinates
     }
     
     // Clean All Core Data
     class func cleanCoreData() {
-        let fetchRequest:NSFetchRequest<Point> = Point.fetchRequest()
+        let fetchRequest:NSFetchRequest<Line> = Line.fetchRequest()
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest as! NSFetchRequest<NSFetchRequestResult>)
         
         do {
-            print("deleting all points")
+            print("deleting all lines")
             try getContext().execute(deleteRequest)
         }catch {
             print(error.localizedDescription)
@@ -80,26 +78,26 @@ class CoreDataManager: NSObject {
     }
     
     // Delete Data
-    class func delete (point: Point) {
+    class func delete (line: Line) {
         let context = getContext()
-        context.delete(point)
+        context.delete(line)
         
         do {
             try context.save()
-            print("point deleted")
+            print("line deleted")
         }catch {
             print(error.localizedDescription)
         }
     }
     
-    class func fetchObject() -> [Point]? {
+    class func fetchObject() -> [Line]? {
         let context = getContext()
-        var point: [Point]? = nil
+        var line: [Line]? = nil
         do {
-            point = try context.fetch(Point.fetchRequest())
-            return point
+            line = try context.fetch(Line.fetchRequest())
+            return line
         }catch {
-            return point
+            return line
         }
     }
 }

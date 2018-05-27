@@ -22,6 +22,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     var mgrs = String()
     @IBOutlet weak var distanceLabel: UILabel!
     var annotations = [MGLAnnotation]()
+    var lines = [MGLPolyline]()
     var styleToggle = UISegmentedControl()
     @IBOutlet weak var zoomInButton: UIButton!
     @IBOutlet weak var zoomOutButton: UIButton!
@@ -30,10 +31,15 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     @IBOutlet weak var doneView: MDCFloatingButton!
     @IBOutlet weak var addLineView: MDCFloatingButton!
     var isAlertSheetActive = true
+    var lineTitle = String()
+    var jointLatitudeArray = [Double]()
+    var jointLongitudeArray = [Double]()
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         mapView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -146,6 +152,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     // MARK: - Core Data Fetching
     @objc func updateData() {
+        
+        ///POINT
         var pointArray = [point]()
         pointArray.removeAll()
         pointArray = CoreDataManager.fetch()
@@ -159,6 +167,34 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
                 annotation.subtitle = pointArray[i].pointMGRS
                 annotations.append(annotation)
                 mapView.addAnnotation(annotation)
+            }
+        }
+        
+        ///LINE
+        var linesArray = [line]()
+        linesArray.removeAll()
+        linesArray = lineDataManager.fetch()
+        let linesCount = linesArray.count
+        mapView.removeOverlays(lines)
+        if linesCount > 0 {
+            for i in 0 ... (linesCount - 1) {
+                let latitude = convert().stringToArray(linesArray[i].lineLatitude)
+                let longitude = convert().stringToArray(linesArray[i].lineLongitude)
+                var coordinates = [CLLocationCoordinate2D]()
+                
+                if (latitude?.count)! >= 1 {
+                    for j in 0 ... ((latitude?.count)! - 1) {
+                        coordinates.append(CLLocationCoordinate2D(latitude: latitude![j], longitude: longitude![j]))
+                    }
+                }
+                
+                if coordinates.count >= 2 {
+                    let polyline = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
+                    lines.append(polyline)
+                    mapView.addOverlays(lines)
+                    coordinates.removeAll()
+                }
+                
             }
         }
     }
@@ -218,6 +254,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     
     // MARK: - Buttons
+    ///ADD BUTTON
     @IBAction func addButton(_ sender: Any) {
         
         let optionMenu = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
@@ -245,6 +282,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         }
     }
     
+    ///ADD POINT
     func addPoint() {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
@@ -281,6 +319,17 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         present(alertController, animated: true)
     }
     
+    ///COPY BUTTON
+    @IBAction func copyButton(_ sender: Any) {
+        UIPasteboard.general.string = mgrs
+        
+        let message = MDCSnackbarMessage()
+        message.text = NSLocalizedString("CoordinatesCopiedToClipboard", comment: "")
+        MDCSnackbarManager.setBottomOffset(50)
+        MDCSnackbarManager.show(message)
+    }
+    
+    ///ADD LINE
     func addLine() {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
@@ -297,11 +346,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         
         let saveButton = UIAlertAction(title: NSLocalizedString("Save", comment: ""), style: .default) { [unowned alertController] _ in
             let newPointName = alertController.textFields![0]
-            var title = newPointName.text
-            if title == "" {
-                title = timeString
+            self.lineTitle = newPointName.text!
+            if self.lineTitle == "" {
+                self.lineTitle = timeString
             }
-            //tuşlar gözükecek
+            
             self.copyView.isHidden = true
             self.addView.isHidden = true
             self.isAlertSheetActive = false
@@ -309,10 +358,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
                 self.doneView.isHidden = false
                 self.addLineView.isHidden = false
             })
-            
-            
-            // + tuşuna basıldıkça arraya append
-            // done tuşunda core dataya yükle, mesaj göster ve noktaları sil
         }
         
         let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
@@ -321,16 +366,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         alertController.addAction(cancelButton)
         present(alertController, animated: true)
     }
-
-    @IBAction func copyButton(_ sender: Any) {
-        UIPasteboard.general.string = mgrs
-        
-        let message = MDCSnackbarMessage()
-        message.text = NSLocalizedString("CoordinatesCopiedToClipboard", comment: "")
-        MDCSnackbarManager.setBottomOffset(50)
-        MDCSnackbarManager.show(message)
-    }
     
+    ///DONE BUTTON
     @IBAction func doneButton(_ sender: Any) {
         doneView.isHidden = true
         addLineView.isHidden = true
@@ -338,12 +375,27 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             self.isAlertSheetActive = true
             self.copyView.isHidden = false
             self.addView.isHidden = false
-            
         }
+        lineDataManager.store(title: lineTitle, latitude: convert().arrayToString(jointLatitudeArray), longitude: convert().arrayToString(jointLongitudeArray))
+        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
         
-        
+        let message = MDCSnackbarMessage()
+        message.text = NSLocalizedString("Saved", comment: "")
+        MDCSnackbarManager.setBottomOffset(50)
+        MDCSnackbarManager.show(message)
     }
     
+    ///ADD JOINT
+    @IBAction func addLineButton(_ sender: Any) {
+        let joint = self.mapView.centerCoordinate
+        let jointLatitude = joint.latitude
+        let jointLongitude = joint.longitude
+        jointLatitudeArray.append(jointLatitude)
+        jointLongitudeArray.append(jointLongitude)
+    }
+    
+    
+    // MARK: -Notifications
     @objc func updateDataNotification (notification: NSNotification) {
         updateData()
     }
