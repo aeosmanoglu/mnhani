@@ -22,6 +22,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     var mgrs = String()
     @IBOutlet weak var distanceLabel: UILabel!
     var annotations = [MGLAnnotation]()
+    var jointAnnotations = [MGLAnnotation]()
     var lines = [MGLPolyline]()
     var styleToggle = UISegmentedControl()
     @IBOutlet weak var zoomInButton: UIButton!
@@ -74,6 +75,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showPointNotification(notification:)), name: NSNotification.Name(rawValue: "Center"), object: nil)
+        
+        
     }
     
     
@@ -166,10 +169,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         mapView.removeAnnotations(annotations)
         if count > 0 {
             for i in 0 ... (count - 1) {
-                let annotation = MGLPointAnnotation()
+                let annotation = CustomPointAnnotationView()
                 annotation.coordinate = CLLocationCoordinate2D(latitude: pointArray[i].pointLatitude, longitude: pointArray[i].pointLongitude)
                 annotation.title = pointArray[i].pointTitle
                 annotation.subtitle = pointArray[i].pointMGRS
+                //annotation.willUseImage = false
                 annotations.append(annotation)
                 mapView.addAnnotation(annotation)
             }
@@ -212,7 +216,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         return true
     }
     
-    /*
+    /* CUSTOM CALLOUT
     func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
         // Instantiate and return our custom callout view.
         return CustomCalloutView(representedObject: annotation)
@@ -244,10 +248,57 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         mapView.showsScale = UserDefaults.standard.bool(forKey: "scaleSwitch")
     }
     
-    func mapView(_ mapView: MGLMapView, regionDidChangeAnimated animated: Bool) {
+    func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
+        
+        if let castAnnotation = annotation as? CustomPointAnnotationView {
+            if (castAnnotation.willUseImage) {
+                return nil;
+            }
+        }
+        
+        
+        
+        // Assign a reuse identifier to be used by both of the annotation views, taking advantage of their similarities.
+        let reuseIdentifier = "DotView"
+        
+        // For better performance, always try to reuse existing annotations.
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        
+        // If there’s no reusable annotation view available, initialize a new one.
+        if annotationView == nil {
+            annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
+            annotationView?.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+            annotationView?.layer.cornerRadius = (annotationView?.frame.size.width)! / 2
+            annotationView?.layer.borderWidth = 4.0
+            annotationView?.layer.borderColor = UIColor.white.cgColor
+            annotationView!.backgroundColor = UIColor(red:0.91, green:0.30, blue:0.24, alpha:1)
+        }
+        
+        if annotation is MGLUserLocation && mapView.userLocation != nil {
+            //return CustomUserLocationAnnotationView()
+            return nil
+        }
+        
+        return annotationView
     }
     
-    func mapView(_ mapView: MGLMapView, didChange mode: MGLUserTrackingMode, animated: Bool) {
+    func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
+        
+        if let castAnnotation = annotation as? CustomPointAnnotationView {
+            if (!castAnnotation.willUseImage) {
+                return nil;
+            }
+        }
+        
+        // For better performance, always try to reuse existing annotations.
+        var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "Plus")
+        
+        // If there is no reusable annotation image available, initialize a new one.
+        if(annotationImage == nil) {
+            annotationImage = MGLAnnotationImage(image: UIImage(named: "Joint")!, reuseIdentifier: "Plus")
+        }
+        
+        return annotationImage
     }
     
     func mapViewDidFinishLoadingMap(_ mapView: MGLMapView) {
@@ -382,6 +433,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     ///DONE BUTTON
     @IBAction func doneButton(_ sender: Any) {
+        mapView.removeAnnotations(jointAnnotations)
         doneView.isHidden = true
         addLineView.isHidden = true
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
@@ -405,6 +457,12 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         let jointLongitude = joint.longitude
         jointLatitudeArray.append(jointLatitude)
         jointLongitudeArray.append(jointLongitude)
+        
+        let jointAnnotation = CustomPointAnnotationView()
+        jointAnnotation.willUseImage = true
+        jointAnnotation.coordinate = joint
+        jointAnnotations.append(jointAnnotation)
+        mapView.addAnnotation(jointAnnotation)
     }
     
     
@@ -421,3 +479,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     }
 
 }
+
+
+
