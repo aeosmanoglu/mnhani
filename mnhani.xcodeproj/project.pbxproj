@@ -29,6 +29,7 @@
 		04BFD57820877F4E00CF3AD5 /* pointsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */; };
 		04BFD57A2087BC7A00CF3AD5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */; };
 		04D9CCCC207F72DF002A9B5C /* currentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9CCCB207F72DF002A9B5C /* currentViewController.swift */; };
+		04EE5AC620BBF7FE001E4462 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE5AC520BBF7FE001E4462 /* CustomCalloutView.swift */; };
 		04F4B9F22097C70B0056D00A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 04F4B9F42097C70B0056D00A /* InfoPlist.strings */; };
 		C284CE742EB2BAAB31EB6FEB /* Pods_mnhani.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93DB0C12AA0184EED72C2FB8 /* Pods_mnhani.framework */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,7 @@
 		04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointsTableViewController.swift; sourceTree = "<group>"; };
 		04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		04D9CCCB207F72DF002A9B5C /* currentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentViewController.swift; sourceTree = "<group>"; };
+		04EE5AC520BBF7FE001E4462 /* CustomCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
 		04F4B9F32097C70B0056D00A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		04F4B9F52097C7130056D00A /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		93DB0C12AA0184EED72C2FB8 /* Pods_mnhani.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mnhani.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				047D80BB20862784001FD38C /* UserLocationButton.swift */,
 				04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */,
 				045D33FE20B6B8B200158E1A /* LineDataManager.swift */,
+				04EE5AC520BBF7FE001E4462 /* CustomCalloutView.swift */,
 				0458E1D22097104000076FC8 /* Localizable.strings */,
 				04510F24207CBE5F00F25E98 /* Assets.xcassets */,
 				04510F21207CBE5D00F25E98 /* mnhani.xcdatamodeld */,
@@ -315,6 +318,7 @@
 				04510F1D207CBE5D00F25E98 /* mapViewController.swift in Sources */,
 				041EA607209745A9001E8944 /* settingsViewController.swift in Sources */,
 				04BFD57820877F4E00CF3AD5 /* pointsTableViewController.swift in Sources */,
+				04EE5AC620BBF7FE001E4462 /* CustomCalloutView.swift in Sources */,
 				046CF351209913730024DF69 /* LatLon2UTM.m in Sources */,
 				047D80BC20862784001FD38C /* UserLocationButton.swift in Sources */,
 				046CF352209913730024DF69 /* MGRS2LatLon.m in Sources */,

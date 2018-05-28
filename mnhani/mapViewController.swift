@@ -36,10 +36,11 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     var jointLongitudeArray = [Double]()
     
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         mapView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -48,7 +49,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         mapView.userTrackingMode = .follow
         mapView.showsUserHeadingIndicator = true
         mapView.styleURL = MGLStyle.outdoorsStyleURL
-        
         
         view.addSubview(mapView)
         view.insertSubview(targetView, aboveSubview: mapView)
@@ -74,8 +74,10 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showPointNotification(notification:)), name: NSNotification.Name(rawValue: "Center"), object: nil)
-        
     }
+    
+    
+    
     
     
     // MARK: - Map Buttons
@@ -150,6 +152,9 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     }
     
     
+    
+    
+    
     // MARK: - Core Data Fetching
     @objc func updateData() {
         
@@ -194,24 +199,29 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
                     mapView.addOverlays(lines)
                     coordinates.removeAll()
                 }
-                
             }
         }
     }
+    
+    
+    
+    
     
     // MARK: - Map View
     func mapView(_ mapView: MGLMapView, annotationCanShowCallout annotation: MGLAnnotation) -> Bool {
         return true
     }
     
+    /*
+    func mapView(_ mapView: MGLMapView, calloutViewFor annotation: MGLAnnotation) -> MGLCalloutView? {
+        // Instantiate and return our custom callout view.
+        return CustomCalloutView(representedObject: annotation)
+    } */
+    
     func mapView(_ mapView: MGLMapView, didSelect annotation: MGLAnnotation) {
         if UserDefaults.standard.bool(forKey: "centerSwitch") {
             mapView.setCenter(annotation.coordinate, animated: true)
         }
-    }
-    
-    func mapView(_ mapView: MGLMapView, didDeselect annotation: MGLAnnotation) {
-        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -251,6 +261,9 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             UserDefaults.standard.set(false, forKey: "ShowPoint")
         }
     }
+    
+    
+    
     
     
     // MARK: - Buttons
@@ -393,6 +406,9 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         jointLatitudeArray.append(jointLatitude)
         jointLongitudeArray.append(jointLongitude)
     }
+    
+    
+    
     
     
     // MARK: -Notifications
