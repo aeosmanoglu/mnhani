@@ -21,6 +21,8 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
         navigationWithSearchBar()
         updateData()
         
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
     }
     
@@ -109,7 +111,6 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
             NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
             tableView.endUpdates()
         } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
     
@@ -130,6 +131,14 @@ class pointsTableViewController: UITableViewController, UISearchResultsUpdating 
     }
     
     // MARK: - Buttons
+    func button () {
+        let size: CGFloat = 56
+        let button = UIButton(frame: CGRect(origin: CGPoint(x: self.view.frame.width - size - 16, y: self.view.frame.height - size - 72 - 50), size: CGSize(width: size, height: size)))
+        button.backgroundColor = UIColor.black
+        button.layer.cornerRadius = size / 2
+        tabBarController?.selectedViewController?.view.addSubview(button)
+    }
+    
     @IBAction func addButton(_ sender: Any) {
         performSegue(withIdentifier: "AddSegue", sender: self)
     }

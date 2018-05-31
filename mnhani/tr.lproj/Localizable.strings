@@ -18,6 +18,7 @@
 "Warning" = "Uyarı";
 "YouRAbout2DeleteAllSavedPoints!" = "Tüm kayıtlı noktaları silmek üzeresiniz! Bu işlem geri alınamaz.";
 "YouRAbout2DeleteSavedPoints!" = "Kayıtlı noktayı silmek üzeresiniz! Bu işlem geri alınamaz.";
+"YouRAbout2DeleteAllSavedLines!" = "Tüm kayıtlı çizgileri silmek üzeresiniz! Bu işlem geri alınamaz.";
 "Delete" = "Sil";
 "Deleted" = "Silindi";
 "Done" = "Tamam";
@@ -30,3 +31,4 @@
 "Point" = "Nokta";
 "Line" = "Çizgi";
 "NewLine" = "Yeni Çizgi";
+"LineError" = "İptal edildi. En az iki nokta kaydetmeniz gerekli.";

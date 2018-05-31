@@ -18,6 +18,7 @@
 "Warning" = "Warning";
 "YouRAbout2DeleteAllSavedPoints!" = "You are about to delete all saved points! You can not undone.";
 "YouRAbout2DeleteSavedPoints!" = "You are about to delete this point! You can not undone.";
+"YouRAbout2DeleteAllSavedLines!" = "You are about to delete all saved lines! You can not undone.";
 "Delete" = "Delete";
 "Deleted" = "Deleted";
 "Done" = "Done";
@@ -30,3 +31,4 @@
 "Point" = "Point";
 "Line" = "Line";
 "NewLine" = "New Line";
+"LineError" = "Cancelled. You have to add two point at least";

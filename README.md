@@ -1,8 +1,8 @@
 # mnhani
 iOS için Askeri GPS Uygulaması - *Military GPS Application for iOS*
 
-[![Version](https://img.shields.io/badge/Version-3.0-ff9500.svg)](https://swift.org/)
-[![Build](https://img.shields.io/badge/Build-6-ff9500.svg)](https://swift.org/)
+[![Version](https://img.shields.io/badge/Version-3.1-ff9500.svg)](https://swift.org/)
+[![Build](https://img.shields.io/badge/Build-7-ff9500.svg)](https://swift.org/)
 [![Language](https://img.shields.io/badge/Swift-4.1-ff9500.svg)](https://swift.org/)
 [![Mapbox](https://img.shields.io/badge/Mapbox-4.0.1-4264fb.svg)](https://www.mapbox.com/)
 [![Material](https://img.shields.io/badge/Material-55.0.4-ff9500.svg)](https://material.io/)
@@ -38,7 +38,7 @@ Görseller için [linke](http://abuzeremre.com/mnhani-app) tıklayınız. - *See
 ### 2.3 İşaretleme Özellikleri - *Mark-Up Features*
 - [x] Nokta ekleme - *Add Custom Annotations*
 - [ ] Eklenen noktaları gruplama - *Grouped Annotations*
-- [ ] Çizgi ekleme - *Add Lines*
+- [x] Çizgi ekleme - *Add Lines*
 - [ ] Alan ekleme - *Add Area*
 ### 2.4 Diğer
 - [x] Kullanıcı Kılavuzu - *User Guide* :point_right: [wiki](https://github.com/aeosmanoglu/mnhani/wiki)

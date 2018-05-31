@@ -22,7 +22,7 @@ struct line {
     }
 }
 
-class lineDataManager: NSObject {
+class LineDataManager: NSObject {
     
     // Delegate
     private class func getContext() -> NSManagedObjectContext {

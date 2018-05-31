@@ -50,6 +50,26 @@ class settingsViewController: UIViewController {
         present(alertController, animated: true)
     }
     
+    @IBAction func deleteAllLinesButton(_ sender: Any) {
+        let alertController = UIAlertController(title: NSLocalizedString("Warning", comment: ""), message: NSLocalizedString("YouRAbout2DeleteAllSavedLines!", comment: ""), preferredStyle: .alert)
+        
+        let deleteButton = UIAlertAction(title: NSLocalizedString("Delete", comment: ""), style: .destructive) { (action: UIAlertAction) in
+            LineDataManager.cleanCoreData()
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
+            
+            let message = MDCSnackbarMessage()
+            message.text = NSLocalizedString("Deleted", comment: "")
+            MDCSnackbarManager.setBottomOffset(50)
+            MDCSnackbarManager.show(message)
+        }
+        
+        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .default, handler: nil)
+        
+        alertController.addAction(deleteButton)
+        alertController.addAction(cancelButton)
+        present(alertController, animated: true)
+    }
+    
     // MARK: - Map
     @IBAction func centerSwitch(_ sender: UISwitch) {
         UserDefaults.standard.set(sender.isOn, forKey: "centerSwitch")

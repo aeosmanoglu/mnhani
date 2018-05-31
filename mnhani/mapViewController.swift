@@ -173,7 +173,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
                 annotation.coordinate = CLLocationCoordinate2D(latitude: pointArray[i].pointLatitude, longitude: pointArray[i].pointLongitude)
                 annotation.title = pointArray[i].pointTitle
                 annotation.subtitle = pointArray[i].pointMGRS
-                //annotation.willUseImage = false
                 annotations.append(annotation)
                 mapView.addAnnotation(annotation)
             }
@@ -182,7 +181,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         ///LINE
         var linesArray = [line]()
         linesArray.removeAll()
-        linesArray = lineDataManager.fetch()
+        linesArray = LineDataManager.fetch()
         let linesCount = linesArray.count
         mapView.removeOverlays(lines)
         if linesCount > 0 {
@@ -244,27 +243,17 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         let converter = GeoCoordinateConverter.shared()
         mgrs = (converter?.mgrs(fromLatitude: mapView.centerCoordinate.latitude, longitude: mapView.centerCoordinate.longitude))!
         navigationItem.title = mgrs
-        
         mapView.showsScale = UserDefaults.standard.bool(forKey: "scaleSwitch")
     }
     
     func mapView(_ mapView: MGLMapView, viewFor annotation: MGLAnnotation) -> MGLAnnotationView? {
-        
         if let castAnnotation = annotation as? CustomPointAnnotationView {
             if (castAnnotation.willUseImage) {
                 return nil;
             }
         }
-        
-        
-        
-        // Assign a reuse identifier to be used by both of the annotation views, taking advantage of their similarities.
         let reuseIdentifier = "DotView"
-        
-        // For better performance, always try to reuse existing annotations.
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
-        
-        // If there’s no reusable annotation view available, initialize a new one.
         if annotationView == nil {
             annotationView = MGLAnnotationView(reuseIdentifier: reuseIdentifier)
             annotationView?.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
@@ -273,31 +262,23 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             annotationView?.layer.borderColor = UIColor.white.cgColor
             annotationView!.backgroundColor = UIColor(red:0.91, green:0.30, blue:0.24, alpha:1)
         }
-        
         if annotation is MGLUserLocation && mapView.userLocation != nil {
-            //return CustomUserLocationAnnotationView()
+            ///return CustomUserLocationAnnotationView()
             return nil
         }
-        
         return annotationView
     }
     
     func mapView(_ mapView: MGLMapView, imageFor annotation: MGLAnnotation) -> MGLAnnotationImage? {
-        
         if let castAnnotation = annotation as? CustomPointAnnotationView {
             if (!castAnnotation.willUseImage) {
                 return nil;
             }
         }
-        
-        // For better performance, always try to reuse existing annotations.
         var annotationImage = mapView.dequeueReusableAnnotationImage(withIdentifier: "Plus")
-        
-        // If there is no reusable annotation image available, initialize a new one.
         if(annotationImage == nil) {
             annotationImage = MGLAnnotationImage(image: UIImage(named: "Joint")!, reuseIdentifier: "Plus")
         }
-        
         return annotationImage
     }
     
@@ -441,13 +422,20 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             self.copyView.isHidden = false
             self.addView.isHidden = false
         }
-        lineDataManager.store(title: lineTitle, latitude: convert().arrayToString(jointLatitudeArray), longitude: convert().arrayToString(jointLongitudeArray))
-        NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
-        
         let message = MDCSnackbarMessage()
-        message.text = NSLocalizedString("Saved", comment: "")
         MDCSnackbarManager.setBottomOffset(50)
-        MDCSnackbarManager.show(message)
+
+        if jointLatitudeArray.count > 1 {
+            LineDataManager.store(title: lineTitle, latitude: convert().arrayToString(jointLatitudeArray), longitude: convert().arrayToString(jointLongitudeArray))
+            NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
+            
+            message.text = NSLocalizedString("Saved", comment: "")
+            MDCSnackbarManager.show(message)
+        } else {
+            message.text = NSLocalizedString("LineError", comment: "")
+            MDCSnackbarManager.show(message)
+        }
+        
     }
     
     ///ADD JOINT
