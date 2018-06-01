@@ -26,9 +26,9 @@
 		046CF353209913730024DF69 /* UTM2LatLon.m in Sources */ = {isa = PBXBuildFile; fileRef = 046CF34E209913730024DF69 /* UTM2LatLon.m */; };
 		04704AF7208B3226001578F9 /* addViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04704AF6208B3226001578F9 /* addViewController.swift */; };
 		047D80BC20862784001FD38C /* UserLocationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047D80BB20862784001FD38C /* UserLocationButton.swift */; };
-		04BFD57820877F4E00CF3AD5 /* pointsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */; };
 		04BFD57A2087BC7A00CF3AD5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */; };
 		04D9CCCC207F72DF002A9B5C /* currentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9CCCB207F72DF002A9B5C /* currentViewController.swift */; };
+		04E97C2220C02CD50003236E /* pointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E97C2120C02CD50003236E /* pointsViewController.swift */; };
 		04EE5AC620BBF7FE001E4462 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE5AC520BBF7FE001E4462 /* CustomCalloutView.swift */; };
 		04EE5AC820BC0E00001E4462 /* CustomPointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE5AC720BC0E00001E4462 /* CustomPointAnnotationView.swift */; };
 		04EE5ACA20BC0E96001E4462 /* CustomUserLocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE5AC920BC0E96001E4462 /* CustomUserLocationAnnotationView.swift */; };
@@ -71,9 +71,9 @@
 		047D80BB20862784001FD38C /* UserLocationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserLocationButton.swift; sourceTree = "<group>"; };
 		04A9421120944D6A005EE758 /* ScreenShots.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ScreenShots.xcassets; sourceTree = "<group>"; };
 		04B3E1A6209658AC007A4F2D /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointsTableViewController.swift; sourceTree = "<group>"; };
 		04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		04D9CCCB207F72DF002A9B5C /* currentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentViewController.swift; sourceTree = "<group>"; };
+		04E97C2120C02CD50003236E /* pointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointsViewController.swift; sourceTree = "<group>"; };
 		04EE5AC520BBF7FE001E4462 /* CustomCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
 		04EE5AC720BC0E00001E4462 /* CustomPointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotationView.swift; sourceTree = "<group>"; };
 		04EE5AC920BC0E96001E4462 /* CustomUserLocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserLocationAnnotationView.swift; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 				04510F1A207CBE5D00F25E98 /* AppDelegate.swift */,
 				04D9CCCB207F72DF002A9B5C /* currentViewController.swift */,
 				04510F1C207CBE5D00F25E98 /* mapViewController.swift */,
-				04BFD57720877F4E00CF3AD5 /* pointsTableViewController.swift */,
+				04E97C2120C02CD50003236E /* pointsViewController.swift */,
 				04704AF6208B3226001578F9 /* addViewController.swift */,
 				045A1AC820950F140062DF80 /* editViewController.swift */,
 				041EA606209745A9001E8944 /* settingsViewController.swift */,
@@ -318,6 +318,7 @@
 				046CF350209913730024DF69 /* GeoCoordinateConverter.m in Sources */,
 				046CF353209913730024DF69 /* UTM2LatLon.m in Sources */,
 				04D9CCCC207F72DF002A9B5C /* currentViewController.swift in Sources */,
+				04E97C2220C02CD50003236E /* pointsViewController.swift in Sources */,
 				04510F23207CBE5D00F25E98 /* mnhani.xcdatamodeld in Sources */,
 				044445292081106200E889EC /* Convert.swift in Sources */,
 				04EE5AC820BC0E00001E4462 /* CustomPointAnnotationView.swift in Sources */,
@@ -325,7 +326,6 @@
 				04510F1D207CBE5D00F25E98 /* mapViewController.swift in Sources */,
 				041EA607209745A9001E8944 /* settingsViewController.swift in Sources */,
 				04EE5ACA20BC0E96001E4462 /* CustomUserLocationAnnotationView.swift in Sources */,
-				04BFD57820877F4E00CF3AD5 /* pointsTableViewController.swift in Sources */,
 				04EE5AC620BBF7FE001E4462 /* CustomCalloutView.swift in Sources */,
 				046CF351209913730024DF69 /* LatLon2UTM.m in Sources */,
 				047D80BC20862784001FD38C /* UserLocationButton.swift in Sources */,
