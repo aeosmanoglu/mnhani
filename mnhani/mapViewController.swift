@@ -75,8 +75,6 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(showPointNotification(notification:)), name: NSNotification.Name(rawValue: "Center"), object: nil)
-        
-        
     }
     
     
@@ -186,22 +184,23 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         mapView.removeOverlays(lines)
         if linesCount > 0 {
             for i in 0 ... (linesCount - 1) {
-                let latitude = convert().stringToArray(linesArray[i].lineLatitude)
-                let longitude = convert().stringToArray(linesArray[i].lineLongitude)
+                var latitude = convert().stringToArray(linesArray[i].lineLatitude)
+                var longitude = convert().stringToArray(linesArray[i].lineLongitude)
                 var coordinates = [CLLocationCoordinate2D]()
                 
                 if (latitude?.count)! >= 1 {
                     for j in 0 ... ((latitude?.count)! - 1) {
                         coordinates.append(CLLocationCoordinate2D(latitude: latitude![j], longitude: longitude![j]))
                     }
+                    if coordinates.count >= 2 {
+                        let polyline = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
+                        lines.append(polyline)
+                        mapView.addOverlays(lines)
+                    }
                 }
-                
-                if coordinates.count >= 2 {
-                    let polyline = MGLPolyline(coordinates: coordinates, count: UInt(coordinates.count))
-                    lines.append(polyline)
-                    mapView.addOverlays(lines)
-                    coordinates.removeAll()
-                }
+                coordinates.removeAll()
+                latitude?.removeAll()
+                longitude?.removeAll()
             }
         }
     }
@@ -435,7 +434,8 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
             message.text = NSLocalizedString("LineError", comment: "")
             MDCSnackbarManager.show(message)
         }
-        
+        jointLatitudeArray.removeAll()
+        jointLongitudeArray.removeAll()
     }
     
     ///ADD JOINT
@@ -457,7 +457,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
     
     
     
-    // MARK: -Notifications
+    // MARK: - Notifications
     @objc func updateDataNotification (notification: NSNotification) {
         updateData()
     }

@@ -1,18 +1,18 @@
 //
-//  pointsViewController.swift
+//  linesViewController.swift
 //  mnhani
 //
-//  Created by Abuzer Emre Osmanoğlu on 31.05.2018.
+//  Created by Abuzer Emre Osmanoğlu on 1.06.2018.
 //  Copyright © 2018 Abuzer Emre Osmanoğlu. All rights reserved.
 //
 
 import UIKit
 
-class pointsViewController: UIViewController, UISearchResultsUpdating, UITableViewDataSource, UITableViewDelegate {
-    
+class linesViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource {
+
     @IBOutlet weak var tableView: UITableView!
-    var pointArray = [point]()
-    var filteredArray = [point]()
+    var lineArray = [line]()
+    var filteredArray = [line]()
     let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
@@ -25,6 +25,7 @@ class pointsViewController: UIViewController, UISearchResultsUpdating, UITableVi
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateDataNotification(notification:)), name: NSNotification.Name(rawValue: "Update"), object: nil)
     }
+
     // MARK: - Navigation and Search Bar
     func navigationWithSearchBar() {
         self.navigationItem.leftBarButtonItem = self.editButtonItem
@@ -41,8 +42,8 @@ class pointsViewController: UIViewController, UISearchResultsUpdating, UITableVi
     }
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
-        filteredArray = pointArray.filter({( point : point) -> Bool in
-            return point.pointTitle.lowercased().contains(searchText.lowercased())
+        filteredArray = lineArray.filter({( line : line) -> Bool in
+            return line.lineTitle.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
     }
@@ -57,8 +58,8 @@ class pointsViewController: UIViewController, UISearchResultsUpdating, UITableVi
     
     // MARK: - Core Data Fetching
     @objc func updateData() {
-        pointArray.removeAll()
-        pointArray = CoreDataManager.fetch()
+        lineArray.removeAll()
+        lineArray = LineDataManager.fetch()
         tableView.reloadData()
     }
     
@@ -67,19 +68,19 @@ class pointsViewController: UIViewController, UISearchResultsUpdating, UITableVi
         if isFiltering() {
             return filteredArray.count
         }
-        return pointArray.count
+        return lineArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCell")
-        let cellRow : point
+        let cellRow : line
         if isFiltering() {
             cellRow = filteredArray[indexPath.row]
         } else {
-            cellRow = pointArray[indexPath.row]
+            cellRow = lineArray[indexPath.row]
         }
-        cell?.textLabel?.text = cellRow.pointTitle
-        cell?.detailTextLabel?.text = cellRow.pointMGRS
+        cell?.textLabel?.text = cellRow.lineTitle
+        cell?.detailTextLabel?.text = "\(convert().stringToArray(cellRow.lineLatitude).count)" + " " + NSLocalizedString("Joint", comment: "")
         return cell!
     }
     
@@ -100,33 +101,15 @@ class pointsViewController: UIViewController, UISearchResultsUpdating, UITableVi
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
-            pointArray.remove(at: indexPath.row)
-            var point: [Point]? = nil
-            point = CoreDataManager.fetchObject()
-            CoreDataManager.delete (point: point![indexPath.row])
+            lineArray.remove(at: indexPath.row)
+            var line: [Line]? = nil
+            line = LineDataManager.fetchObject()
+            LineDataManager.delete (line: line![indexPath.row])
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
             NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
             tableView.endUpdates()
         } else if editingStyle == .insert {
-        }
-    }
-    
-    
-    
-    ///
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if isFiltering() {
-        } else {
-            performSegue(withIdentifier: "EditSegue", sender: self)
-        }
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "EditSegue" {
-            let edit = segue.destination as! editViewController
-            edit.indexPFSR = (tableView.indexPathForSelectedRow?.row)!
         }
     }
     
@@ -139,5 +122,4 @@ class pointsViewController: UIViewController, UISearchResultsUpdating, UITableVi
     @objc func updateDataNotification (notification: NSNotification) {
         updateData()
     }
-
 }

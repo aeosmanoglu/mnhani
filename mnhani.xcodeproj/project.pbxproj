@@ -29,6 +29,7 @@
 		04BFD57A2087BC7A00CF3AD5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */; };
 		04D9CCCC207F72DF002A9B5C /* currentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D9CCCB207F72DF002A9B5C /* currentViewController.swift */; };
 		04E97C2220C02CD50003236E /* pointsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E97C2120C02CD50003236E /* pointsViewController.swift */; };
+		04E97C2420C17FDE0003236E /* linesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04E97C2320C17FDE0003236E /* linesViewController.swift */; };
 		04EE5AC620BBF7FE001E4462 /* CustomCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE5AC520BBF7FE001E4462 /* CustomCalloutView.swift */; };
 		04EE5AC820BC0E00001E4462 /* CustomPointAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE5AC720BC0E00001E4462 /* CustomPointAnnotationView.swift */; };
 		04EE5ACA20BC0E96001E4462 /* CustomUserLocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EE5AC920BC0E96001E4462 /* CustomUserLocationAnnotationView.swift */; };
@@ -74,6 +75,7 @@
 		04BFD5792087BC7A00CF3AD5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		04D9CCCB207F72DF002A9B5C /* currentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentViewController.swift; sourceTree = "<group>"; };
 		04E97C2120C02CD50003236E /* pointsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pointsViewController.swift; sourceTree = "<group>"; };
+		04E97C2320C17FDE0003236E /* linesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linesViewController.swift; sourceTree = "<group>"; };
 		04EE5AC520BBF7FE001E4462 /* CustomCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCalloutView.swift; sourceTree = "<group>"; };
 		04EE5AC720BC0E00001E4462 /* CustomPointAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPointAnnotationView.swift; sourceTree = "<group>"; };
 		04EE5AC920BC0E96001E4462 /* CustomUserLocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUserLocationAnnotationView.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				04704AF6208B3226001578F9 /* addViewController.swift */,
 				045A1AC820950F140062DF80 /* editViewController.swift */,
 				041EA606209745A9001E8944 /* settingsViewController.swift */,
+				04E97C2320C17FDE0003236E /* linesViewController.swift */,
 				04510F1E207CBE5D00F25E98 /* Main.storyboard */,
 				04510F26207CBE5F00F25E98 /* LaunchScreen.storyboard */,
 				045DF3B2207F81CF0079362C /* CardView.swift */,
@@ -217,7 +220,7 @@
 				TargetAttributes = {
 					04510F16207CBE5D00F25E98 = {
 						CreatedOnToolsVersion = 9.3;
-						LastSwiftMigration = 0930;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -329,6 +332,7 @@
 				04EE5AC620BBF7FE001E4462 /* CustomCalloutView.swift in Sources */,
 				046CF351209913730024DF69 /* LatLon2UTM.m in Sources */,
 				047D80BC20862784001FD38C /* UserLocationButton.swift in Sources */,
+				04E97C2420C17FDE0003236E /* linesViewController.swift in Sources */,
 				046CF352209913730024DF69 /* MGRS2LatLon.m in Sources */,
 				046CF34F209913730024DF69 /* LatLon2MGRS.m in Sources */,
 				04510F1B207CBE5D00F25E98 /* AppDelegate.swift in Sources */,
@@ -514,7 +518,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mnhani/mnhani-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -535,7 +539,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.abuzeremre.mnhani;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mnhani/mnhani-Bridging-Header.h";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

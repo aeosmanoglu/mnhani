@@ -9,7 +9,7 @@
 "CoordinatesCopiedToClipboard" = "Koordinat kopyalandı";
 "NewPoint" = "Yeni Nokta";
 "PleaseWriteYourPointName!" = "Lütfen noktanın adını yazınız!";
-"PleaseWriteYourPointName!" = "Lütfen çizginin adını yazınız!";
+"PleaseWriteYourLineName!" = "Lütfen çizginin adını yazınız!";
 "Save" = "Kaydet";
 "Saved" = "Kaydedildi";
 "Cancel" = "İptal";
@@ -32,3 +32,4 @@
 "Line" = "Çizgi";
 "NewLine" = "Yeni Çizgi";
 "LineError" = "İptal edildi. En az iki nokta kaydetmeniz gerekli.";
+"Joint" = "nokta";
