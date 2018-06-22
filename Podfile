@@ -7,5 +7,6 @@ target 'mnhani' do
   pod 'Mapbox-iOS-SDK'
   pod 'FormToolbar'
   pod 'MaterialComponents'
+  pod 'Google-Mobile-Ads-SDK'
   
 end

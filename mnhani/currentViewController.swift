@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import MaterialComponents
+import GoogleMobileAds
 
 
 class currentViewController: UIViewController, CLLocationManagerDelegate {
@@ -22,6 +23,7 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var altitudeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationTenLabel: UILabel!
+    @IBOutlet weak var bannerView: GADBannerView!
     var firstOpen = UserDefaults.standard.bool(forKey: "FirstOpen")
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,7 +32,6 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
             UserDefaults.standard.set(firstOpen, forKey: "FirstOpen")
             _ = self.tabBarController?.selectedIndex = 1
         }
-        
     }
     
     override func viewDidLoad() {
@@ -40,6 +41,7 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         
+        adBanner()
     }
     
     // MARK: - Location
@@ -105,4 +107,10 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
         present(alertController, animated: true)
     }
     
+    // MARK: -BANNER
+    func adBanner() {
+        bannerView.adUnitID = "ca-app-pub-5155000980855805/8753378214"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+    }
 }

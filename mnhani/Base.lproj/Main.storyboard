@@ -546,6 +546,14 @@
                                     <action selector="copyButton:" destination="93F-UQ-3UH" eventType="touchUpInside" id="NVy-CQ-Uky"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SRV-8s-UnZ" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="381" width="320" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1Aa-9D-zdk"/>
+                                    <constraint firstAttribute="width" constant="320" id="3sN-qm-gPB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -558,18 +566,22 @@
                             <constraint firstItem="U5X-cS-5B5" firstAttribute="top" secondItem="p58-O1-aW6" secondAttribute="bottom" constant="16" id="Nql-bg-sMD"/>
                             <constraint firstItem="U5X-cS-5B5" firstAttribute="leading" secondItem="YbO-Af-vQG" secondAttribute="leading" constant="16" id="Q2U-hE-ZDv"/>
                             <constraint firstItem="YbO-Af-vQG" firstAttribute="bottom" secondItem="hYu-qc-epL" secondAttribute="bottom" constant="72" id="QEs-uM-fxV"/>
+                            <constraint firstItem="SRV-8s-UnZ" firstAttribute="trailing" secondItem="YbO-Af-vQG" secondAttribute="trailing" id="TC2-fz-ipy"/>
+                            <constraint firstItem="SRV-8s-UnZ" firstAttribute="leading" secondItem="YbO-Af-vQG" secondAttribute="leading" id="VkX-Mt-h9e"/>
                             <constraint firstItem="U5X-cS-5B5" firstAttribute="centerX" secondItem="p58-O1-aW6" secondAttribute="centerX" id="YQB-lF-2KM"/>
                             <constraint firstItem="p58-O1-aW6" firstAttribute="centerX" secondItem="YZd-Ny-wFj" secondAttribute="centerX" id="YYs-YQ-vQ4"/>
                             <constraint firstItem="U5X-cS-5B5" firstAttribute="trailing" secondItem="ZW8-Px-XyC" secondAttribute="trailing" id="eJA-bR-vS9"/>
                             <constraint firstItem="Qby-U2-KoP" firstAttribute="leading" secondItem="YbO-Af-vQG" secondAttribute="leading" constant="16" id="fFA-1Z-R87"/>
                             <constraint firstItem="U5X-cS-5B5" firstAttribute="leading" secondItem="ZW8-Px-XyC" secondAttribute="leading" id="i7U-K0-bjj"/>
                             <constraint firstItem="YbO-Af-vQG" firstAttribute="trailing" secondItem="hYu-qc-epL" secondAttribute="trailing" constant="16" id="kRr-Kp-x9B"/>
+                            <constraint firstItem="SRV-8s-UnZ" firstAttribute="bottom" secondItem="YbO-Af-vQG" secondAttribute="bottom" id="nYT-LC-ZTS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YbO-Af-vQG"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Current" image="Now" id="HB7-vb-IHs"/>
                     <connections>
                         <outlet property="altitudeLabel" destination="Q7G-sj-qqy" id="QIC-QH-M3j"/>
+                        <outlet property="bannerView" destination="SRV-8s-UnZ" id="Zzo-AJ-EX6"/>
                         <outlet property="locationLabel" destination="vkc-dW-TsW" id="XR8-21-aPS"/>
                         <outlet property="locationTenLabel" destination="Qb0-gK-5le" id="maj-RT-sM8"/>
                     </connections>
