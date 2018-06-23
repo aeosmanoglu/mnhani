@@ -9,6 +9,17 @@
 /* Begin PBXBuildFile section */
 		041EA607209745A9001E8944 /* settingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041EA606209745A9001E8944 /* settingsViewController.swift */; };
 		044445292081106200E889EC /* Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044445282081106200E889EC /* Convert.swift */; };
+		0445C5CF20DD9375000F809B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0445C5CE20DD9375000F809B /* NotificationCenter.framework */; };
+		0445C5D220DD9375000F809B /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0445C5D120DD9375000F809B /* TodayViewController.swift */; };
+		0445C5D520DD9375000F809B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0445C5D320DD9375000F809B /* MainInterface.storyboard */; };
+		0445C5D920DD9375000F809B /* widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0445C5CD20DD9375000F809B /* widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0445C5F120DD99B9000F809B /* MGRS2LatLon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445C5EA20DD99B4000F809B /* MGRS2LatLon.m */; };
+		0445C5F220DD99B9000F809B /* LatLon2UTM.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445C5EB20DD99B5000F809B /* LatLon2UTM.m */; };
+		0445C5F320DD99B9000F809B /* GeoCoordinateConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445C5EE20DD99B7000F809B /* GeoCoordinateConverter.m */; };
+		0445C5F420DD99B9000F809B /* UTM2LatLon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445C5EF20DD99B8000F809B /* UTM2LatLon.m */; };
+		0445C5F520DD99B9000F809B /* LatLon2MGRS.m in Sources */ = {isa = PBXBuildFile; fileRef = 0445C5F020DD99B9000F809B /* LatLon2MGRS.m */; };
+		0445C5F620DDB1EC000F809B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0458E1D22097104000076FC8 /* Localizable.strings */; };
+		0445C5F720DDBA4F000F809B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04510F24207CBE5F00F25E98 /* Assets.xcassets */; };
 		04510F1B207CBE5D00F25E98 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510F1A207CBE5D00F25E98 /* AppDelegate.swift */; };
 		04510F1D207CBE5D00F25E98 /* mapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04510F1C207CBE5D00F25E98 /* mapViewController.swift */; };
 		04510F20207CBE5D00F25E98 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04510F1E207CBE5D00F25E98 /* Main.storyboard */; };
@@ -37,11 +48,52 @@
 		C284CE742EB2BAAB31EB6FEB /* Pods_mnhani.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93DB0C12AA0184EED72C2FB8 /* Pods_mnhani.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0445C5D720DD9375000F809B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 04510F0F207CBE5D00F25E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0445C5CC20DD9375000F809B;
+			remoteInfo = widget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0445C5DD20DD9375000F809B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0445C5D920DD9375000F809B /* widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		041EA606209745A9001E8944 /* settingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = settingsViewController.swift; sourceTree = "<group>"; };
 		04217CC2208959C3002FE09D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		043C2FE12097CA4C006C2A41 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		044445282081106200E889EC /* Convert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Convert.swift; sourceTree = "<group>"; };
+		0445C5CD20DD9375000F809B /* widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		0445C5CE20DD9375000F809B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		0445C5D120DD9375000F809B /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		0445C5D420DD9375000F809B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		0445C5D620DD9375000F809B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0445C5E520DD99AE000F809B /* widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "widget-Bridging-Header.h"; sourceTree = "<group>"; };
+		0445C5E620DD99B0000F809B /* LatLon2UTM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatLon2UTM.h; sourceTree = "<group>"; };
+		0445C5E720DD99B1000F809B /* LatLon2MGRS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LatLon2MGRS.h; sourceTree = "<group>"; };
+		0445C5E820DD99B2000F809B /* MGRS2LatLon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGRS2LatLon.h; sourceTree = "<group>"; };
+		0445C5E920DD99B3000F809B /* GeoCoordinateConverter-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GeoCoordinateConverter-Prefix.pch"; sourceTree = "<group>"; };
+		0445C5EA20DD99B4000F809B /* MGRS2LatLon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGRS2LatLon.m; sourceTree = "<group>"; };
+		0445C5EB20DD99B5000F809B /* LatLon2UTM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatLon2UTM.m; sourceTree = "<group>"; };
+		0445C5EC20DD99B5000F809B /* GeoCoordinateConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeoCoordinateConverter.h; sourceTree = "<group>"; };
+		0445C5ED20DD99B6000F809B /* UTM2LatLon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UTM2LatLon.h; sourceTree = "<group>"; };
+		0445C5EE20DD99B7000F809B /* GeoCoordinateConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeoCoordinateConverter.m; sourceTree = "<group>"; };
+		0445C5EF20DD99B8000F809B /* UTM2LatLon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UTM2LatLon.m; sourceTree = "<group>"; };
+		0445C5F020DD99B9000F809B /* LatLon2MGRS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LatLon2MGRS.m; sourceTree = "<group>"; };
 		04510F17207CBE5D00F25E98 /* mnhani.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mnhani.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04510F1A207CBE5D00F25E98 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04510F1C207CBE5D00F25E98 /* mapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +139,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0445C5CA20DD9375000F809B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0445C5CF20DD9375000F809B /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04510F14207CBE5D00F25E98 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,6 +158,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0445C5D020DD9375000F809B /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				0445C5D120DD9375000F809B /* TodayViewController.swift */,
+				0445C5D320DD9375000F809B /* MainInterface.storyboard */,
+				0445C5D620DD9375000F809B /* Info.plist */,
+				0445C5E920DD99B3000F809B /* GeoCoordinateConverter-Prefix.pch */,
+				0445C5EC20DD99B5000F809B /* GeoCoordinateConverter.h */,
+				0445C5EE20DD99B7000F809B /* GeoCoordinateConverter.m */,
+				0445C5E720DD99B1000F809B /* LatLon2MGRS.h */,
+				0445C5F020DD99B9000F809B /* LatLon2MGRS.m */,
+				0445C5E620DD99B0000F809B /* LatLon2UTM.h */,
+				0445C5EB20DD99B5000F809B /* LatLon2UTM.m */,
+				0445C5E820DD99B2000F809B /* MGRS2LatLon.h */,
+				0445C5EA20DD99B4000F809B /* MGRS2LatLon.m */,
+				0445C5ED20DD99B6000F809B /* UTM2LatLon.h */,
+				0445C5EF20DD99B8000F809B /* UTM2LatLon.m */,
+				0445C5E520DD99AE000F809B /* widget-Bridging-Header.h */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
 		04510F0E207CBE5D00F25E98 = {
 			isa = PBXGroup;
 			children = (
@@ -105,6 +187,7 @@
 				04A9421120944D6A005EE758 /* ScreenShots.xcassets */,
 				04217CC2208959C3002FE09D /* README.md */,
 				04510F19207CBE5D00F25E98 /* mnhani */,
+				0445C5D020DD9375000F809B /* widget */,
 				04510F18207CBE5D00F25E98 /* Products */,
 				EBE685873DBA13FAEBEA7525 /* Pods */,
 				BDA724439A0B69AB8B12DF40 /* Frameworks */,
@@ -115,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				04510F17207CBE5D00F25E98 /* mnhani.app */,
+				0445C5CD20DD9375000F809B /* widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -173,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				93DB0C12AA0184EED72C2FB8 /* Pods_mnhani.framework */,
+				0445C5CE20DD9375000F809B /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,6 +274,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0445C5CC20DD9375000F809B /* widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0445C5DC20DD9375000F809B /* Build configuration list for PBXNativeTarget "widget" */;
+			buildPhases = (
+				0445C5C920DD9375000F809B /* Sources */,
+				0445C5CA20DD9375000F809B /* Frameworks */,
+				0445C5CB20DD9375000F809B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widget;
+			productName = widget;
+			productReference = 0445C5CD20DD9375000F809B /* widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		04510F16207CBE5D00F25E98 /* mnhani */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04510F2C207CBE5F00F25E98 /* Build configuration list for PBXNativeTarget "mnhani" */;
@@ -198,10 +300,12 @@
 				04510F14207CBE5D00F25E98 /* Frameworks */,
 				04510F15207CBE5D00F25E98 /* Resources */,
 				DD9762F2BEE317D73F4EC957 /* [CP] Embed Pods Frameworks */,
+				0445C5DD20DD9375000F809B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0445C5D820DD9375000F809B /* PBXTargetDependency */,
 			);
 			name = mnhani;
 			productName = mnhani;
@@ -214,10 +318,14 @@
 		04510F0F207CBE5D00F25E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0930;
+				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Abuzer Emre Osmanoğlu";
 				TargetAttributes = {
+					0445C5CC20DD9375000F809B = {
+						CreatedOnToolsVersion = 9.4.1;
+						LastSwiftMigration = 0940;
+					};
 					04510F16207CBE5D00F25E98 = {
 						CreatedOnToolsVersion = 9.3;
 						LastSwiftMigration = 1000;
@@ -239,11 +347,22 @@
 			projectRoot = "";
 			targets = (
 				04510F16207CBE5D00F25E98 /* mnhani */,
+				0445C5CC20DD9375000F809B /* widget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0445C5CB20DD9375000F809B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0445C5D520DD9375000F809B /* MainInterface.storyboard in Resources */,
+				0445C5F720DDBA4F000F809B /* Assets.xcassets in Resources */,
+				0445C5F620DDB1EC000F809B /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04510F15207CBE5D00F25E98 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -314,6 +433,19 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0445C5C920DD9375000F809B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0445C5D220DD9375000F809B /* TodayViewController.swift in Sources */,
+				0445C5F120DD99B9000F809B /* MGRS2LatLon.m in Sources */,
+				0445C5F420DD99B9000F809B /* UTM2LatLon.m in Sources */,
+				0445C5F320DD99B9000F809B /* GeoCoordinateConverter.m in Sources */,
+				0445C5F220DD99B9000F809B /* LatLon2UTM.m in Sources */,
+				0445C5F520DD99B9000F809B /* LatLon2MGRS.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		04510F13207CBE5D00F25E98 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,7 +477,23 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0445C5D820DD9375000F809B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0445C5CC20DD9375000F809B /* widget */;
+			targetProxy = 0445C5D720DD9375000F809B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
+		0445C5D320DD9375000F809B /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0445C5D420DD9375000F809B /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		04510F1E207CBE5D00F25E98 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -385,6 +533,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0445C5DA20DD9375000F809B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZDSRJX347M;
+				INFOPLIST_FILE = widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abuzeremre.mnhani.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "widget/widget-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0445C5DB20DD9375000F809B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZDSRJX347M;
+				INFOPLIST_FILE = widget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.abuzeremre.mnhani.widget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "widget/widget-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		04510F2A207CBE5F00F25E98 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -505,6 +698,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BB7D2A09B0525FC05685A87B /* Pods-mnhani.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,6 +721,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD8BA83F67BB402EAEAB5006 /* Pods-mnhani.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -547,6 +742,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0445C5DC20DD9375000F809B /* Build configuration list for PBXNativeTarget "widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0445C5DA20DD9375000F809B /* Debug */,
+				0445C5DB20DD9375000F809B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		04510F12207CBE5D00F25E98 /* Build configuration list for PBXProject "mnhani" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
