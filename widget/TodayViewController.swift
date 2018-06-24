@@ -26,7 +26,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.delegate = self
-        copyButton.layer.cornerRadius = 54 / 2
+        copyButton.layer.cornerRadius = 42 / 2
         copyButton.clipsToBounds = true
     }
     
@@ -45,6 +45,14 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         completionHandler(NCUpdateResult.newData)
     }
     
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        if activeDisplayMode == .compact {
+            self.preferredContentSize = maxSize
+        } else if activeDisplayMode == .expanded {
+            self.preferredContentSize = CGSize(width: maxSize.width, height: 168)
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let altitude = locations[0].altitude
         let roundedAltitude = Int(round(altitude))
@@ -56,7 +64,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
                             \(String(mgrs.prefix(5)))
                             \(String(mgrs.suffix(11)))
                             """
-        altitudeLabel.text = NSLocalizedString("altitude", comment: "") + " \(roundedAltitude) m"
+        altitudeLabel.text = NSLocalizedString("Altitude", comment: "") + ": \(roundedAltitude) m"
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
