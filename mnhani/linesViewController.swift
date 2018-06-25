@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class linesViewController: UIViewController, UISearchResultsUpdating, UITableViewDelegate, UITableViewDataSource {
 
@@ -80,7 +81,7 @@ class linesViewController: UIViewController, UISearchResultsUpdating, UITableVie
             cellRow = lineArray[indexPath.row]
         }
         cell?.textLabel?.text = cellRow.lineTitle
-        cell?.detailTextLabel?.text = "\(convert().stringToArray(cellRow.lineLatitude).count)" + " " + NSLocalizedString("Joint", comment: "")
+        cell?.detailTextLabel?.text = "\(convert().stringToArray(cellRow.lineLatitude).count)" + " " + NSLocalizedString("Joint", comment: "") + ", \(lengthOfLine(i: indexPath.row))"
         return cell!
     }
     
@@ -110,6 +111,28 @@ class linesViewController: UIViewController, UISearchResultsUpdating, UITableVie
             NotificationCenter.default.post(name: NSNotification.Name("Update"), object: nil)
             tableView.endUpdates()
         } else if editingStyle == .insert {
+        }
+    }
+    
+    func lengthOfLine(i: Int) -> String {
+        let latitude: Array<Double>
+        let longitude: Array<Double>
+        if isFiltering() {
+            latitude = convert().stringToArray(filteredArray[i].lineLatitude)
+            longitude = convert().stringToArray(filteredArray[i].lineLongitude)
+        } else {
+            latitude = convert().stringToArray(lineArray[i].lineLatitude)
+            longitude = convert().stringToArray(lineArray[i].lineLongitude)
+        }
+        var distance = 0.0
+        for i in 0 ... latitude.count - 2 {
+            distance = distance + CLLocation(latitude: latitude[i], longitude: longitude[i]).distance(from: CLLocation(latitude: latitude[i + 1], longitude: longitude[i + 1]))
+        }
+        let meter = Int(distance)
+        if distance > 999 {
+            return convert().toKM(meter: distance)
+        } else {
+            return "\(meter) m"
         }
     }
     
