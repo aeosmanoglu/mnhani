@@ -18,6 +18,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     @IBOutlet weak var altitudeLabel: UILabel!
     @IBOutlet weak var courseView: UIImageView!
     @IBOutlet weak var copyButton: UIButton!
+    @IBOutlet weak var accuracyLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,6 +57,8 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let accuracy = Int(locations[0].horizontalAccuracy.rounded())
+        accuracyLabel.text = NSLocalizedString("Accuracy", comment: "") + ": \(accuracy) m"
         let altitude = locations[0].altitude
         let roundedAltitude = Int(round(altitude))
         let latitude = locations[0].coordinate.latitude

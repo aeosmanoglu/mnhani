@@ -24,6 +24,7 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationTenLabel: UILabel!
     @IBOutlet weak var bannerView: GADBannerView!
+    @IBOutlet weak var accuracyLabel: UILabel!
     
     
     
@@ -42,6 +43,10 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: - Location
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations[0]
+        
+        
+        let accuracy = Int(userLocation.horizontalAccuracy.rounded())
+        accuracyLabel.text = NSLocalizedString("Accuracy", comment: "") + ": \(accuracy) m"
         
         let altitude = userLocation.altitude
         let roundedAltitude = Int(round(altitude))

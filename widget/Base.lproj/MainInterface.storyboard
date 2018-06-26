@@ -38,20 +38,28 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps-50" translatesAutoresizingMaskIntoConstraints="NO" id="18c-5y-6Im">
-                                <rect key="frame" x="254" y="116" width="42" height="42"/>
+                                <rect key="frame" x="256" y="116" width="40" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="5kP-3q-uUe"/>
-                                    <constraint firstAttribute="width" constant="42" id="lU1-Q8-65O"/>
+                                    <constraint firstAttribute="height" constant="40" id="5kP-3q-uUe"/>
+                                    <constraint firstAttribute="width" constant="40" id="lU1-Q8-65O"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EzX-hw-U4P">
-                                <rect key="frame" x="24" y="121" width="35" height="32"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                <rect key="frame" x="24" y="126" width="23" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mY8-kv-bEo">
+                                <rect key="frame" x="24" y="89" width="33" height="16"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="mY8-kv-bEo" firstAttribute="top" secondItem="GcN-lo-r42" secondAttribute="bottom" id="5g8-zs-elV"/>
+                            <constraint firstItem="mY8-kv-bEo" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="leading" id="9HT-Dg-SrB"/>
                             <constraint firstItem="EzX-hw-U4P" firstAttribute="centerY" secondItem="18c-5y-6Im" secondAttribute="centerY" id="BBo-aA-Xhj"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="seO-hv-H52" secondAttribute="trailing" constant="24" id="EHY-f7-kyl"/>
                             <constraint firstItem="seO-hv-H52" firstAttribute="centerY" secondItem="GcN-lo-r42" secondAttribute="centerY" id="O5y-H8-MEw"/>
@@ -67,6 +75,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="168"/>
                     <connections>
+                        <outlet property="accuracyLabel" destination="mY8-kv-bEo" id="OZH-c8-KDa"/>
                         <outlet property="altitudeLabel" destination="EzX-hw-U4P" id="5Bb-cp-24t"/>
                         <outlet property="copyButton" destination="seO-hv-H52" id="Tq5-WE-ULZ"/>
                         <outlet property="courseView" destination="18c-5y-6Im" id="O4X-za-VWx"/>

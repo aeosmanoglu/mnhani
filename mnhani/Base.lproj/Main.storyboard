@@ -554,12 +554,19 @@
                                     <constraint firstAttribute="width" constant="320" id="3sN-qm-gPB"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Accuracy: 5 m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDd-No-HZt">
+                                <rect key="frame" x="105" y="346" width="110" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.17254901959999999" green="0.24313725489999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="YbO-Af-vQG" firstAttribute="trailing" secondItem="U5X-cS-5B5" secondAttribute="trailing" constant="16" id="2gc-wt-IQu"/>
                             <constraint firstItem="Qby-U2-KoP" firstAttribute="width" secondItem="hYu-qc-epL" secondAttribute="width" id="3Y8-Df-Aa8"/>
                             <constraint firstItem="Qby-U2-KoP" firstAttribute="height" secondItem="hYu-qc-epL" secondAttribute="height" id="5Fi-Pz-p0Y"/>
+                            <constraint firstItem="GDd-No-HZt" firstAttribute="top" secondItem="ZW8-Px-XyC" secondAttribute="bottom" constant="8" id="ATp-bz-JnO"/>
                             <constraint firstItem="Qby-U2-KoP" firstAttribute="top" secondItem="hYu-qc-epL" secondAttribute="top" id="ENF-Rb-5C4"/>
                             <constraint firstItem="ZW8-Px-XyC" firstAttribute="top" secondItem="U5X-cS-5B5" secondAttribute="bottom" constant="16" id="Jgg-id-PUp"/>
                             <constraint firstItem="p58-O1-aW6" firstAttribute="top" secondItem="YbO-Af-vQG" secondAttribute="top" constant="16" id="NHn-BT-jYG"/>
@@ -573,6 +580,7 @@
                             <constraint firstItem="U5X-cS-5B5" firstAttribute="trailing" secondItem="ZW8-Px-XyC" secondAttribute="trailing" id="eJA-bR-vS9"/>
                             <constraint firstItem="Qby-U2-KoP" firstAttribute="leading" secondItem="YbO-Af-vQG" secondAttribute="leading" constant="16" id="fFA-1Z-R87"/>
                             <constraint firstItem="U5X-cS-5B5" firstAttribute="leading" secondItem="ZW8-Px-XyC" secondAttribute="leading" id="i7U-K0-bjj"/>
+                            <constraint firstItem="GDd-No-HZt" firstAttribute="centerX" secondItem="YZd-Ny-wFj" secondAttribute="centerX" id="j4V-J9-hHv"/>
                             <constraint firstItem="YbO-Af-vQG" firstAttribute="trailing" secondItem="hYu-qc-epL" secondAttribute="trailing" constant="16" id="kRr-Kp-x9B"/>
                             <constraint firstItem="SRV-8s-UnZ" firstAttribute="bottom" secondItem="YbO-Af-vQG" secondAttribute="bottom" id="nYT-LC-ZTS"/>
                         </constraints>
@@ -580,6 +588,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Current" image="Now" id="HB7-vb-IHs"/>
                     <connections>
+                        <outlet property="accuracyLabel" destination="GDd-No-HZt" id="0Gn-We-Kpc"/>
                         <outlet property="altitudeLabel" destination="Q7G-sj-qqy" id="QIC-QH-M3j"/>
                         <outlet property="bannerView" destination="SRV-8s-UnZ" id="Zzo-AJ-EX6"/>
                         <outlet property="locationLabel" destination="vkc-dW-TsW" id="XR8-21-aPS"/>

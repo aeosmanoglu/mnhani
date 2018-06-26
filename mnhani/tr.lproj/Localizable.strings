@@ -35,3 +35,4 @@
 "Joint" = "nokta";
 "Altitude" = "Yükseklik";
 "LocationAlertTitle" = "Konum hizmetleri kullanılamıyor";
+"Accuracy" = "Doğruluk";
