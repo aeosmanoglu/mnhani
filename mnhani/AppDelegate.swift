@@ -55,9 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if shortcutItem.type == "com.abuzeremre.mnhani.points" {
             tabVC?.selectedIndex = 2
         } else if shortcutItem.type == "com.abuzeremre.mnhani.map" {
-            tabVC?.selectedIndex = 1
-        } else if shortcutItem.type == "com.abuzeremre.mnhani.current" {
             tabVC?.selectedIndex = 0
+        } else if shortcutItem.type == "com.abuzeremre.mnhani.current" {
+            tabVC?.selectedIndex = 1
+        } else if shortcutItem.type == "com.abuzeremre.mnhani.lines" {
+            tabVC?.selectedIndex = 3
         }
     }
 

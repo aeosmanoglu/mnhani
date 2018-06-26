@@ -24,15 +24,10 @@ class currentViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var locationTenLabel: UILabel!
     @IBOutlet weak var bannerView: GADBannerView!
-    var firstOpen = UserDefaults.standard.bool(forKey: "FirstOpen")
     
-    override func viewWillAppear(_ animated: Bool) {
-        if firstOpen == false  {
-            firstOpen = true
-            UserDefaults.standard.set(firstOpen, forKey: "FirstOpen")
-            _ = self.tabBarController?.selectedIndex = 1
-        }
-    }
+    
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -27,8 +27,8 @@
                                     <constraint firstAttribute="width" constant="24" id="gf1-KN-6YG"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="distance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG8-Ab-tev">
-                                <rect key="frame" x="131" y="259.5" width="58" height="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG8-Ab-tev">
+                                <rect key="frame" x="149" y="259.5" width="22" height="14"/>
                                 <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -130,7 +130,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Coordinate" id="moK-cJ-ece"/>
+                    <navigationItem key="navigationItem" title="---" id="moK-cJ-ece"/>
                     <connections>
                         <outlet property="addLineView" destination="cp5-SS-x5v" id="CQc-40-kUV"/>
                         <outlet property="addView" destination="sWL-L8-Gqb" id="Xjl-IQ-f9e"/>
@@ -449,7 +449,7 @@
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7G-sj-qqy">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7G-sj-qqy">
                                         <rect key="frame" x="8" y="45" width="272" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="gox-7A-ZGT"/>
@@ -483,7 +483,7 @@
                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open map" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkc-dW-TsW">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vkc-dW-TsW">
                                         <rect key="frame" x="8" y="45" width="272" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="Jdj-Lq-WKK"/>
@@ -492,7 +492,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="and allow" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb0-gK-5le">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--- ---" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qb0-gK-5le">
                                         <rect key="frame" x="8" y="77" width="272" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="32" id="HLg-UD-Abt"/>
@@ -601,8 +601,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="93F-UQ-3UH" kind="relationship" relationship="viewControllers" id="1Bg-49-jzy"/>
                         <segue destination="5be-dc-G1G" kind="relationship" relationship="viewControllers" id="N86-Gf-bNl"/>
+                        <segue destination="93F-UQ-3UH" kind="relationship" relationship="viewControllers" id="1Bg-49-jzy"/>
                         <segue destination="uW8-Ya-JHf" kind="relationship" relationship="viewControllers" id="yQe-1o-4UT"/>
                         <segue destination="cqT-pH-ejB" kind="relationship" relationship="viewControllers" id="Zpt-Vx-WMa"/>
                         <segue destination="IY9-UP-0Qk" kind="relationship" relationship="viewControllers" id="1Ic-01-Qst"/>

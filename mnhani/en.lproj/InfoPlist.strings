@@ -7,7 +7,7 @@
 */
 
 "NSLocationWhenInUseUsageDescription" = "Shows your location on the map and helps improve OpenStreetMap.";
-"4" = "Share Mnhani";
+"4" = "Line List";
 "3" = "Points List";
 "2" = "Open Map";
-"1" = "Show Location";
+"1" = "Show My Location";

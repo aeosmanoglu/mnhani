@@ -25,6 +25,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         locationManager.startUpdatingLocation()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingHeading()
         locationManager.delegate = self
         copyButton.layer.cornerRadius = 42 / 2
         copyButton.clipsToBounds = true

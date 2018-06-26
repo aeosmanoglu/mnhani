@@ -34,3 +34,4 @@
 "LineError" = "İptal edildi. En az iki nokta kaydetmeniz gerekli.";
 "Joint" = "nokta";
 "Altitude" = "Yükseklik";
+"LocationAlertTitle" = "Konum hizmetleri kullanılamıyor";
