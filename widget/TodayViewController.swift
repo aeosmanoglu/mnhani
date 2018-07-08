@@ -74,7 +74,7 @@ class TodayViewController: UIViewController, NCWidgetProviding, CLLocationManage
     
     func locationManager(_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
         UIView.animate(withDuration: 0.5) {
-            let angle = newHeading.trueHeading.toRadians
+            let angle = (360 - newHeading.trueHeading).toRadians
             self.courseView.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         }
     }

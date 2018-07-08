@@ -248,7 +248,7 @@ class editViewController: UIViewController, UITextFieldDelegate {
         UserDefaults.standard.set(longitude, forKey: "Longitude")
         UserDefaults.standard.set(true, forKey: "ShowPoint")
         NotificationCenter.default.post(name: NSNotification.Name("Center"), object: nil)
-        _ = self.tabBarController?.selectedIndex = 1
+        _ = self.tabBarController?.selectedIndex = 0
         
     }
     
