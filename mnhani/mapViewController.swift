@@ -182,6 +182,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
         linesArray = LineDataManager.fetch()
         let linesCount = linesArray.count
         mapView.removeOverlays(lines)
+        lines.removeAll()
         if linesCount > 0 {
             for i in 0 ... (linesCount - 1) {
                 var latitude = convert().stringToArray(linesArray[i].lineLatitude)
@@ -198,9 +199,7 @@ class mapViewController: UIViewController, MGLMapViewDelegate, CLLocationManager
                         mapView.addOverlays(lines)
                     }
                 }
-                coordinates.removeAll()
-                latitude?.removeAll()
-                longitude?.removeAll()
+                
             }
         }
     }
