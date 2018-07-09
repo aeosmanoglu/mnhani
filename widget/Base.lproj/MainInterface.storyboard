@@ -63,11 +63,14 @@
                             <constraint firstItem="EzX-hw-U4P" firstAttribute="centerY" secondItem="18c-5y-6Im" secondAttribute="centerY" id="BBo-aA-Xhj"/>
                             <constraint firstItem="ssy-KU-ocm" firstAttribute="trailing" secondItem="seO-hv-H52" secondAttribute="trailing" constant="24" id="EHY-f7-kyl"/>
                             <constraint firstItem="seO-hv-H52" firstAttribute="centerY" secondItem="GcN-lo-r42" secondAttribute="centerY" id="O5y-H8-MEw"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mY8-kv-bEo" secondAttribute="trailing" constant="20" symbolic="YES" id="OVy-eE-u8U"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="top" secondItem="ssy-KU-ocm" secondAttribute="top" constant="13" id="VG1-kM-Xix"/>
                             <constraint firstItem="EzX-hw-U4P" firstAttribute="leading" secondItem="GcN-lo-r42" secondAttribute="leading" id="Wr4-Da-8iS"/>
                             <constraint firstItem="18c-5y-6Im" firstAttribute="top" secondItem="seO-hv-H52" secondAttribute="bottom" constant="48" id="dbY-yF-p58"/>
                             <constraint firstItem="18c-5y-6Im" firstAttribute="trailing" secondItem="seO-hv-H52" secondAttribute="trailing" id="h3c-Mg-HWk"/>
                             <constraint firstItem="GcN-lo-r42" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="24" id="jDo-zK-MQ4"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GcN-lo-r42" secondAttribute="trailing" constant="20" symbolic="YES" id="w5Y-5b-42u"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EzX-hw-U4P" secondAttribute="trailing" constant="20" symbolic="YES" id="wYO-fi-lj3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
                     </view>

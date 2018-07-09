@@ -1,1 +1,2 @@
-./mnhani/Info.plist
+# for hiding the mapbox api key
+*.plist
