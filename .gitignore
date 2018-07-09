@@ -1,2 +1,7 @@
 # for hiding the mapbox api key
 *.plist
+
+#mac0S stuffs
+*.BIN
+*.ini
+*.db
