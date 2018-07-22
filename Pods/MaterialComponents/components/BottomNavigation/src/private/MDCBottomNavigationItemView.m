@@ -363,8 +363,8 @@ static NSString *const kMDCBottomNavigationItemViewTabString = @"tab";
   if (!self.selected) {
     self.iconImageView.tintColor = self.unselectedItemTintColor;
     self.label.textColor = self.unselectedItemTintColor;
-    self.inkView.inkColor =
-        [self.selectedItemTintColor colorWithAlphaComponent:MDCBottomNavigationItemViewInkOpacity];
+    CGFloat alpha = MDCBottomNavigationItemViewInkOpacity;
+    self.inkView.inkColor = [self.unselectedItemTintColor colorWithAlphaComponent:alpha];
   }
 }
 

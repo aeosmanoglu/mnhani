@@ -153,10 +153,6 @@ static inline CGSize CGSizeShrinkWithInsets(CGSize size, UIEdgeInsets edgeInsets
   return [MDCShapedShadowLayer class];
 }
 
-- (void)commonMDCChipViewInit {
-  self.isAccessibilityElement = YES;
-}
-
 - (instancetype)initWithFrame:(CGRect)frame {
   if (self = [super initWithFrame:frame]) {
     if (!_backgroundColors) {
@@ -233,8 +229,6 @@ static inline CGSize CGSizeShrinkWithInsets(CGSize size, UIEdgeInsets edgeInsets
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentFill;
 
     [self updateBackgroundColor];
-
-    [self commonMDCChipViewInit];
   }
   return self;
 }
@@ -276,8 +270,6 @@ static inline CGSize CGSizeShrinkWithInsets(CGSize size, UIEdgeInsets edgeInsets
 
     self.mdc_adjustsFontForContentSizeCategory =
         [aDecoder decodeBoolForKey:MDCChipAdjustsFontForContentSizeKey];
-
-    [self commonMDCChipViewInit];
   }
   return self;
 }
@@ -573,24 +565,6 @@ static inline CGSize CGSizeShrinkWithInsets(CGSize size, UIEdgeInsets edgeInsets
   self.titleLabel.textColor = [self titleColorForState:self.state];
 }
 
-- (void)updateAccessibility {
-
-  // Clearing and then adding the relevant traits based on current the state (while accommodating concurrent states).
-  self.accessibilityTraits &= ~(UIAccessibilityTraitSelected | UIAccessibilityTraitNotEnabled);
-
-  if ((self.state & UIControlStateSelected) == UIControlStateSelected) {
-    self.accessibilityTraits |= UIAccessibilityTraitSelected;
-  }
-
-  if ((self.state & UIControlStateDisabled) == UIControlStateDisabled) {
-    self.accessibilityTraits |= UIAccessibilityTraitNotEnabled;
-  }
-}
-
-- (NSString *)accessibilityLabel {
-  return self.titleLabel.accessibilityLabel ?: self.titleLabel.text;
-}
-
 - (void)updateState {
   [self updateBackgroundColor];
   [self updateBorderColor];
@@ -600,7 +574,6 @@ static inline CGSize CGSizeShrinkWithInsets(CGSize size, UIEdgeInsets edgeInsets
   [self updateShadowColor];
   [self updateTitleFont];
   [self updateTitleColor];
-  [self updateAccessibility];
 }
 
 #pragma mark - Custom touch handling
